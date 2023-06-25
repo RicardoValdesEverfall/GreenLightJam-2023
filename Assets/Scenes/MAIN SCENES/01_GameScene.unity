@@ -1350,12 +1350,14 @@ MonoBehaviour:
   walkSpeed: 3
   sprintSpeed: 6
   rotationSpeed: 3
-  initialJumpVelocity: 0
+  initialFallVelocity: 0
   maxJumpHeight: 1
   maxJumpTime: 0.5
+  inAirTimer: 0
+  yVelocity: {x: 0, y: 0, z: 0}
   gravity: -9.8
   groundedGravity: -0.5
-  groundCheckSphereRadius: 1
+  groundCheckBox: {x: 0.1, y: 0.01, z: 0.2}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1

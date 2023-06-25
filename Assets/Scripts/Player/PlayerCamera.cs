@@ -21,7 +21,6 @@ public class PlayerCamera : MonoBehaviour
 
     private Vector3 CameraVelocity;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player").transform;
@@ -56,4 +55,6 @@ public class PlayerCamera : MonoBehaviour
         CameraPivotTransform.localRotation = targetRot;
 
     }
+
+    //HandleFOV function for lerping between different FOVs based on isSprinting vs isWalking.
 }

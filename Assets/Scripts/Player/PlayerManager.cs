@@ -24,7 +24,6 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-     
         playerCam.HandleCamera();
     }
 }
