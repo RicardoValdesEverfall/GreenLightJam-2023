@@ -15,9 +15,24 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private float sprintSpeed;
     [SerializeField] private float rotationSpeed;
 
+    [SerializeField] private float initialFallVelocity;
+    [SerializeField] private float maxJumpHeight;
+    [SerializeField] private float maxJumpTime;
+    [SerializeField] private float inAirTimer;
+    [SerializeField] private Vector3 yVelocity;
+
+    [Header("GRAVITY & GROUND SETTINGS")]
+    [SerializeField] private float gravity;
+    [SerializeField] private float groundedGravity;
+    [SerializeField] private Vector3 groundCheckBox;
+    [SerializeField] private LayerMask groundLayer;
+
     [Header("DEBUG")]
     [SerializeField] private Vector3 moveDirection;
     [SerializeField] public bool isSprinting;
+    [SerializeField] public bool isJumping;
+    [SerializeField] public bool isGrounded;
+    [SerializeField] private bool isFalling;
 
     private void Awake()
     {
@@ -30,6 +45,10 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+
+        HandleGravity();
+        HandleGroundCheck();
+        //HandleAnimations();
     }
 
     private void HandleMovement()
@@ -40,7 +59,6 @@ public class PlayerLocomotion : MonoBehaviour
 
         moveDirection.y = 0;
 
-        //if is sprinting needs to be implemented here
         if (isSprinting) { playerCharacterController.Move(moveDirection * sprintSpeed * Time.deltaTime); }
         else { playerCharacterController.Move(moveDirection * walkSpeed * Time.deltaTime); }
         
@@ -61,5 +79,55 @@ public class PlayerLocomotion : MonoBehaviour
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         transform.rotation = playerRotation;
+    }
+
+    private void HandleGroundCheck()
+    {
+        isGrounded = Physics.CheckBox(transform.position, groundCheckBox, Quaternion.identity, groundLayer);
+    }
+
+    private void HandleGravity()
+    {
+        if (isGrounded)
+        {
+            if (yVelocity.y < 0)
+            {
+                inAirTimer = 0;
+                isFalling = false;
+                yVelocity.y = groundedGravity;
+            }
+        }
+
+        else
+        {
+            if (!isJumping && !isFalling)
+            {
+                isFalling = true;
+                yVelocity.y = initialFallVelocity;
+            }
+
+            inAirTimer += Time.deltaTime;
+            yVelocity.y += gravity * Time.deltaTime;
+            //Set Animator falling float here
+        }
+
+        playerCharacterController.Move(yVelocity * Time.deltaTime);
+    }
+
+    public void PerformJumpAction()
+    {
+        if (isJumping) { return; }
+        if (isGrounded) { return; }
+
+        //Play jump animation
+
+        isJumping = true;
+    }
+
+
+    //DEBUG
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawCube(transform.position, groundCheckBox * 2);
     }
 }

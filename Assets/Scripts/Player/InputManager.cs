@@ -13,7 +13,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] public float camHorizontalInput;
     [SerializeField] public float camVerticalInput;
 
-    [SerializeField] public bool sprintInput;
+    [SerializeField] private bool sprintInput;
+    [SerializeField] public bool jumpInput;
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
@@ -24,16 +25,17 @@ public class InputManager : MonoBehaviour
         {
             playerControls = new PlayerControls();
 
-                           //The input action (locomotion) followed
-                           //by the input type (movement).
+                           //The input action (locomotion) in the input map "PlayerControls"
+                           //followed by the input type (movement).
             playerControls.PlayerLocomotion.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
                                                                       //Our variable that
                                                                       //stores the input data.
 
             playerControls.PlayerCamera.Look.performed += i => cameraInput = i.ReadValue<Vector2>();
-            playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
+            playerControls.PlayerActions.Sprint.started += i => sprintInput = true;
             playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
-          
+            playerControls.PlayerActions.Jump.started += i => jumpInput = true;
+            playerControls.PlayerActions.Jump.canceled += i => jumpInput = false;
         }
 
         playerControls.Enable();
@@ -54,7 +56,7 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleCameraInput();
         HandleSprintInput();
-        //HandleJumpInput
+        HandleJumpInput();
         //HandleInteractInput
     }
 
@@ -76,5 +78,15 @@ public class InputManager : MonoBehaviour
     {
         if (sprintInput) { playerLocomotion.isSprinting = true; }
         else { playerLocomotion.isSprinting = false; }
+    }
+
+    private void HandleJumpInput()
+    {
+        if (jumpInput)
+        {
+            //If UI is open we dont want to do jumps, but this could also be handled by the PlayerManager Script
+
+            playerLocomotion.PerformJumpAction();
+        }
     }
 }
