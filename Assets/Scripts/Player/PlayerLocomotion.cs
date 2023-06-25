@@ -64,8 +64,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         moveDirection.y = 0;
 
-        if (isSprinting) { playerCharacterController.Move(moveDirection * sprintSpeed * Time.deltaTime); }
-        else { playerCharacterController.Move(moveDirection * walkSpeed * Time.deltaTime); }
+        if (isSprinting) { playerCharacterController.Move(moveDirection * (sprintSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime); }
+        else { playerCharacterController.Move(moveDirection * (walkSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime); }
         
     }
 
@@ -95,6 +95,8 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (isGrounded)
         {
+            //if was in the air before, play landing sound once
+
             if (yVelocity.y < 0)
             {
                 inAirTimer = 0;
@@ -103,7 +105,6 @@ public class PlayerLocomotion : MonoBehaviour
                 yVelocity.y = groundedGravity;
             }
         }
-
         else
         {
             if (!isJumping && !isFalling)
@@ -133,16 +134,17 @@ public class PlayerLocomotion : MonoBehaviour
         playerCharacterController.Move(yVelocity * Time.deltaTime);
     }
 
-    public void PerformJumpAction()
+    public void PerformJumpAction(float heldTimer) //The amount of time the player held the jump input. This is to perform a charged jump.
     {
         if (isJumping) { return; }
         if (!isGrounded) { return; }
 
         //Play jump animation
+        //Play jump sound
         
         isJumping = true;
 
-        yVelocity.y += initialJumpVelocity;
+        yVelocity.y += initialJumpVelocity + heldTimer;
         playerCharacterController.Move(yVelocity * Time.deltaTime);
     }
 

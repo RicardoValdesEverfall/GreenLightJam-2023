@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
 
     [SerializeField, ReadOnly] private bool sprintInput;
     [SerializeField, ReadOnly] public bool jumpInput;
+    [SerializeField, ReadOnly] public float jumpInputTimer;
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
@@ -85,9 +86,18 @@ public class InputManager : MonoBehaviour
     {
         if (jumpInput)
         {
-            //If UI is open we dont want to do jumps, but this could also be handled by the PlayerManager Script
+            if (jumpInputTimer < 1f)
+            {
+                jumpInputTimer += Time.deltaTime;
+            }
+            return;
+        }
 
-            playerLocomotion.PerformJumpAction();
+        if (!jumpInput && jumpInputTimer != 0)
+        {
+            if (jumpInputTimer < 0.3f) { jumpInputTimer = 0f; }
+            playerLocomotion.PerformJumpAction(jumpInputTimer * 4);
+            jumpInputTimer = 0;
         }
     }
 }
