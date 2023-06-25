@@ -16,8 +16,8 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float UpDownRotSpeed = 220;
 
     [Header("DEBUG")]
-    [SerializeField] private float LeftRightLookAngle;
-    [SerializeField] private float UpDownLookAngle;
+    [SerializeField, ReadOnly] private float LeftRightLookAngle;
+    [SerializeField, ReadOnly] private float UpDownLookAngle;
 
     private Vector3 CameraVelocity;
 

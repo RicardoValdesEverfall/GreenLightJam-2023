@@ -15,11 +15,11 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private float sprintSpeed;
     [SerializeField] private float rotationSpeed;
 
-    [SerializeField] private float initialFallVelocity;
+    [SerializeField] private float initialFallVelocity;   
     [SerializeField] private float maxJumpHeight;
     [SerializeField] private float maxJumpTime;
-    [SerializeField] private float inAirTimer;
-    [SerializeField] private Vector3 yVelocity;
+   
+    [SerializeField, Range(0.01f, 0.1f)] private float fallingSpeed;   
 
     [Header("GRAVITY & GROUND SETTINGS")]
     [SerializeField] private float gravity;
@@ -28,17 +28,22 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     [Header("DEBUG")]
-    [SerializeField] private Vector3 moveDirection;
-    [SerializeField] public bool isSprinting;
-    [SerializeField] public bool isJumping;
-    [SerializeField] public bool isGrounded;
-    [SerializeField] private bool isFalling;
+    [SerializeField, ReadOnly] private Vector3 moveDirection;
+    [SerializeField, ReadOnly] private Vector3 yVelocity;
+    [SerializeField, ReadOnly] public bool isSprinting;
+    [SerializeField, ReadOnly] public bool isJumping;
+    [SerializeField, ReadOnly] public bool isGrounded;
+    [SerializeField, ReadOnly] private bool isFalling;
+    [SerializeField, ReadOnly] private float inAirTimer;
+    [SerializeField, ReadOnly] private float initialJumpVelocity;
 
     private void Awake()
     {
         playerCharacterController = GetComponent<CharacterController>();
         inputManager = GetComponent<InputManager>();
         cameraObject = Camera.main.transform;
+
+        initialJumpVelocity = Mathf.Sqrt(-2 * gravity * maxJumpHeight);
     }
 
     public void HandleAllLocomotion()
@@ -94,6 +99,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 inAirTimer = 0;
                 isFalling = false;
+                isJumping = false;
                 yVelocity.y = groundedGravity;
             }
         }
@@ -104,6 +110,19 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 isFalling = true;
                 yVelocity.y = initialFallVelocity;
+            }
+
+            if (isJumping)
+            {   
+                if (inAirTimer >= maxJumpTime)
+                {
+                    isJumping = false;
+                }
+            }
+
+            if (isFalling)
+            {
+                yVelocity.y -= fallingSpeed;
             }
 
             inAirTimer += Time.deltaTime;
@@ -117,11 +136,14 @@ public class PlayerLocomotion : MonoBehaviour
     public void PerformJumpAction()
     {
         if (isJumping) { return; }
-        if (isGrounded) { return; }
+        if (!isGrounded) { return; }
 
         //Play jump animation
-
+        
         isJumping = true;
+
+        yVelocity.y += initialJumpVelocity;
+        playerCharacterController.Move(yVelocity * Time.deltaTime);
     }
 
 

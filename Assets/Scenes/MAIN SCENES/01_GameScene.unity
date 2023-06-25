@@ -1353,8 +1353,7 @@ MonoBehaviour:
   initialFallVelocity: 0
   maxJumpHeight: 1
   maxJumpTime: 0.5
-  inAirTimer: 0
-  yVelocity: {x: 0, y: 0, z: 0}
+  fallingSpeed: 0.075
   gravity: -9.8
   groundedGravity: -0.5
   groundCheckBox: {x: 0.1, y: 0.01, z: 0.2}
@@ -1362,10 +1361,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   moveDirection: {x: 0, y: 0, z: 0}
+  yVelocity: {x: 0, y: 0, z: 0}
   isSprinting: 0
   isJumping: 0
   isGrounded: 0
   isFalling: 0
+  inAirTimer: 0
+  initialJumpVelocity: 0
 --- !u!114 &831724788
 MonoBehaviour:
   m_ObjectHideFlags: 0

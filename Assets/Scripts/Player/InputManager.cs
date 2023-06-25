@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class InputManager : MonoBehaviour
 {
@@ -8,13 +9,13 @@ public class InputManager : MonoBehaviour
     private PlayerLocomotion playerLocomotion;
 
     [Header("DEBUG")]
-    [SerializeField] public float verticalInput;
-    [SerializeField] public float horizontalInput;
-    [SerializeField] public float camHorizontalInput;
-    [SerializeField] public float camVerticalInput;
+    [SerializeField, ReadOnly] public float verticalInput;
+    [SerializeField, ReadOnly] public float horizontalInput;
+    [SerializeField, ReadOnly] public float camHorizontalInput;
+    [SerializeField, ReadOnly] public float camVerticalInput;
 
-    [SerializeField] private bool sprintInput;
-    [SerializeField] public bool jumpInput;
+    [SerializeField, ReadOnly] private bool sprintInput;
+    [SerializeField, ReadOnly] public bool jumpInput;
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
@@ -90,3 +91,4 @@ public class InputManager : MonoBehaviour
         }
     }
 }
+
