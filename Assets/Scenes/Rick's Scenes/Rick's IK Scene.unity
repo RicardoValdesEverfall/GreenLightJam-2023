@@ -866,6 +866,11 @@ PrefabInstance:
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 1963118429}
+    - target: {fileID: 1180593077989435814, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 257
+      objectReference: {fileID: 0}
     - target: {fileID: 3843454213363157846, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Data.m_Hint
@@ -966,6 +971,16 @@ PrefabInstance:
       propertyPath: footTargetFR
       value: 
       objectReference: {fileID: 1067720200}
+    - target: {fileID: 5258780197712541042, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485203214956905476, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6196654130082884572, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1291,18 +1306,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 147570137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &147570142 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1180593077989435814, guid: e05ef682c85ea0543892b432f0f3fa4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 147570137}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147570139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af9ced302288acb4097c024aece13670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &183865697
 GameObject:
   m_ObjectHideFlags: 0
@@ -6223,12 +6226,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780416518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c125e8ae499c5ea41b433e304b028323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLocomotion: {fileID: 147570142}
   footIKConstraints:
   - {fileID: 1067720201}
   - {fileID: 554227494}
@@ -6247,10 +6249,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  stepHeight: 0.0003
-  stepLength: 0.00015
-  maxDistance: 0.0005
-  sphereRadius: 0
+  stepHeight: 2
+  stepLength: 2
+  maxDistance: 2
+  sphereRadius: 0.05
 --- !u!1 &1792978072
 GameObject:
   m_ObjectHideFlags: 0
