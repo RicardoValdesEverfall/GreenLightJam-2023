@@ -5,82 +5,71 @@ using UnityEngine.Animations.Rigging;
 
 public class QuadrupedIK : MonoBehaviour
 {
-    [SerializeField] private PlayerLocomotion playerLocomotion;
-    [SerializeField] private QuadrupedIK otherFoot;
-    [SerializeField] private Transform body;
-    [SerializeField] private Vector3 footOffset;
+    [Header("IK COMPONENTS")]
+    [SerializeField] private TwoBoneIKConstraint[] footIKConstraints;
+    [SerializeField] private Transform[] targetTransforms; //FL = 0, FR = 1, BL = 2, BR =3
+    [SerializeField] private Transform[] footTransforms;
+    [SerializeField] private LayerMask groundLayer;
+
+    [Header("IK SETTINGS")]
     [SerializeField] private float stepHeight;
     [SerializeField] private float stepLength;
-    [SerializeField] private float stepDistance;
+    [SerializeField] private float maxDistance;
+    [SerializeField] private float sphereRadius;
 
-    private Vector3 newPosition;
-    private Vector3 currentPosition;
-    private Vector3 oldPosition;
+    private float angleX;
+    private float angleZ;
 
-    private Vector3 newNormal;
-    private Vector3 currentNormal;
-    private Vector3 oldNormal;
-
-    private float footSpacing;
-    private float lerp;
+    private Vector3[] allHitNormals;
 
     private void Start()
     {
-        playerLocomotion = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLocomotion>();
-
-        footSpacing = transform.localPosition.x;
-
-        currentPosition = transform.position;
-        newPosition = transform.position;
-        oldPosition = transform.position;
-
-        currentNormal = transform.up;
-        newNormal = transform.up;
-        oldNormal = transform.up;
+        allHitNormals = new Vector3[4];
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.position = currentPosition;
-        transform.up = currentNormal;
+        HandleFeetRotation();
+    }
 
-        Ray ray = new Ray(body.position + (body.right * footSpacing), Vector3.down);
+    private Vector3 HandleContactPlane(Vector3 plane, Vector3 hitNormal)
+    {
+        return plane - hitNormal * Vector3.Dot(plane, hitNormal);
+    }
 
-        if (Physics.Raycast(ray, out RaycastHit info, 10))
+    private void HandleAxisAngles(Transform footTarget, Vector3 hitNormal)
+    {
+        Vector3 xAxisProject = HandleContactPlane(footTarget.forward, hitNormal).normalized;
+        Vector3 zAxisProject = HandleContactPlane(footTarget.right, hitNormal).normalized;
+
+        angleX = Vector3.SignedAngle(footTarget.forward, xAxisProject, footTarget.right);
+        angleZ = Vector3.SignedAngle(footTarget.right, zAxisProject, footTarget.forward);
+    }
+
+    private void HandleFeetRotation()
+    {
+        for(int i = 0; i < 4; i++)
         {
-            if (Vector3.Distance(newPosition, info.point) > stepDistance && !otherFoot.IsMoving() && lerp >= 1)
+            RaycastHit hit;
+
+            if (Physics.SphereCast(footTransforms[i].position, sphereRadius, Vector3.down, out hit, groundLayer))
             {
-                lerp = 0;
-                int direction = body.InverseTransformPoint(info.point).z > body.InverseTransformPoint(newPosition).z ? 1 : -1;
-                newPosition = info.point + (body.forward * stepLength * direction) + footOffset;
-                newNormal = info.normal;
+                allHitNormals[i] = hit.normal;
+
+                HandleAxisAngles(footTransforms[i], hit.normal);
+                targetTransforms[i].position = hit.point;
+                targetTransforms[i].localEulerAngles = new Vector3(targetTransforms[i].localEulerAngles.x + angleX, targetTransforms[i].localEulerAngles.y, targetTransforms[i].localEulerAngles.z + angleZ);
+              
             }
         }
-
-        if (lerp < 1)
-        {
-            Vector3 tempPosition = Vector3.Lerp(oldPosition, newPosition, lerp);
-            tempPosition.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
-
-            currentPosition = tempPosition;
-            currentNormal = Vector3.Lerp(oldNormal, newNormal, lerp);
-            lerp += Time.deltaTime * playerLocomotion.currentSpeed;
-        }
-        else
-        {
-            oldPosition = newPosition;
-            oldNormal = newNormal;
-        }
-    }
-
-    public bool IsMoving()
-    {
-        return (lerp < 1);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 0.01f);
+        for (int i = 0; i < 4; i++)
+        {
+            Gizmos.DrawSphere(footTransforms[i].position, sphereRadius);
+        }
+       
     }
 }
