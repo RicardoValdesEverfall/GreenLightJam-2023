@@ -1311,6 +1311,7 @@ GameObject:
   - component: {fileID: 1180593077989435814}
   - component: {fileID: 2208246019023815245}
   - component: {fileID: 5021066563387024655}
+  - component: {fileID: 988673636851549936}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1381,6 +1382,7 @@ MonoBehaviour:
   isFalling: 0
   inAirTimer: 0
   initialJumpVelocity: 0
+  currentSpeed: 0
 --- !u!114 &2208246019023815245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,6 +1428,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.32, z: 0}
+--- !u!114 &988673636851549936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913409546406123319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e65cdd56c08480fa32d65d0b513a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMaterial: 0
 --- !u!1 &6938156176557668438
 GameObject:
   m_ObjectHideFlags: 0

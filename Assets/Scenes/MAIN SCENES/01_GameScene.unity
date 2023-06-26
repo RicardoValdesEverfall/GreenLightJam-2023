@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 102999227}
   - component: {fileID: 102999226}
   - component: {fileID: 102999225}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2298,7 +2298,7 @@ GameObject:
   - component: {fileID: 1074401637}
   - component: {fileID: 1074401636}
   - component: {fileID: 1074401635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3665,6 +3665,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2033379161186666896}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983230695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983230692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &2003361879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,7 +3946,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4103429348691877041, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1983230695}
   m_SourcePrefab: {fileID: 100100000, guid: 88eb8ebba9caa9b46819627d08eedeca, type: 3}
 --- !u!1 &2495630361980437497
 GameObject:
