@@ -6616,9 +6616,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
         type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 1963118436}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 147570138}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: shakeFrequency
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: shakeIntensity
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: cameraPivotTransform
+      value: 
+      objectReference: {fileID: 1963118432}
+    - target: {fileID: 6417104971856608472, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.626
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417104971856608472, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7049420607587720569, guid: 88eb8ebba9caa9b46819627d08eedeca,
         type: 3}
       propertyPath: m_RootOrder
@@ -6700,6 +6730,18 @@ GameObject:
 --- !u!1 &1963118431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4103429348691877041, guid: 88eb8ebba9caa9b46819627d08eedeca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1963118427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1963118432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6417104971856608472, guid: 88eb8ebba9caa9b46819627d08eedeca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1963118427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1963118436 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5858206293171622289, guid: 88eb8ebba9caa9b46819627d08eedeca,
     type: 3}
   m_PrefabInstance: {fileID: 1963118427}
   m_PrefabAsset: {fileID: 0}

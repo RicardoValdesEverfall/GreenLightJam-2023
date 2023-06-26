@@ -6,7 +6,7 @@ using UnityEditor;
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls; //The input map where all input actions and types are defined & registered.
-    private PlayerLocomotion playerLocomotion;
+    public PlayerLocomotion playerLocomotion; 
 
     [Header("DEBUG")]
     [SerializeField, ReadOnly] public float verticalInput;
@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
+    private float moveAmount;
 
     private void OnEnable()
     {
@@ -66,7 +67,10 @@ public class InputManager : MonoBehaviour
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
+        moveAmount = Mathf.Clamp01(Mathf.Abs(verticalInput) + Mathf.Abs(horizontalInput));
 
+
+        PlayerCamera.Instance.HandleCameraPivot(moveAmount);
         //implement animation variables here.
     }
 

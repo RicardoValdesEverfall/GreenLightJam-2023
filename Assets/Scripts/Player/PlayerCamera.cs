@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    public static PlayerCamera Instance;
     private InputManager playerInputManager;
 
     [Header("CAMERA COMPONENTS")]
     [SerializeField] private Transform playerObject;
-    [SerializeField] private Transform CameraPivotTransform;
+    [SerializeField] private Transform cameraPivotTransform;
+    [SerializeField] private Camera playerCam;
 
     [Header("CAMERA SETTINGS")]
-    [SerializeField] private float CameraSmoothSpeed = 1;
-    [SerializeField] private float LeftRightRotSpeed = 220;
-    [SerializeField] private float UpDownRotSpeed = 220;
+    [SerializeField] private float CameraSmoothSpeed;
+    [SerializeField] private float LeftRightRotSpeed;
+    [SerializeField] private float UpDownRotSpeed;
+    [SerializeField] private float shakeIntensity;
+    [SerializeField] private float shakeFrequency;
 
     [Header("DEBUG")]
     [SerializeField, ReadOnly] private float LeftRightLookAngle;
     [SerializeField, ReadOnly] private float UpDownLookAngle;
 
     private Vector3 CameraVelocity;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        } else { Destroy(this.gameObject); }
+    }
 
     void Start()
     {
@@ -39,10 +51,30 @@ public class PlayerCamera : MonoBehaviour
         transform.position = targetCameraPosition;
     }
 
+    public void HandleCameraPivot(float moveSpeed)
+    {
+        if (moveSpeed <= 0.5) { HandleSmoothCamera(0f, 55f); }
+
+                              //Absolutely awful implementation, I am sorry.
+                              //I should be using PlayerManager for the flags but I kinda gave up lol.
+        if (moveSpeed > 0.5 && !playerInputManager.playerLocomotion.isSprinting) { HandleSmoothCamera(-0.15f, 65f); }
+        else if (moveSpeed > 0.5 && playerInputManager.playerLocomotion.isSprinting) { HandleSmoothCamera(-0.45f, 85f); }
+    }
+
+    private void HandleSmoothCamera(float zPos, float FOV)    //HandleFOV function for lerping between different FOVs based on isSprinting vs isWalking.
+    {
+        Vector3 newPos = cameraPivotTransform.localPosition;
+        newPos.z = Mathf.Lerp(newPos.z, zPos, 1.8f * Time.deltaTime);
+
+        cameraPivotTransform.localPosition = newPos;
+        playerCam.fieldOfView = Mathf.Lerp(playerCam.fieldOfView, FOV, 1.8f * Time.deltaTime);
+    }
+
     private void HandleRotations()
     {
         LeftRightLookAngle += (playerInputManager.camHorizontalInput * LeftRightRotSpeed) * Time.deltaTime;
         UpDownLookAngle -= (playerInputManager.camVerticalInput * UpDownRotSpeed) * Time.deltaTime;
+        UpDownLookAngle = Mathf.Clamp(UpDownLookAngle, -30, 60);
 
         Vector3 cameraRot = Vector3.zero;
         cameraRot.y = LeftRightLookAngle;
@@ -52,9 +84,7 @@ public class PlayerCamera : MonoBehaviour
         cameraRot = Vector3.zero;
         cameraRot.x = UpDownLookAngle;
         targetRot = Quaternion.Euler(cameraRot);
-        CameraPivotTransform.localRotation = targetRot;
+        cameraPivotTransform.localRotation = targetRot;
 
     }
-
-    //HandleFOV function for lerping between different FOVs based on isSprinting vs isWalking.
 }
