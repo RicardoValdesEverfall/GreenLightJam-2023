@@ -36,6 +36,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField, ReadOnly] private bool isFalling;
     [SerializeField, ReadOnly] private float inAirTimer;
     [SerializeField, ReadOnly] private float initialJumpVelocity;
+    [SerializeField, ReadOnly] public float currentSpeed;
 
     private void Awake()
     {
@@ -64,8 +65,17 @@ public class PlayerLocomotion : MonoBehaviour
 
         moveDirection.y = 0;
 
-        if (isSprinting) { playerCharacterController.Move(moveDirection * (sprintSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime); }
-        else { playerCharacterController.Move(moveDirection * (walkSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime); }
+        if (isSprinting)
+        { 
+            playerCharacterController.Move(moveDirection * (sprintSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime);
+            currentSpeed = sprintSpeed;
+        }
+
+        else
+        { 
+            playerCharacterController.Move(moveDirection * (walkSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime);
+            currentSpeed = sprintSpeed;
+        }
         
     }
 

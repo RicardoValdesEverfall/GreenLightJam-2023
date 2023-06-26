@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9030647079114470662}
-  - component: {fileID: 3843454213363157846}
   m_Layer: 3
   m_Name: foot.B.IK.L
   m_TagString: Untagged
@@ -32,30 +31,6 @@ Transform:
   m_Father: {fileID: 7069854027632266072}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3843454213363157846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454255917908923556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weight: 1
-  m_Data:
-    m_Root: {fileID: 8730233224307796469}
-    m_Mid: {fileID: 3203950882529943439}
-    m_Tip: {fileID: 4843736192031162921}
-    m_Target: {fileID: 9030647079114470662}
-    m_Hint: {fileID: 0}
-    m_TargetPositionWeight: 1
-    m_TargetRotationWeight: 1
-    m_HintWeight: 1
-    m_MaintainTargetPositionOffset: 0
-    m_MaintainTargetRotationOffset: 0
 --- !u!1 &519864046428228607
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +806,6 @@ GameObject:
   - component: {fileID: 9175029544216101252}
   - component: {fileID: 5258780197712541042}
   - component: {fileID: 5485203214956905476}
-  - component: {fileID: 4778392123404962602}
   m_Layer: 3
   m_Name: '[TEMP] Cat Model'
   m_TagString: Untagged
@@ -1134,18 +1108,6 @@ MonoBehaviour:
   - m_Rig: {fileID: 9034285954190592076}
     m_Active: 1
   m_Effectors: []
---- !u!114 &4778392123404962602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6185919374169743025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c125e8ae499c5ea41b433e304b028323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6282493871829554977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1332,7 @@ Transform:
   m_Children:
   - {fileID: 173218400526296669}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5796386225955803242
 MonoBehaviour:
@@ -1505,6 +1467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8134654976451244549}
+  - component: {fileID: 7229717691906906680}
   m_Layer: 3
   m_Name: foot.F.IK.L
   m_TagString: Untagged
@@ -1527,6 +1490,30 @@ Transform:
   m_Father: {fileID: 7069854027632266072}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7229717691906906680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960653953758631065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Data:
+    m_Root: {fileID: 1024497444971882884}
+    m_Mid: {fileID: 6663094875926250906}
+    m_Tip: {fileID: 2911128920286640069}
+    m_Target: {fileID: 0}
+    m_Hint: {fileID: 0}
+    m_TargetPositionWeight: 1
+    m_TargetRotationWeight: 1
+    m_HintWeight: 1
+    m_MaintainTargetPositionOffset: 0
+    m_MaintainTargetRotationOffset: 0
 --- !u!1 &6961218117023634678
 GameObject:
   m_ObjectHideFlags: 0
