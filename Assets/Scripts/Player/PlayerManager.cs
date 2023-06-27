@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     private InputManager inputManager;
     private PlayerCamera playerCam;
 
+    [SerializeField, ReadOnly] public Interactable objectToInteractWith;
+
     private void Awake()
     {
         playerCam = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<PlayerCamera>();
