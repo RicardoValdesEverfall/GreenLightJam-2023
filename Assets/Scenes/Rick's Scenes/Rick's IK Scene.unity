@@ -4556,6 +4556,7 @@ GameObject:
   - component: {fileID: 1085573450}
   - component: {fileID: 1085573447}
   - component: {fileID: 1085573451}
+  - component: {fileID: 1085573452}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -4685,6 +4686,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowPopup: 1
   PopupText: {fileID: 221634790}
+  ShowOutline: 1
+  isInRange: 0
+--- !u!114 &1085573452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085573445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 15
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1201315741
 GameObject:
   m_ObjectHideFlags: 0
