@@ -21874,9 +21874,34 @@ PrefabInstance:
       objectReference: {fileID: 1954289577}
     - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
         type: 3}
+      propertyPath: camFOVidle
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: camFOVwalk
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: camFOVsprint
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1032224085}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: camZOffsetidle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: camZOffsetwalk
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
         type: 3}
       propertyPath: shakeFrequency
@@ -21886,6 +21911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shakeIntensity
       value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
+        type: 3}
+      propertyPath: camZOffsetprint
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 5550080915087483529, guid: 88eb8ebba9caa9b46819627d08eedeca,
         type: 3}

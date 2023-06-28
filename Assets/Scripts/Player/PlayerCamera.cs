@@ -22,7 +22,6 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float camZOffsetwalk;
     [SerializeField] private float camZOffsetprint;
     [SerializeField] private float camZOffsetidle;
-    [SerializeField] private float shakeFrequency;
 
     [Header("DEBUG")]
     [SerializeField, ReadOnly] private float LeftRightLookAngle;
