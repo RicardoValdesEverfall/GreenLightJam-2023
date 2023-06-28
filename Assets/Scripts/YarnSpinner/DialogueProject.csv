@@ -1,0 +1,4 @@
+language,id,text,file,node,lineNumber,lock,comment,FMOD Key
+en-GB,line:0b85daf,Fascinating how advanced our Hellenic counterparts are in the study of the stars…,Assets/Scripts/YarnSpinner/Narrator.yarn,Narrator,4,9d1e9466,,Narration_FascinatingHowAdvanced
+en-GB,line:02c62d9,"Oh, how’s Pangur Ban doing? He’s doing–I mean, he was doing fine…",Assets/Scripts/YarnSpinner/Narrator.yarn,Narrator,5,8a46d180,,Narration_OhHowsPangur
+en-GB,line:0f52539,"No, he’s not getting better… What should I do… How is this the one problem I can’t solve…",Assets/Scripts/YarnSpinner/Narrator.yarn,Narrator,6,789be184,,Narration_NoHesNot

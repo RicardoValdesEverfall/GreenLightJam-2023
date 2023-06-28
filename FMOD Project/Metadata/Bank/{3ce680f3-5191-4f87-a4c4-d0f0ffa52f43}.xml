@@ -16,7 +16,10 @@
 			<value>Audio Table</value>
 		</property>
 		<property name="sourceDirectory">
-			<value>DialogueAudioTable</value>
+			<value>../Assets/StreamingAssets/Dialogue</value>
+		</property>
+		<property name="includeSubDirectories">
+			<value>true</value>
 		</property>
 		<property name="isLocalized">
 			<value>true</value>

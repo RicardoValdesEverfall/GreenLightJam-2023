@@ -5,7 +5,7 @@
 			<value>Dialogue_Narration</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9018ec1b-fa05-47c3-8b91-1a93db8b9983}</destination>
@@ -99,7 +99,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ac2e3b42-644b-4202-9220-e5ed21c0fa9d}" />
-	<object class="ProgrammerSound" id="{9b085b85-431d-4f58-9307-1821dbc02b97}" />
+	<object class="ProgrammerSound" id="{9b085b85-431d-4f58-9307-1821dbc02b97}">
+		<relationship name="placeholder">
+			<destination>{b0e29c25-6b2e-4fc2-906e-92a7b610e076}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{5293dabd-a5e9-4128-a245-88a316d4a115}" />
 	<object class="MixerBusFader" id="{3d4eacc0-df43-4e16-810c-69ac036d6d07}" />
 </objects>
