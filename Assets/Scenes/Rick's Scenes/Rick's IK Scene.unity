@@ -1006,6 +1006,11 @@ PrefabInstance:
       propertyPath: footTargetFR
       value: 
       objectReference: {fileID: 1067720200}
+    - target: {fileID: 5021066563387024655, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5258780197712541042, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Enabled

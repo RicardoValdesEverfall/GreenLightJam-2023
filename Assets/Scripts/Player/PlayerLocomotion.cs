@@ -81,20 +81,21 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void CheckClimbing()
     {
-        Debug.DrawRay(transform.position + playerCharacterController.center, transform.forward  * ( playerCharacterController.radius + 0.1f) , Color.yellow);
+        //Debug.DrawRay(transform.position + playerCharacterController.center, transform.forward  * ( playerCharacterController.radius + 0.1f) , Color.yellow);
         if (!isGrounded)
         {
-            bool isClimbHit = Physics.Raycast(transform.position + playerCharacterController.center, transform.forward, out climbHit, playerCharacterController.radius + 0.1f ,
-                climbableLayer);
-            if(isClimbHit)
+            /*bool isClimbHit = Physics.Raycast(transform.position + playerCharacterController.center, transform.forward, out climbHit, playerCharacterController.radius + 0.1f ,
+                climbableLayer);*/
+            bool isClimbHit = Physics.SphereCast(transform.position + playerCharacterController.center, playerCharacterController.radius * 0.7f, transform.forward, out climbHit,
+                playerCharacterController.radius, climbableLayer);
+            RaycastHit hit;
+
+           
+            if (isClimbHit)
             {
                 Debug.DrawRay(climbHit.collider.ClosestPoint(transform.position), climbHit.normal, Color.red);
                 Vector3 dir = (climbHit.collider.ClosestPointOnBounds(transform.position) - transform.position).normalized;
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.forward, -climbHit.normal), 0.25f);
-                
-            }
-            if (isClimbHit)
-            {
                 isClimbing = true;
             }
             else
@@ -126,7 +127,6 @@ public class PlayerLocomotion : MonoBehaviour
         if (other.gameObject.tag == climbableTag && checkWithCollider)
         {
             isClimbing = false;
-            changeDirToClimb = false;
         }
     }
 
@@ -257,5 +257,11 @@ public class PlayerLocomotion : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawCube(transform.position, groundCheckBox * 2);
+
+        //spherecast for climbing detection
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position + playerCharacterController.center, transform.forward * (playerCharacterController.radius));
+        Gizmos.DrawWireSphere(transform.position + playerCharacterController.center + (transform.forward * (playerCharacterController.radius/2)), playerCharacterController.radius *0.7f);
+
     }
 }
