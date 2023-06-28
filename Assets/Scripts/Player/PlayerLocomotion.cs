@@ -27,6 +27,19 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private Vector3 groundCheckBox;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("CLIMBING SETTINGS")]
+    [SerializeField] private LayerMask climbableLayer;
+    [SerializeField] private float climbFallSpeed;
+    [SerializeField] private float detectLength;
+    [SerializeField] private float castRadius;
+    [SerializeField] private float maxLookAtAngle;
+    private float lookAtAngle;
+    private bool isClimbing;
+    private RaycastHit climbHit;
+    private bool isClimbHit;
+
+
+
     [Header("DEBUG")]
     [SerializeField, ReadOnly] private Vector3 moveDirection;
     [SerializeField, ReadOnly] private Vector3 yVelocity;
@@ -45,16 +58,71 @@ public class PlayerLocomotion : MonoBehaviour
         cameraObject = Camera.main.transform;
 
         initialJumpVelocity = Mathf.Sqrt(-2 * gravity * maxJumpHeight);
+        isClimbing = false;
     }
 
     public void HandleAllLocomotion()
     {
-        HandleMovement();
-        HandleRotation();
-
-        HandleGravity();
         HandleGroundCheck();
+        CheckClimbing();
+        HandleClimbing();
+
+        if(!isClimbing)
+        {
+            //Handle normal movement
+            HandleMovement();
+            HandleRotation();
+
+            HandleGravity();
+        }
         //HandleAnimations();
+
+    }
+
+    private void CheckClimbing()
+    {
+        if (!isGrounded)
+        {
+            isClimbHit = Physics.SphereCast(transform.position, castRadius, transform.forward,
+                out climbHit, detectLength, climbableLayer);
+
+            //Debug.Log("It can climb? " + isClimbHit);
+            lookAtAngle = Vector3.Angle(transform.forward, -climbHit.normal);
+            //Debug.Log("look angle: " + wallLookAngle);
+            if(isClimbHit && lookAtAngle < maxLookAtAngle)
+            {
+                isClimbing = true;
+            }
+            else
+            {
+                isClimbing = false;
+            }
+        }
+        else
+        {
+            isClimbing = isClimbHit = false;
+
+        }
+
+        
+    }
+
+    private void HandleClimbing()
+    {
+        if (isClimbing)
+        {
+            moveDirection = Vector3.up * inputManager.verticalInput;
+            moveDirection += transform.right * inputManager.horizontalInput;
+            moveDirection.Normalize();
+
+
+            playerCharacterController.Move(moveDirection * walkSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Debug.Log("no more climbing. Should fall");
+            isClimbing = false;
+        }
     }
 
     private void HandleMovement()
