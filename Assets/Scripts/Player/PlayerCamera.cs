@@ -16,7 +16,12 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float CameraSmoothSpeed;
     [SerializeField] private float LeftRightRotSpeed;
     [SerializeField] private float UpDownRotSpeed;
-    [SerializeField] private float shakeIntensity;
+    [SerializeField] private float camFOVwalk;
+    [SerializeField] private float camFOVsprint;
+    [SerializeField] private float camFOVidle;
+    [SerializeField] private float camZOffsetwalk;
+    [SerializeField] private float camZOffsetprint;
+    [SerializeField] private float camZOffsetidle;
     [SerializeField] private float shakeFrequency;
 
     [Header("DEBUG")]
@@ -53,12 +58,12 @@ public class PlayerCamera : MonoBehaviour
 
     public void HandleCameraPivot(float moveSpeed)
     {
-        if (moveSpeed <= 0.5) { HandleSmoothCamera(0f, 55f); }
+        if (moveSpeed <= 0.5) { HandleSmoothCamera(camZOffsetidle, camFOVidle); }
 
                               //Absolutely awful implementation, I am sorry.
                               //I should be using PlayerManager for the flags but I kinda gave up lol.
-        if (moveSpeed > 0.5 && !playerInputManager.playerLocomotion.isSprinting) { HandleSmoothCamera(-0.15f, 65f); }
-        else if (moveSpeed > 0.5 && playerInputManager.playerLocomotion.isSprinting) { HandleSmoothCamera(-0.45f, 85f); }
+        if (moveSpeed > 0.5 && !playerInputManager.playerLocomotion.isSprinting) { HandleSmoothCamera(camZOffsetwalk, camFOVwalk); }
+        else if (moveSpeed > 0.5 && playerInputManager.playerLocomotion.isSprinting) { HandleSmoothCamera(camZOffsetprint, camFOVsprint); }
     }
 
     private void HandleSmoothCamera(float zPos, float FOV)    //HandleFOV function for lerping between different FOVs based on isSprinting vs isWalking.
