@@ -28,15 +28,11 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     [Header("CLIMBING SETTINGS")]
+    [SerializeField] private string climbableTag;
     [SerializeField] private LayerMask climbableLayer;
-    [SerializeField] private float climbFallSpeed;
-    [SerializeField] private float detectLength;
-    [SerializeField] private float castRadius;
-    [SerializeField] private float maxLookAtAngle;
-    private float lookAtAngle;
+    [SerializeField] private bool checkWithCollider = false;
     private bool isClimbing;
     private RaycastHit climbHit;
-    private bool isClimbHit;
 
 
 
@@ -59,12 +55,16 @@ public class PlayerLocomotion : MonoBehaviour
 
         initialJumpVelocity = Mathf.Sqrt(-2 * gravity * maxJumpHeight);
         isClimbing = false;
+
+       
+
     }
 
     public void HandleAllLocomotion()
     {
         HandleGroundCheck();
-        CheckClimbing();
+        if(!checkWithCollider)
+            CheckClimbing();
         HandleClimbing();
 
         if(!isClimbing)
@@ -81,16 +81,21 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void CheckClimbing()
     {
+        //Debug.DrawRay(transform.position + playerCharacterController.center, transform.forward  * ( playerCharacterController.radius + 0.1f) , Color.yellow);
         if (!isGrounded)
         {
-            isClimbHit = Physics.SphereCast(transform.position, castRadius, transform.forward,
-                out climbHit, detectLength, climbableLayer);
+            /*bool isClimbHit = Physics.Raycast(transform.position + playerCharacterController.center, transform.forward, out climbHit, playerCharacterController.radius + 0.1f ,
+                climbableLayer);*/
+            bool isClimbHit = Physics.SphereCast(transform.position + playerCharacterController.center, playerCharacterController.radius * 0.7f, transform.forward, out climbHit,
+                playerCharacterController.radius, climbableLayer);
+            RaycastHit hit;
 
-            //Debug.Log("It can climb? " + isClimbHit);
-            lookAtAngle = Vector3.Angle(transform.forward, -climbHit.normal);
-            //Debug.Log("look angle: " + wallLookAngle);
-            if(isClimbHit && lookAtAngle < maxLookAtAngle)
+           
+            if (isClimbHit)
             {
+                Debug.DrawRay(climbHit.collider.ClosestPoint(transform.position), climbHit.normal, Color.red);
+                Vector3 dir = (climbHit.collider.ClosestPointOnBounds(transform.position) - transform.position).normalized;
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.forward, -climbHit.normal), 0.25f);
                 isClimbing = true;
             }
             else
@@ -100,15 +105,36 @@ public class PlayerLocomotion : MonoBehaviour
         }
         else
         {
-            isClimbing = isClimbHit = false;
+            isClimbing = false;
 
         }
 
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == climbableTag &&  checkWithCollider)
+        {
+            isClimbing = true;
+            Vector3 colPoint = other.ClosestPointOnBounds(transform.position);
+            transform.LookAt(colPoint);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == climbableTag && checkWithCollider)
+        {
+            isClimbing = false;
+        }
+    }
+
     private void HandleClimbing()
     {
+        // we need to:
+        // 1. put cat in specific animations , do not turn orientation etc etc
+        // 2. put cat exactly on top of 3D object and perpendicular to the object
         if (isClimbing)
         {
             moveDirection = Vector3.up * inputManager.verticalInput;
@@ -116,11 +142,11 @@ public class PlayerLocomotion : MonoBehaviour
             moveDirection.Normalize();
 
 
-            playerCharacterController.Move(moveDirection * walkSpeed * Time.deltaTime);
+            playerCharacterController.Move(moveDirection * walkSpeed * 0.5f * Time.deltaTime);
         }
         else
         {
-            Debug.Log("no more climbing. Should fall");
+            //Debug.Log("no more climbing. Should fall");
             isClimbing = false;
         }
     }
@@ -231,5 +257,11 @@ public class PlayerLocomotion : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawCube(transform.position, groundCheckBox * 2);
+
+        //spherecast for climbing detection
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position + playerCharacterController.center, transform.forward * (playerCharacterController.radius));
+        Gizmos.DrawWireSphere(transform.position + playerCharacterController.center + (transform.forward * (playerCharacterController.radius/2)), playerCharacterController.radius *0.7f);
+
     }
 }
