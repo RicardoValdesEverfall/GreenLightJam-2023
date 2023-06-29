@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerCamera
   - Climbable
+  - CutsceneManager
   layers:
   - Default
   - TransparentFX

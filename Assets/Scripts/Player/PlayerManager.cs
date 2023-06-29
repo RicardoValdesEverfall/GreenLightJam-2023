@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     private PlayerCamera playerCam;
 
     [SerializeField, ReadOnly] public Interactable objectToInteractWith;
+    [SerializeField, ReadOnly] public bool isCinematicPlaying;
 
     private void Awake()
     {
@@ -20,12 +21,19 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        inputManager.HandleAllInputs();
-        playerLocomotion.HandleAllLocomotion();
+        if (!isCinematicPlaying)
+        {
+            inputManager.HandleAllInputs();
+            playerLocomotion.HandleAllLocomotion();
+        }
+      
     }
 
     private void LateUpdate()
     {
-        playerCam.HandleCamera();
+        if (!isCinematicPlaying)
+        {
+            playerCam.HandleCamera();
+        }
     }
 }
