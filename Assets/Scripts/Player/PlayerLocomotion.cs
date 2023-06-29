@@ -33,6 +33,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private bool checkWithCollider = false;
     private bool isClimbing;
     private RaycastHit climbHit;
+    private Transform currentRug;
 
 
 
@@ -86,20 +87,20 @@ public class PlayerLocomotion : MonoBehaviour
         {
             /*bool isClimbHit = Physics.Raycast(transform.position + playerCharacterController.center, transform.forward, out climbHit, playerCharacterController.radius + 0.1f ,
                 climbableLayer);*/
-            bool isClimbHit = Physics.SphereCast(transform.position + playerCharacterController.center, playerCharacterController.radius * 0.7f, transform.forward, out climbHit,
+            bool isClimbHit = Physics.SphereCast(transform.position + playerCharacterController.center, playerCharacterController.radius, transform.forward, out climbHit,
                 playerCharacterController.radius, climbableLayer);
-            RaycastHit hit;
 
-           
             if (isClimbHit)
             {
-                Debug.DrawRay(climbHit.collider.ClosestPoint(transform.position), climbHit.normal, Color.red);
+                if(currentRug == null)
+                    currentRug = climbHit.transform;
+                transform.rotation = Quaternion.LookRotation(climbHit.transform.up);
                 Vector3 dir = (climbHit.collider.ClosestPointOnBounds(transform.position) - transform.position).normalized;
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.forward, -climbHit.normal), 0.25f);
                 isClimbing = true;
             }
             else
             {
+                currentRug = null;
                 isClimbing = false;
             }
         }
@@ -116,9 +117,10 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (other.gameObject.tag == climbableTag &&  checkWithCollider)
         {
+            currentRug = other.transform;
             isClimbing = true;
-            Vector3 colPoint = other.ClosestPointOnBounds(transform.position);
-            transform.LookAt(colPoint);
+            transform.rotation = Quaternion.LookRotation(other.transform.up,other.transform.forward);
+
         }
     }
 
@@ -130,15 +132,18 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
+
     private void HandleClimbing()
     {
         // we need to:
         // 1. put cat in specific animations , do not turn orientation etc etc
-        // 2. put cat exactly on top of 3D object and perpendicular to the object
+        // 2. put cat exactly on top of 3D object and perpendicular to the object- DONE!
         if (isClimbing)
         {
+            //Always goes up
             moveDirection = Vector3.up * inputManager.verticalInput;
-            moveDirection += transform.right * inputManager.horizontalInput;
+            //Along the X axis of the rug itself
+            moveDirection += currentRug.right * inputManager.horizontalInput * -1;
             moveDirection.Normalize();
 
 
@@ -260,8 +265,6 @@ public class PlayerLocomotion : MonoBehaviour
 
         //spherecast for climbing detection
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position + playerCharacterController.center, transform.forward * (playerCharacterController.radius));
-        Gizmos.DrawWireSphere(transform.position + playerCharacterController.center + (transform.forward * (playerCharacterController.radius/2)), playerCharacterController.radius *0.7f);
 
     }
 }
