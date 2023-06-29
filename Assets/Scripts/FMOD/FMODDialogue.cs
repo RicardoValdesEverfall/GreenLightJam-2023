@@ -12,8 +12,6 @@ public class FMODDialogue : MonoBehaviour
 
     public FMODUnity.EventReference DialogueNarration;
 
-    
-
 #if UNITY_EDITOR
     private void Reset()
     {
@@ -25,10 +23,11 @@ public class FMODDialogue : MonoBehaviour
     private void Start()
     {
         dialogueCallback = new FMOD.Studio.EVENT_CALLBACK(DialogueEventCallback);
+
+        
     }
 
-
-    private void PlayDialogue(string lineID)
+    public void PlayDialogue(string lineID)
     {
         var dialogueInstance = FMODUnity.RuntimeManager.CreateInstance(DialogueNarration);
 
@@ -117,11 +116,12 @@ public class FMODDialogue : MonoBehaviour
 
         void Update()
         {
-
+            
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 PlayDialogue("line:0b85daf");
+                
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
