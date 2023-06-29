@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: Leaves
+  m_Name: Snow
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.75,"y":2.0}'
+      m_SerializableObject: '{"x":0.10000000149011612,"y":0.5}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -138,7 +138,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Leaves
+  m_Name: Snow
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -1212,7 +1212,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"9d2e3e41acdba4e4281e5809b01bd4bc","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"1d159f8afd6413f46a4f42a9de4487c1","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mainTexture
@@ -2975,7 +2975,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.75,"y":2.0}'
+      m_SerializableObject: '{"x":0.10000000149011612,"y":0.5}'
     m_Space: 2147483647
   m_Property:
     name: o
