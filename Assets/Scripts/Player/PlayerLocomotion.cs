@@ -161,7 +161,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (isSprinting)
         { 
-            playerCharacterController.Move(moveDirection * (sprintSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime);
+            playerCharacterController.Move(moveDirection * (sprintSpeed - (inputManager.jumpInputTimer * 6)) * Time.deltaTime);
             currentSpeed = sprintSpeed;
         }
 
