@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2be5f092-f80a-4d27-82e0-4cc575033389}">
 		<property name="name">
-			<value>Music</value>
+			<value>In_Game_Music</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -4565,7 +4565,7 @@
 	<object class="MixerBusEffectChain" id="{dc072468-0886-45ea-99e2-cd1a29aff63d}">
 		<relationship name="effects">
 			<destination>{9db0be22-494a-4072-b5cd-b2f8525f65ff}</destination>
-			<destination>{fc9fc7ae-8c11-41da-9e9b-ce20e0bc96fe}</destination>
+			<destination>{066af0c1-1e45-4024-b0f0-700d5e3fecbe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4a42da9c-0077-40ed-a543-39a4340053b2}" />
@@ -6889,19 +6889,16 @@
 	</object>
 	<object class="MixerBusFader" id="{847a8293-704d-4688-81eb-fa405bd4ffe5}" />
 	<object class="MixerBusFader" id="{9db0be22-494a-4072-b5cd-b2f8525f65ff}" />
-	<object class="SFXReverbEffect" id="{fc9fc7ae-8c11-41da-9e9b-ce20e0bc96fe}">
-		<property name="decayTime">
-			<value>6500</value>
+	<object class="MixerSend" id="{066af0c1-1e45-4024-b0f0-700d5e3fecbe}">
+		<property name="level">
+			<value>0</value>
 		</property>
-		<property name="earlyLateMix">
-			<value>67</value>
+		<property name="inputFormat">
+			<value>1</value>
 		</property>
-		<property name="wetLevel">
-			<value>-9.5</value>
-		</property>
-		<property name="dryLevel">
-			<value>-3</value>
-		</property>
+		<relationship name="mixerReturn">
+			<destination>{ba1af4f8-6583-4602-8e1e-6fa36c65b64b}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{9253e0b3-5228-4ee5-8a52-095c58885f03}" />
 	<object class="AutomationPoint" id="{59b97b5e-3128-47f2-bbb7-7cc929961290}">
