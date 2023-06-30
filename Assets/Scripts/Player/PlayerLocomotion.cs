@@ -42,6 +42,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField, ReadOnly] private Vector3 yVelocity;
     [SerializeField, ReadOnly] public bool isSprinting;
     [SerializeField, ReadOnly] public bool isJumping;
+    [SerializeField, ReadOnly] public bool isJumpingFromClimb;
     [SerializeField, ReadOnly] public bool isGrounded;
     [SerializeField, ReadOnly] private bool isFalling;
     [SerializeField, ReadOnly] private float inAirTimer;
@@ -119,6 +120,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             currentRug = other.transform;
             isClimbing = true;
+            isJumping = false;
             transform.rotation = Quaternion.LookRotation(other.transform.up,other.transform.forward);
 
         }
@@ -132,13 +134,22 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == climbableTag && checkWithCollider)
+        {
+            if (!isJumping)
+                isClimbing = true;
+        }
+    }
+
 
     private void HandleClimbing()
     {
         // we need to:
         // 1. put cat in specific animations , do not turn orientation etc etc
         // 2. put cat exactly on top of 3D object and perpendicular to the object- DONE!
-        if (isClimbing)
+        if (isClimbing && !isJumping)
         {
             //Always goes up
             moveDirection = Vector3.up * inputManager.verticalInput;
@@ -148,10 +159,11 @@ public class PlayerLocomotion : MonoBehaviour
 
 
             playerCharacterController.Move(moveDirection * walkSpeed * 0.5f * Time.deltaTime);
+
+            
         }
         else
         {
-            //Debug.Log("no more climbing. Should fall");
             isClimbing = false;
         }
     }
@@ -246,16 +258,47 @@ public class PlayerLocomotion : MonoBehaviour
     public void PerformJumpAction(float heldTimer) //The amount of time the player held the jump input. This is to perform a charged jump.
     {
         if (isJumping) { return; }
-        if (!isGrounded) { return; }
+        if (!isGrounded && !isClimbing) { return; }
 
         //Play jump animation
         //Play jump sound
         
         isJumping = true;
 
-        yVelocity.y += initialJumpVelocity + heldTimer;
-        playerCharacterController.Move(yVelocity * Time.deltaTime);
+        if (isClimbing)
+        {
+            yVelocity.y += initialJumpVelocity*2f;
+            Debug.Log("climb jump before: "+ yVelocity);
+            if (inputManager.horizontalInput == 0 )
+            {
+                //normal jump in perpendicular
+                yVelocity += (currentRug.forward *2f);
+            }
+            else
+                yVelocity += currentRug.right * inputManager.horizontalInput * -1 * 2f;
+
+            isClimbing = false;
+            //we need to force perpendicular to where the cat is
+            Debug.Log("climb jump after: " + yVelocity);
+            playerCharacterController.Move(yVelocity * Time.deltaTime);
+            StartCoroutine("StopClimbJumpMomentum");
+        }
+        else
+        {
+            yVelocity.y += initialJumpVelocity + heldTimer;
+            playerCharacterController.Move(yVelocity * Time.deltaTime);
+        }
     }
+
+    IEnumerator StopClimbJumpMomentum()
+    {
+        yield return new WaitForSeconds(0.25f);
+        //after quarter of a second remove the momentum
+        yVelocity.x = 0;
+        yVelocity.z = 0;
+    }
+
+  
 
 
     //DEBUG
