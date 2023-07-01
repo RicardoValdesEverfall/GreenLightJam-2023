@@ -7,5 +7,22 @@
 		<relationship name="folder">
 			<destination>{ad54bf78-f061-47d6-b723-46044ff922c3}</destination>
 		</relationship>
+		<relationship name="audioTable">
+			<destination>{b0e29c25-6b2e-4fc2-906e-92a7b610e076}</destination>
+		</relationship>
+	</object>
+	<object class="AudioTable" id="{b0e29c25-6b2e-4fc2-906e-92a7b610e076}">
+		<property name="name">
+			<value>Audio Table</value>
+		</property>
+		<property name="sourceDirectory">
+			<value>../Assets/StreamingAssets/Dialogue</value>
+		</property>
+		<property name="includeSubDirectories">
+			<value>true</value>
+		</property>
+		<property name="isLocalized">
+			<value>true</value>
+		</property>
 	</object>
 </objects>
