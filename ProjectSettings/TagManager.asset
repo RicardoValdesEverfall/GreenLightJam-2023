@@ -1,3 +1,50 @@
 version https://git-lfs.github.com/spec/v1
 oid sha256:48dfedf78653c9bbd034515afb11d828343cd04b7b4bec1f02089fed9f503876
 size 416
+
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PlayerCamera
+  - Climbable
+  - CutsceneManager
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Wood
+  - Concrete
+  - Ground
+  - Climbable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -48,6 +48,11 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
+    protected virtual void HandleInteract()
+    {
+
+    }
+
     protected virtual void OnTriggerEnter(Collider col)
     {
         if (ShowPopup && col.CompareTag("Player"))

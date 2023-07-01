@@ -20,11 +20,9 @@ public class QuadrupedIK : MonoBehaviour
     private float angleX;
     private float angleZ;
 
-    private Vector3[] allHitNormals;
-
     private void Start()
     {
-        allHitNormals = new Vector3[4];
+
     }
 
     private void FixedUpdate()
@@ -52,11 +50,9 @@ public class QuadrupedIK : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.SphereCast(footTransforms[i].position, sphereRadius, Vector3.down, out hit, groundLayer))
+            if (Physics.SphereCast(targetTransforms[i].position + new Vector3(0, stepHeight, 0), sphereRadius, Vector3.down, out hit, groundLayer))
             {
-                allHitNormals[i] = hit.normal;
-
-                HandleAxisAngles(footTransforms[i], hit.normal);
+                HandleAxisAngles(targetTransforms[i], hit.normal);
                 targetTransforms[i].position = hit.point;
                 targetTransforms[i].localEulerAngles = new Vector3(targetTransforms[i].localEulerAngles.x + angleX, targetTransforms[i].localEulerAngles.y, targetTransforms[i].localEulerAngles.z + angleZ);
               
@@ -64,12 +60,5 @@ public class QuadrupedIK : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            Gizmos.DrawSphere(footTransforms[i].position, sphereRadius);
-        }
-       
-    }
+    
 }
