@@ -31,7 +31,6 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private string climbableTag;
     [SerializeField] private LayerMask climbableLayer;
     [SerializeField] private bool checkWithCollider = false;
-    private bool isClimbing;
     private RaycastHit climbHit;
     private Transform currentRug;
 
@@ -45,6 +44,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField, ReadOnly] public bool isJumpingFromClimb;
     [SerializeField, ReadOnly] public bool isGrounded;
     [SerializeField, ReadOnly] private bool isFalling;
+    [SerializeField, ReadOnly] private bool isClimbing;
     [SerializeField, ReadOnly] private float inAirTimer;
     [SerializeField, ReadOnly] private float initialJumpVelocity;
     [SerializeField, ReadOnly] public float currentSpeed;
@@ -113,7 +113,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         
     }
-
+   
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == climbableTag &&  checkWithCollider)
