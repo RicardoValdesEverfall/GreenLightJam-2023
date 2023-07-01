@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Book : Interactable
 {
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -12,6 +14,13 @@ public class Book : Interactable
     protected override void Update()
     {
         base.Update();
+    }
+
+    protected override void HandleInteract()
+    {
+        base.HandleInteract();
+
+
     }
 
     protected override void OnTriggerEnter(Collider col)

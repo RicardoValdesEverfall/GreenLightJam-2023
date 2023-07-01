@@ -1312,6 +1312,8 @@ GameObject:
   - component: {fileID: 2208246019023815245}
   - component: {fileID: 5021066563387024655}
   - component: {fileID: 988673636851549936}
+  - component: {fileID: 7368046469734855472}
+  - component: {fileID: 2781924085550372990}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1347,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ba58c08ecffe4b86295d3b80eb476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToInteractWith: {fileID: 0}
 --- !u!114 &1180593077989435814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,11 +1377,17 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  climbableTag: 
+  climbableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  checkWithCollider: 0
   moveDirection: {x: 0, y: 0, z: 0}
   yVelocity: {x: 0, y: 0, z: 0}
   isSprinting: 0
   isJumping: 0
   isGrounded: 0
+  isClimbing: 0
   isFalling: 0
   inAirTimer: 0
   initialJumpVelocity: 0
@@ -1395,6 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96417d5cb5e19640ab67dbd8ec59de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLocomotion: {fileID: 0}
   verticalInput: 0
   horizontalInput: 0
   camHorizontalInput: 0
@@ -1441,6 +1451,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMaterial: 0
+--- !u!54 &7368046469734855472
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913409546406123319}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2781924085550372990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913409546406123319}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.46469474, y: 0.19860476, z: 0.32206818}
+  m_Center: {x: 0.0526264, y: 0.28489518, z: 0.13785301}
 --- !u!1 &6938156176557668438
 GameObject:
   m_ObjectHideFlags: 0

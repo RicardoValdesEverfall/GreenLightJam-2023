@@ -46,10 +46,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 0}
-  CameraPivotTransform: {fileID: 6417104971856608472}
+  cameraPivotTransform: {fileID: 0}
+  playerCam: {fileID: 0}
   CameraSmoothSpeed: 1
   LeftRightRotSpeed: 220
   UpDownRotSpeed: 220
+  camFOVwalk: 65
+  camFOVsprint: 85
+  camFOVidle: 55
+  camZOffsetwalk: -0.15
+  camZOffsetprint: -0.45
+  camZOffsetidle: 0
   LeftRightLookAngle: 0
   UpDownLookAngle: 0
 --- !u!1 &4401560578188195654

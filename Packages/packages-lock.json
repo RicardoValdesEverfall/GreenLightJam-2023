@@ -121,6 +121,13 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+    "com.unity.recorder": {
+      "version": "4.0.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
@@ -189,7 +196,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.7.4",
+      "version": "1.7.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
