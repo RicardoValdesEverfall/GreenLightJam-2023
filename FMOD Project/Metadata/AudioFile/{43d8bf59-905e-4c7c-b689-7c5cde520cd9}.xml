@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{43d8bf59-905e-4c7c-b689-7c5cde520cd9}">
+		<property name="assetPath">
+			<value>IR_Church_Heathfield.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.2791874999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{399e63aa-b4ee-4e2b-8311-23c56eea5e21}</destination>
+		</relationship>
+	</object>
+</objects>

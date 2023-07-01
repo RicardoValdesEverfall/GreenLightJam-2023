@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2204fdb9-0ce3-4a26-af0c-bef698686e0a}">
+		<property name="assetPath">
+			<value>HARP_SFX_PB_4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.9471875000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{399e63aa-b4ee-4e2b-8311-23c56eea5e21}</destination>
+		</relationship>
+	</object>
+</objects>
