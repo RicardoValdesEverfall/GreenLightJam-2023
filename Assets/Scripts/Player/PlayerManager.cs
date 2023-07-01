@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -8,8 +9,12 @@ public class PlayerManager : MonoBehaviour
     private InputManager inputManager;
     private PlayerCamera playerCam;
 
+    [SerializeField] public PlayableDirector endCinematic;
+
+    [Header("DEBUG VALUES")]
     [SerializeField, ReadOnly] public Interactable objectToInteractWith;
     [SerializeField, ReadOnly] public bool isCinematicPlaying;
+    [SerializeField, ReadOnly] private int musicSheetCounter;
 
     private void Awake()
     {
@@ -34,6 +39,20 @@ public class PlayerManager : MonoBehaviour
         if (!isCinematicPlaying)
         {
             playerCam.HandleCamera();
+        }
+    }
+
+    public void HandleInteraction(Interactable objToInteract)
+    {
+        if (objToInteract.CompareTag("MusicSheet"))
+        {
+            objToInteract.gameObject.SetActive(false);
+            musicSheetCounter++;
+
+            if (musicSheetCounter == 5)
+            {
+                endCinematic.Play();
+            }
         }
     }
 }

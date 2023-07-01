@@ -273,7 +273,7 @@ public class PlayerLocomotion : MonoBehaviour
             if (inputManager.horizontalInput == 0 )
             {
                 //normal jump in perpendicular
-                yVelocity += (currentRug.forward *2f);
+                yVelocity += (currentRug.forward * 2f);
             }
             else
                 yVelocity += currentRug.right * inputManager.horizontalInput * -1 * 2f;

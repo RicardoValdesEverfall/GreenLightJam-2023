@@ -55,13 +55,18 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider col)
     {
-        if (ShowPopup && col.CompareTag("Player"))
+        if (col.CompareTag("Player"))
         {
-            if (!isInRange)
-            { 
-                isInRange = true;
-                col.GetComponent<PlayerManager>().objectToInteractWith = this;
+            if (ShowPopup)
+            {
+                if (!isInRange)
+                {
+                    isInRange = true;
+                   
+                }
             }
+
+            col.GetComponent<PlayerManager>().objectToInteractWith = this;
         }
 
     }
