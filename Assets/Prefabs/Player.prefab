@@ -1349,7 +1349,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ba58c08ecffe4b86295d3b80eb476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endCinematic: {fileID: 0}
   objectToInteractWith: {fileID: 0}
+  isCinematicPlaying: 0
+  musicSheetCounter: 0
+  churchComplete: 0
+  libraryComplete: 0
+  kitchenComplete: 0
+  dormComplete: 0
 --- !u!114 &1180593077989435814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,9 +1393,10 @@ MonoBehaviour:
   yVelocity: {x: 0, y: 0, z: 0}
   isSprinting: 0
   isJumping: 0
+  isJumpingFromClimb: 0
   isGrounded: 0
-  isClimbing: 0
   isFalling: 0
+  isClimbing: 0
   inAirTimer: 0
   initialJumpVelocity: 0
   currentSpeed: 0
@@ -1404,7 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96417d5cb5e19640ab67dbd8ec59de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLocomotion: {fileID: 0}
+  playerLocomotion: {fileID: 1180593077989435814}
   verticalInput: 0
   horizontalInput: 0
   camHorizontalInput: 0

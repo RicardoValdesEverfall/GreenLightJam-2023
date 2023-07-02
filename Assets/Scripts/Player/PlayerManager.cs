@@ -9,12 +9,17 @@ public class PlayerManager : MonoBehaviour
     private InputManager inputManager;
     private PlayerCamera playerCam;
 
-    [SerializeField] public PlayableDirector endCinematic;
+    
 
     [Header("DEBUG VALUES")]
+    [SerializeField, ReadOnly] public PlayableDirector endCinematic;
     [SerializeField, ReadOnly] public Interactable objectToInteractWith;
     [SerializeField, ReadOnly] public bool isCinematicPlaying;
     [SerializeField, ReadOnly] private int musicSheetCounter;
+    [SerializeField, ReadOnly] public bool churchComplete;
+    [SerializeField, ReadOnly] public bool libraryComplete;
+    [SerializeField, ReadOnly] public bool kitchenComplete;
+    [SerializeField, ReadOnly] public bool dormComplete;
 
     private void Awake()
     {
@@ -42,9 +47,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void HandleInteraction(Interactable objToInteract)
+    public void HandleInteraction(Interactable objToInteract, string name)
     {
-        if (objToInteract.CompareTag("MusicSheet"))
+        if (name == "MusicSheet")
         {
             objToInteract.gameObject.SetActive(false);
             musicSheetCounter++;
@@ -52,6 +57,7 @@ public class PlayerManager : MonoBehaviour
             if (musicSheetCounter == 5)
             {
                 endCinematic.Play();
+                Debug.Log("Playing");
             }
         }
     }

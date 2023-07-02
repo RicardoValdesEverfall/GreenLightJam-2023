@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
     [SerializeField, ReadOnly] private bool sprintInput;
     [SerializeField, ReadOnly] public bool jumpInput;
     [SerializeField, ReadOnly] public float jumpInputTimer;
+    [SerializeField, ReadOnly] private bool meowInput;
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
@@ -35,10 +36,15 @@ public class InputManager : MonoBehaviour
                                                                       //stores the input data.
 
             playerControls.PlayerCamera.Look.performed += i => cameraInput = i.ReadValue<Vector2>();
+
             playerControls.PlayerActions.Sprint.started += i => sprintInput = true;
             playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
+
             playerControls.PlayerActions.Jump.started += i => jumpInput = true;
             playerControls.PlayerActions.Jump.canceled += i => jumpInput = false;
+
+            playerControls.PlayerActions.Meow.started += i => meowInput = true;
+            playerControls.PlayerActions.Meow.canceled += i => meowInput = false;
         }
 
         playerControls.Enable();
@@ -78,6 +84,12 @@ public class InputManager : MonoBehaviour
     {
         camVerticalInput = cameraInput.y;
         camHorizontalInput = cameraInput.x;
+    }
+
+    private void HandleMeowInput()
+    {
+        //if meow sound isnt playing |||||||| Or you could also do, if meow is playing, stop playing and start playing again.
+            //Play Meow Sound Once
     }
 
     private void HandleSprintInput()
