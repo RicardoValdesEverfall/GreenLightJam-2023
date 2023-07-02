@@ -47,6 +47,7 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Meow.canceled += i => meowInput = false;
         }
 
+        HandleCursorState(CursorLockMode.Locked);
         playerControls.Enable();
     }
 
@@ -116,6 +117,11 @@ public class InputManager : MonoBehaviour
             playerLocomotion.PerformJumpAction(jumpInputTimer * 4);
             jumpInputTimer = 0;
         }
+    }
+
+    public void HandleCursorState(CursorLockMode state)
+    {
+        Cursor.lockState = state;
     }
 }
 

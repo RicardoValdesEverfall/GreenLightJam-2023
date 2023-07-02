@@ -57,7 +57,7 @@ public class PlayerManager : MonoBehaviour
             if (musicSheetCounter == 5)
             {
                 endCinematic.Play();
-                Debug.Log("Playing");
+                inputManager.HandleCursorState(CursorLockMode.Confined);
             }
         }
     }
