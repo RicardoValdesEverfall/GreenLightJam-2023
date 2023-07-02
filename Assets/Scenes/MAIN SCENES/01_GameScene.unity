@@ -9517,7 +9517,7 @@ PrefabInstance:
     - target: {fileID: 9162030596742772694, guid: fd58e862cd69e124dad89c2a3e465cf3,
         type: 3}
       propertyPath: Rules.Array.size
-      value: 37
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 9162030596742772694, guid: fd58e862cd69e124dad89c2a3e465cf3,
         type: 3}
