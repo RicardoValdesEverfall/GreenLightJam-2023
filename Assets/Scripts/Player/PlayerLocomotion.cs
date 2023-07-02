@@ -58,8 +58,6 @@ public class PlayerLocomotion : MonoBehaviour
         initialJumpVelocity = Mathf.Sqrt(-2 * gravity * maxJumpHeight);
         isClimbing = false;
 
-       
-
     }
 
     public void HandleAllLocomotion()
@@ -80,7 +78,8 @@ public class PlayerLocomotion : MonoBehaviour
         //HandleAnimations();
 
     }
-
+    
+    //Method using spherecast and not colliders. OLD
     private void CheckClimbing()
     {
         //Debug.DrawRay(transform.position + playerCharacterController.center, transform.forward  * ( playerCharacterController.radius + 0.1f) , Color.yellow);
@@ -113,60 +112,24 @@ public class PlayerLocomotion : MonoBehaviour
 
         
     }
-   
-   
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == climbableTag &&  checkWithCollider)
-        {
-            currentRug = other.transform;
-            isClimbing = true;
-            isJumping = false;
-            transform.rotation = Quaternion.LookRotation(other.transform.up,other.transform.forward);
-
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == climbableTag && checkWithCollider)
-        {
-            isClimbing = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == climbableTag && checkWithCollider)
-        {
-            if (!isJumping)
-                isClimbing = true;
-        }
-    }
-
 
     private void HandleClimbing()
     {
         // we need to:
         // 1. put cat in specific animations , do not turn orientation etc etc
-        // 2. put cat exactly on top of 3D object and perpendicular to the object- DONE!
         if (isClimbing && !isJumping)
         {
             //Always goes up
-            moveDirection = Vector3.up * inputManager.verticalInput;
-            //Along the X axis of the rug itself
-            moveDirection += currentRug.right * inputManager.horizontalInput * -1;
+            moveDirection = currentRug.up * inputManager.verticalInput;
+            //Along the X axis
+            moveDirection += transform.right * inputManager.horizontalInput;
             moveDirection.Normalize();
 
-
-            playerCharacterController.Move(moveDirection * walkSpeed * 0.5f * Time.deltaTime);
-
+            playerCharacterController.Move(moveDirection * walkSpeed * 0.3f * Time.deltaTime);
             
         }
         else
-        {
             isClimbing = false;
-        }
     }
 
     private void HandleMovement()
@@ -268,19 +231,18 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (isClimbing)
         {
-            yVelocity.y += initialJumpVelocity*2f;
-            Debug.Log("climb jump before: "+ yVelocity);
+            //is jump from climbing
+            yVelocity.y = initialJumpVelocity*2f;
             if (inputManager.horizontalInput == 0 )
             {
                 //normal jump in perpendicular
                 yVelocity += (currentRug.forward * 2f);
             }
             else
-                yVelocity += currentRug.right * inputManager.horizontalInput * -1 * 2f;
+                yVelocity += transform.right * inputManager.horizontalInput * -1 * 2.5f;
 
             isClimbing = false;
             //we need to force perpendicular to where the cat is
-            Debug.Log("climb jump after: " + yVelocity);
             playerCharacterController.Move(yVelocity * Time.deltaTime);
             StartCoroutine("StopClimbJumpMomentum");
         }
@@ -291,15 +253,42 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
+    //stops the jump from climbing momentum after .25 secs
     IEnumerator StopClimbJumpMomentum()
     {
         yield return new WaitForSeconds(0.25f);
-        //after quarter of a second remove the momentum
         yVelocity.x = 0;
         yVelocity.z = 0;
     }
 
-  
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(climbableTag) && checkWithCollider)
+        {
+            //if the collision is on the side or bottom-up the nothing should happen
+            Vector3 contactPointNormal = collision.GetContact(0).normal;
+            if (contactPointNormal.x != 0 && contactPointNormal.z != 0)
+            {
+                currentRug = collision.transform;
+                isClimbing = true;
+                isJumping = false;
+
+                transform.rotation = Quaternion.LookRotation(collision.transform.up, contactPointNormal);
+
+            }
+
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(climbableTag) && checkWithCollider)
+        {
+            isClimbing = false;
+        }
+    }
+
+
 
 
     //DEBUG

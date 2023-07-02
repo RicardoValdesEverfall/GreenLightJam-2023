@@ -919,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.45195436
+      value: 0.7405391
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -934,12 +934,17 @@ PrefabInstance:
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.15822041
+      value: 0.30251276
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Center.z
       value: 0.07786739
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3843454213363157846, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -4528,6 +4533,7 @@ GameObject:
   - component: {fileID: 1065254332}
   - component: {fileID: 1065254331}
   - component: {fileID: 1065254330}
+  - component: {fileID: 1065254333}
   m_Layer: 9
   m_Name: Rug (3)
   m_TagString: Climbable
@@ -4542,14 +4548,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065254328}
-  m_LocalRotation: {x: -0, y: 0.8313868, z: -0, w: -0.5556942}
+  m_LocalRotation: {x: 0.021374373, y: 0.76087976, z: 0.041710168, w: -0.64719814}
   m_LocalPosition: {x: 3.916, y: 2.175, z: 1.191}
   m_LocalScale: {x: 2.17818, y: 2.6836061, z: 0.097242765}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 397071594}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 247.517, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.229, y: 260.825, z: -1.235}
 --- !u!65 &1065254330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4621,6 +4627,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065254328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1065254333
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065254328}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1067720199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5272166522559255861, guid: e05ef682c85ea0543892b432f0f3fa4d,
@@ -7195,6 +7228,7 @@ GameObject:
   - component: {fileID: 1929953698}
   - component: {fileID: 1929953697}
   - component: {fileID: 1929953696}
+  - component: {fileID: 1929953699}
   m_Layer: 9
   m_Name: Rug (1)
   m_TagString: Climbable
@@ -7210,7 +7244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929953694}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
-  m_LocalPosition: {x: -0.21600002, y: 2.175, z: 5.247}
+  m_LocalPosition: {x: -0.21600002, y: 2.458, z: 5.247}
   m_LocalScale: {x: 2.17818, y: 2.6836061, z: 0.097242765}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7288,6 +7322,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929953694}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1929953699
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929953694}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1963118427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8422,6 +8483,7 @@ GameObject:
   - component: {fileID: 2099384537}
   - component: {fileID: 2099384536}
   - component: {fileID: 2099384535}
+  - component: {fileID: 2099384538}
   m_Layer: 9
   m_Name: Rug (2)
   m_TagString: Climbable
@@ -8436,14 +8498,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099384533}
-  m_LocalRotation: {x: -0, y: 0.9474704, z: -0, w: -0.31984356}
+  m_LocalRotation: {x: 0.022922538, y: 0.945034, z: 0.067903265, w: -0.31902108}
   m_LocalPosition: {x: 2.18, y: 2.175, z: 4.21}
   m_LocalScale: {x: 2.17818, y: 2.6836061, z: 0.097242765}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 397071594}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 217.307, z: 0}
+  m_LocalEulerAnglesHint: {x: -8.22, y: 217.307, z: 0}
 --- !u!65 &2099384535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8515,6 +8577,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099384533}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2099384538
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099384533}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2111121096
 GameObject:
   m_ObjectHideFlags: 0
