@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class MusicSheet : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void Awake()
     {
-        
+        base.Awake();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
+    }
+
+    protected override void HandleInteract()
+    {
+        base.HandleInteract();
     }
 
     protected override void OnTriggerEnter(Collider col)

@@ -37,6 +37,7 @@ public class CutsceneManager : MonoBehaviour
         {
             playerManager = other.GetComponent<PlayerManager>();
             playerManager.isCinematicPlaying = true;
+            playerManager.endCinematic = this.transform.GetChild(0).GetComponent<PlayableDirector>();
           
             cutsceneDirector.Play();
             cutsceneDirector.playableGraph.GetRootPlayable(0).SetSpeed(playbackSpeed);
