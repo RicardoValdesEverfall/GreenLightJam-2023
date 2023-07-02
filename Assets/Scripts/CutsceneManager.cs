@@ -26,7 +26,7 @@ public class CutsceneManager : MonoBehaviour
             if (cutsceneDirector.state == PlayState.Paused && playerManager.isCinematicPlaying)
             {
                 playerManager.isCinematicPlaying = false;
-                this.gameObject.SetActive(false);
+                this.GetComponent<BoxCollider>().enabled = false;
             }
         }
     }

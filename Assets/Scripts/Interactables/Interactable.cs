@@ -7,11 +7,13 @@ using TMPro;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] private bool ShowPopup;
-    [SerializeField] private Transform PopupText;
     [SerializeField] private bool ShowOutline = true;
 
     private Vector3 startSize;
     private Outline myOutline;
+
+    [SerializeField, ReadOnly] private PlayerManager playerManager;
+    [SerializeField, ReadOnly] private Transform PopupText;
     [SerializeField, ReadOnly] private bool isInRange;
 
     protected virtual void Awake()
@@ -48,9 +50,9 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
-    protected virtual void HandleInteract()
+    protected virtual void Interaction()
     {
-
+        playerManager.HandleInteraction(this, this.tag);
     }
 
     protected virtual void OnTriggerEnter(Collider col)
@@ -66,7 +68,8 @@ public abstract class Interactable : MonoBehaviour
                 }
             }
 
-            col.GetComponent<PlayerManager>().objectToInteractWith = this;
+            playerManager = col.GetComponent<PlayerManager>();
+            playerManager.objectToInteractWith = this;
         }
 
     }

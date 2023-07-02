@@ -14,14 +14,19 @@ public class MusicSheet : Interactable
         base.Update();
     }
 
-    protected override void HandleInteract()
+    protected override void Interaction()
     {
-        base.HandleInteract();
+        base.Interaction();
     }
 
     protected override void OnTriggerEnter(Collider col)
     {
         base.OnTriggerEnter(col);
+
+        if (col.CompareTag("Player"))
+        {
+            Interaction();
+        }
     }
 
     protected override void OnTriggerExit(Collider col)

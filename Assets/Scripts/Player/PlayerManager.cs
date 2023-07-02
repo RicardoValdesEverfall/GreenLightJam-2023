@@ -47,9 +47,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void HandleInteraction(Interactable objToInteract)
+    public void HandleInteraction(Interactable objToInteract, string name)
     {
-        if (objToInteract.CompareTag("MusicSheet"))
+        if (name == "MusicSheet")
         {
             objToInteract.gameObject.SetActive(false);
             musicSheetCounter++;
@@ -57,6 +57,7 @@ public class PlayerManager : MonoBehaviour
             if (musicSheetCounter == 5)
             {
                 endCinematic.Play();
+                Debug.Log("Playing");
             }
         }
     }
