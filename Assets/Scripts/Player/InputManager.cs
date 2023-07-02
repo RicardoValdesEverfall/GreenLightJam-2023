@@ -66,6 +66,7 @@ public class InputManager : MonoBehaviour
         HandleCameraInput();
         HandleSprintInput();
         HandleJumpInput();
+        HandleMeowInput();
         //HandleInteractInput
     }
 
