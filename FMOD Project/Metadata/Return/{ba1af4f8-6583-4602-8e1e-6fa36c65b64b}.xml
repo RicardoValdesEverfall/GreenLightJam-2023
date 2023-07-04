@@ -5,7 +5,7 @@
 			<value>2</value>
 		</property>
 		<property name="name">
-			<value>Reverb</value>
+			<value>Church Reverb</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{5ce64a15-6478-44ad-9547-c5fc82d2630e}</destination>
@@ -27,9 +27,6 @@
 	<object class="ConvolutionReverbEffect" id="{5f06f257-1a95-4c7f-901e-8fe5e86293a7}">
 		<property name="endFrame">
 			<value>190305</value>
-		</property>
-		<property name="wetLevel">
-			<value>-13</value>
 		</property>
 		<relationship name="referenceableData">
 			<destination>{43d8bf59-905e-4c7c-b689-7c5cde520cd9}</destination>

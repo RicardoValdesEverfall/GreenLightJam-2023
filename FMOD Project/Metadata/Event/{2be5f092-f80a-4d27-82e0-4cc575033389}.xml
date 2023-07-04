@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{9018ec1b-fa05-47c3-8b91-1a93db8b9983}</destination>
+			<destination>{b1b999e0-9b70-4833-916a-49f39b4c4e59}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{58c88535-9f5b-45b6-83ed-6e5f99157c02}</destination>
@@ -1540,6 +1540,9 @@
 	<object class="EventMixerGroup" id="{ea9a333d-3047-4ca2-94d0-b00695f1f027}">
 		<property name="color">
 			<value>Purple</value>
+		</property>
+		<property name="volume">
+			<value>4</value>
 		</property>
 		<property name="name">
 			<value>Crash</value>
