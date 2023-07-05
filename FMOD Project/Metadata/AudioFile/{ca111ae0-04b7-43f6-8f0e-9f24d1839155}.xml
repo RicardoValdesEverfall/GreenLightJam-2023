@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{4ed3f5ce-8f47-4a28-b091-1fdabf2b173c}">
+	<object class="AudioFile" id="{ca111ae0-04b7-43f6-8f0e-9f24d1839155}">
 		<property name="assetPath">
-			<value>ANML_CAT_Meow_8.wav</value>
+			<value>Organ halftime STEM#01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>4.04</value>
+			<value>71.902416666666667</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{399e63aa-b4ee-4e2b-8311-23c56eea5e21}</destination>
