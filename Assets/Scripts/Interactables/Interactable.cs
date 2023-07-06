@@ -7,6 +7,7 @@ using TMPro;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] public Transform interactPoint;
+    [SerializeField] private FMODDialogue dialogueSystem;
     [SerializeField] private bool ShowPopup;
     [SerializeField] private bool ShowOutline = true;
 
@@ -19,6 +20,8 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void Awake()
     {
+        
+
         if(ShowPopup)
         {
             PopupText = transform.GetChild(0).GetChild(0);
