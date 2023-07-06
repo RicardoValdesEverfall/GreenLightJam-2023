@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     [Header("DEBUG VALUES")]
     [SerializeField, ReadOnly] public PlayableDirector endCinematic;
     [SerializeField, ReadOnly] public Interactable objectToInteractWith;
+    [SerializeField, ReadOnly] public Transform interactIKTarget;
+
     [SerializeField, ReadOnly] public bool isCinematicPlaying;
     [SerializeField, ReadOnly] private int musicSheetCounter;
     [SerializeField, ReadOnly] public bool churchComplete;
@@ -59,6 +61,11 @@ public class PlayerManager : MonoBehaviour
                 endCinematic.Play();
                 inputManager.HandleCursorState(CursorLockMode.Confined);
             }
+        }
+
+        if (name == "Book")
+        {
+            
         }
     }
 }

@@ -6,13 +6,14 @@ using TMPro;
 [RequireComponent(typeof(Outline))]
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] public Transform interactPoint;
     [SerializeField] private bool ShowPopup;
     [SerializeField] private bool ShowOutline = true;
 
     private Vector3 startSize;
     private Outline myOutline;
 
-    [SerializeField, ReadOnly] private PlayerManager playerManager;
+    [SerializeField, ReadOnly] public PlayerManager playerManager;
     [SerializeField, ReadOnly] private Transform PopupText;
     [SerializeField, ReadOnly] private bool isInRange;
 

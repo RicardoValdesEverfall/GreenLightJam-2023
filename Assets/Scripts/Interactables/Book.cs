@@ -19,9 +19,8 @@ public class Book : Interactable
     protected override void Interaction()
     {
         base.Interaction();
-
-
-    }
+        playerManager.interactIKTarget.position = interactPoint.position;
+}
 
     protected override void OnTriggerEnter(Collider col)
     {
