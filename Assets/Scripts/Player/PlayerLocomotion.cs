@@ -31,6 +31,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private string climbableTag;
     [SerializeField] private LayerMask climbableLayer;
     [SerializeField] private bool checkWithCollider = false;
+    [SerializeField] private float fallingClimbingSpeed = 0;
     private RaycastHit climbHit;
     private Transform currentRug;
 
@@ -57,6 +58,11 @@ public class PlayerLocomotion : MonoBehaviour
 
         initialJumpVelocity = Mathf.Sqrt(-2 * gravity * maxJumpHeight);
         isClimbing = false;
+
+        if(fallingClimbingSpeed == 0)
+        {
+            fallingClimbingSpeed = fallingSpeed / 2;
+        }
 
     }
 
@@ -119,14 +125,26 @@ public class PlayerLocomotion : MonoBehaviour
         // 1. put cat in specific animations , do not turn orientation etc etc
         if (isClimbing && !isJumping)
         {
-            //Always goes up
-            moveDirection = currentRug.up * inputManager.verticalInput;
+            bool notMoving = false;
+            if(inputManager.verticalInput == 0 && inputManager.horizontalInput == 0)
+            {
+                //falldown
+                moveDirection = currentRug.up * -1;
+                notMoving = true;
+            }
+            else
+            {
+                moveDirection = currentRug.up * inputManager.verticalInput;
+                moveDirection += transform.right * inputManager.horizontalInput;
+            }
             //Along the X axis
-            moveDirection += transform.right * inputManager.horizontalInput;
-            moveDirection.Normalize();
-
-            playerCharacterController.Move(moveDirection * walkSpeed * 0.3f * Time.deltaTime);
             
+            Debug.Log("vertical input: " + inputManager.verticalInput);
+            Debug.Log("move dir: " + moveDirection);
+
+            moveDirection.Normalize();
+            playerCharacterController.Move(moveDirection * (notMoving ? fallingClimbingSpeed : walkSpeed * 0.3f) * Time.deltaTime);
+
         }
         else
             isClimbing = false;

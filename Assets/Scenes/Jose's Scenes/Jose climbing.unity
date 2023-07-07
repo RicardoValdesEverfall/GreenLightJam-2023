@@ -908,6 +908,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1180593077989435814, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
+      propertyPath: fallingClimbingSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180593077989435814, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
       propertyPath: climbableLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -919,27 +924,27 @@ PrefabInstance:
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.7405391
+      value: 0.5811322
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.44203937
+      value: 0.31170723
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.0036066147
+      value: -0.003606614
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.30251276
+      value: 0.24602258
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.07786739
+      value: 0.14303346
       objectReference: {fileID: 0}
     - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -4900,9 +4905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04145b3c2e18b444b9beece1b535dacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 1
-  PopupText: {fileID: 221634790}
   ShowOutline: 1
+  playerManager: {fileID: 0}
+  PopupText: {fileID: 221634790}
   isInRange: 0
 --- !u!114 &1085573452
 MonoBehaviour:
