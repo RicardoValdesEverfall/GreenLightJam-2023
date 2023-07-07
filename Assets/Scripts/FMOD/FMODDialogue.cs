@@ -11,6 +11,7 @@ public class FMODDialogue : MonoBehaviour
     FMOD.Studio.EVENT_CALLBACK dialogueCallback;
 
     public FMODUnity.EventReference DialogueNarration;
+    public static FMODDialogue Instance;
 
 #if UNITY_EDITOR
     private void Reset()
@@ -18,13 +19,18 @@ public class FMODDialogue : MonoBehaviour
         DialogueNarration = FMODUnity.EventReference.Find("event:/DialogueNarration");
     }
 #endif
-
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else Destroy(this.gameObject);
+    }
 
     private void Start()
     {
         dialogueCallback = new FMOD.Studio.EVENT_CALLBACK(DialogueEventCallback);
-
-        
     }
 
     public void PlayDialogue(string lineID)

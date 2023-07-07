@@ -16,12 +16,11 @@ public class Book : Interactable
         base.Update();
     }
 
-    protected override void HandleInteract()
+    protected override void Interaction()
     {
-        base.HandleInteract();
-
-
-    }
+        base.Interaction();
+        playerManager.interactIKTarget.position = interactPoint.position;
+}
 
     protected override void OnTriggerEnter(Collider col)
     {
