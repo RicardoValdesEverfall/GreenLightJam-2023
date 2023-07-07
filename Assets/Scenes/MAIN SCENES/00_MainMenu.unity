@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 212107299}
   - component: {fileID: 212107298}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: AudioUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -579,14 +579,14 @@ MonoBehaviour:
       Data2: 1254045657
       Data3: 117701054
       Data4: 1744344382
-    Path: event:/UI_Navigate
+    Path: event:/Menu/UI_Navigate
   uiSelectEvent:
     Guid:
       Data1: -960257626
       Data2: 1140576126
       Data3: 1613476517
       Data4: 1895305871
-    Path: event:/UI_Select
+    Path: event:/Menu/UI_Select
 --- !u!4 &212107299
 Transform:
   m_ObjectHideFlags: 0
@@ -2116,7 +2116,7 @@ MonoBehaviour:
       Data2: 1293265240
       Data3: -708903503
       Data4: -1289216531
-    Path: event:/Menu_Music
+    Path: event:/Music/Menu_Music
   Event: 
   PlayEvent: 1
   StopEvent: 2

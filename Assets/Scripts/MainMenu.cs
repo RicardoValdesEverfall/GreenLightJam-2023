@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.VFX;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] CanvasGroup windowCredits;
     [SerializeField] CanvasGroup logo;
     [SerializeField] VisualEffect activeEffect;
+    [SerializeField] Button back;
+    [SerializeField] Button play;
 
     private CanvasGroup currentWindow;
 
@@ -54,6 +57,7 @@ public class MainMenu : MonoBehaviour
         seq.OnComplete(() =>
         {
             currentWindow = windowMain;
+            play.Select();
         });
     }
 
@@ -85,6 +89,7 @@ public class MainMenu : MonoBehaviour
         seq.OnComplete(() =>
         {
             currentWindow = windowMain;
+            play.Select();
         });
     }
 
@@ -100,7 +105,10 @@ public class MainMenu : MonoBehaviour
         seq.OnComplete(() =>
         {
             currentWindow = windowCredits;
+            back.Select();
         });
+
+        
     }
 
     IEnumerator LoadingScreen()
@@ -113,4 +121,6 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(gameScene);
     }
+
+
 }
