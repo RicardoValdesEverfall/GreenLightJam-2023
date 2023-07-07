@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 1
   ShowOutline: 1
   playerManager: {fileID: 0}
@@ -5020,6 +5021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 1
   ShowOutline: 1
   playerManager: {fileID: 0}
@@ -6000,6 +6002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -12654,6 +12657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -12955,6 +12959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -13126,6 +13131,91 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932027304}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &934464410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934464413}
+  - component: {fileID: 934464412}
+  - component: {fileID: 934464411}
+  m_Layer: 0
+  m_Name: ChurchReverb Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &934464411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934464410}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30.7, y: 8.64, z: 32.23}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &934464412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934464410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1297252663
+      Data2: 1217214271
+      Data3: -417583206
+      Data4: 575857650
+    Path: snapshot:/ChurchReverb
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!4 &934464413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934464410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.9, y: 3.53, z: -62.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &941064646
 GameObject:
   m_ObjectHideFlags: 0
@@ -14242,6 +14332,11 @@ PrefabInstance:
         type: 3}
       propertyPath: climbableLayer.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781924085550372990, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3843454213363157846, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -16685,6 +16780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -17272,6 +17368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -22871,6 +22968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 1
   ShowOutline: 1
   playerManager: {fileID: 0}
@@ -25816,6 +25914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -27779,6 +27878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -28703,6 +28803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -29141,6 +29242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -29684,6 +29786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 0
   ShowOutline: 0
   playerManager: {fileID: 0}
@@ -30273,6 +30376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 1
   ShowOutline: 1
   playerManager: {fileID: 0}

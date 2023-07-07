@@ -118,6 +118,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{d0f7cd53-e336-4835-a662-651c6b7b86cb}" />
 	<object class="MultiSound" id="{72296e14-6655-4c57-946b-aff95d4eec37}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{a4f67ae0-5f8e-4e90-89c0-121a60fe6c43}</destination>
 			<destination>{bdc78115-e691-460c-99d0-d87c8a7b5460}</destination>
@@ -126,9 +129,6 @@
 	<object class="MixerBusFader" id="{93c07e74-6277-47df-b90c-4118dafcbbbd}" />
 	<object class="MixerBusFader" id="{424df3c4-6b31-4e43-b155-52cc632f491c}" />
 	<object class="MixerSend" id="{b0ef108d-b914-48df-9228-86848b57ba9f}">
-		<property name="level">
-			<value>-22.5</value>
-		</property>
 		<property name="inputFormat">
 			<value>1</value>
 		</property>

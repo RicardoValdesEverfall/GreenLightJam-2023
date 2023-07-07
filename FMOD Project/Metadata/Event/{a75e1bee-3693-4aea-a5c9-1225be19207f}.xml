@@ -5,7 +5,7 @@
 			<value>Cat_Footsteps</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b864ff47-e7c4-447c-95ce-92bf64a0ef1a}</destination>
@@ -56,7 +56,7 @@
 			<destination>{b4239cb4-3f74-42ae-ac54-86fcc1d241bf}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{917a6c3c-8577-48ea-97b3-b23fc3c51052}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{bb714823-50ab-4d49-8d02-86dda3ae22b8}" />
@@ -131,6 +131,7 @@
 	<object class="MixerBusEffectChain" id="{a497c3b7-b0a0-4f34-9fba-7a732a86b2cf}">
 		<relationship name="effects">
 			<destination>{2fd10038-ebeb-4dff-8740-97a4f51114fa}</destination>
+			<destination>{4feadb49-23b3-42e9-a489-0c1de78655b8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1274ef2b-f253-4eb6-91f0-1fe7a646d9ea}" />
@@ -142,5 +143,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{407d011d-1a0e-43a5-9ff2-9d241d82363d}" />
 	<object class="MixerBusFader" id="{2fd10038-ebeb-4dff-8740-97a4f51114fa}" />
+	<object class="SpatialiserEffect" id="{4feadb49-23b3-42e9-a489-0c1de78655b8}" />
 	<object class="MixerBusFader" id="{783699af-1381-432f-bed8-99d9ef2f2a41}" />
 </objects>

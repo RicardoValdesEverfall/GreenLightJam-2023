@@ -3729,6 +3729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endCinematic: {fileID: 0}
   objectToInteractWith: {fileID: 0}
+  interactIKTarget: {fileID: 0}
   isCinematicPlaying: 0
   musicSheetCounter: 0
   churchComplete: 0
@@ -3837,6 +3838,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e65cdd56c08480fa32d65d0b513a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catMeowEvent:
+    Guid:
+      Data1: -1937408423
+      Data2: 1166007387
+      Data3: -552612697
+      Data4: -1983216898
+    Path: event:/Player/Cat_Meow
   currentMaterial: 0
 --- !u!54 &7368046469734855472
 Rigidbody:

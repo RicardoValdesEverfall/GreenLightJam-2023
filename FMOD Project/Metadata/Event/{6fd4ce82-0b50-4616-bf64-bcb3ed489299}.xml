@@ -5,7 +5,7 @@
 			<value>Cat_Chirp</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b864ff47-e7c4-447c-95ce-92bf64a0ef1a}</destination>
@@ -56,7 +56,7 @@
 			<destination>{7bf4b723-d7ce-4ec1-b19a-206d0e435266}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{917a6c3c-8577-48ea-97b3-b23fc3c51052}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{84ee1c6e-23ee-4d4d-a18c-66ddf6be91a6}" />
@@ -110,6 +110,7 @@
 	<object class="MixerBusEffectChain" id="{c634c082-7016-485d-8a5d-2acb0de2cbec}">
 		<relationship name="effects">
 			<destination>{f653a065-8e62-424b-9a50-00d164798ad8}</destination>
+			<destination>{71b7d4ec-df79-408a-9e8d-2b88ea79c2d2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4f623cea-7801-4a17-b755-3063d1dde73d}" />
@@ -121,6 +122,7 @@
 	</object>
 	<object class="MixerBusFader" id="{0488d0aa-9df3-4a07-83a0-6775dd9c1692}" />
 	<object class="MixerBusFader" id="{f653a065-8e62-424b-9a50-00d164798ad8}" />
+	<object class="SpatialiserEffect" id="{71b7d4ec-df79-408a-9e8d-2b88ea79c2d2}" />
 	<object class="SingleSound" id="{ff7be444-4e5c-4a4a-8a99-235692d3fab9}">
 		<relationship name="audioFile">
 			<destination>{bd6f8ecd-8c85-4bc4-9ae4-0c968c087e55}</destination>

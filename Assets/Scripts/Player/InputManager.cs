@@ -6,7 +6,8 @@ using UnityEditor;
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls; //The input map where all input actions and types are defined & registered.
-    public PlayerLocomotion playerLocomotion; 
+    public PlayerLocomotion playerLocomotion;
+    private PlayerAudio playerAudio;
 
     [Header("DEBUG")]
     [SerializeField, ReadOnly] public float verticalInput;
@@ -17,11 +18,13 @@ public class InputManager : MonoBehaviour
     [SerializeField, ReadOnly] private bool sprintInput;
     [SerializeField, ReadOnly] public bool jumpInput;
     [SerializeField, ReadOnly] public float jumpInputTimer;
-    [SerializeField, ReadOnly] private bool meowInput;
+    [SerializeField, ReadOnly] public bool meowInput;
+
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
     private float moveAmount;
+
 
     private void OnEnable()
     {
@@ -54,6 +57,7 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     private void OnDisable()
@@ -88,10 +92,10 @@ public class InputManager : MonoBehaviour
         camHorizontalInput = cameraInput.x;
     }
 
+
     private void HandleMeowInput()
     {
-        //if meow sound isnt playing |||||||| Or you could also do, if meow is playing, stop playing and start playing again.
-            //Play Meow Sound Once
+        playerAudio.PlayMeow();
     }
 
     private void HandleSprintInput()

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
+    [Header("FMOD")]
+    [SerializeField] public FMODUnity.EventReference catMeowEvent;
+    FMOD.Studio.EventInstance catMeowInstance;
+    private FMOD.Studio.EventInstance Player_Footsteps;
+
+    InputManager inputManager;
+
+
     [SerializeField]
     private CURRENT_MATERIAL currentMaterial;
 
@@ -11,13 +19,22 @@ public class PlayerAudio : MonoBehaviour
 
     private Vector3 rayCastOffSet = new Vector3(0f, 0.1f, 0f);
 
-    private FMOD.Studio.EventInstance Player_Footsteps;
 
+    Rigidbody cachedRigidBody;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        inputManager = GetComponent<InputManager>();
+        cachedRigidBody = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         DetermineMaterial();
+        
+        
     }
 
 
@@ -121,6 +138,23 @@ public class PlayerAudio : MonoBehaviour
     {
         Player_Footsteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
- 
+
+
+
+    public void PlayMeow()
+    {
+        FMOD.Studio.PLAYBACK_STATE playbackState;
+        catMeowInstance.getPlaybackState(out playbackState);
+
+        if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED && inputManager.meowInput == true)
+        {
+            catMeowInstance = FMODUnity.RuntimeManager.CreateInstance(catMeowEvent);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(catMeowInstance, GetComponent<Transform>(), cachedRigidBody);
+            catMeowInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, cachedRigidBody));
+            catMeowInstance.start();
+            catMeowInstance.release();
+        }
+    }
+
 
 }

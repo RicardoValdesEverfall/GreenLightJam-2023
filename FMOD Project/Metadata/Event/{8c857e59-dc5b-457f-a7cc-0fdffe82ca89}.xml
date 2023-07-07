@@ -5,7 +5,7 @@
 			<value>Cat_Meow</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b864ff47-e7c4-447c-95ce-92bf64a0ef1a}</destination>
@@ -56,10 +56,17 @@
 			<destination>{3bec5627-eca7-4938-9300-a5c884acc830}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{917a6c3c-8577-48ea-97b3-b23fc3c51052}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{d8aaf7ac-f765-4a9e-b324-c9008cd253ea}" />
+	<object class="EventAutomatableProperties" id="{d8aaf7ac-f765-4a9e-b324-c9008cd253ea}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="dopplerScale">
+			<value>500</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{4a262087-4198-419c-91f4-95aeb8c32c13}" />
 	<object class="Timeline" id="{58be49be-f613-45dd-85a8-0576cb554000}">
 		<property name="isProxyEnabled">
@@ -110,6 +117,8 @@
 	<object class="MixerBusEffectChain" id="{757fbef1-d1c6-42d5-97f9-26111841d216}">
 		<relationship name="effects">
 			<destination>{9f60323f-e68c-4d49-8fed-8790bdca112e}</destination>
+			<destination>{3c340bc1-312c-4071-979b-b0585eb359e5}</destination>
+			<destination>{b217a594-e04c-41d5-8776-353b63d901cf}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{844bc7c3-1842-4251-9798-cb00a5ba5a77}" />
@@ -132,6 +141,40 @@
 	</object>
 	<object class="MixerBusFader" id="{d80f42b2-be0a-4082-896f-e4c48acc8049}" />
 	<object class="MixerBusFader" id="{9f60323f-e68c-4d49-8fed-8790bdca112e}" />
+	<object class="SpatialiserEffect" id="{3c340bc1-312c-4071-979b-b0585eb359e5}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.0500000007</value>
+		</property>
+		<property name="maximumDistance">
+			<value>4.20000029</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>0.100000001</value>
+		</property>
+		<property name="minimumExtent">
+			<value>180</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{b217a594-e04c-41d5-8776-353b63d901cf}">
+		<property name="filterTypeA">
+			<value>4</value>
+		</property>
+		<property name="frequencyA">
+			<value>673.712952</value>
+		</property>
+		<property name="qualityA">
+			<value>0.775642395</value>
+		</property>
+	</object>
 	<object class="RandomizerModulator" id="{3b695bf3-5df7-4742-b5c9-c163ed02ab42}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

@@ -5,7 +5,7 @@
 			<value>Cat_Purr</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b864ff47-e7c4-447c-95ce-92bf64a0ef1a}</destination>
@@ -56,7 +56,7 @@
 			<destination>{f7acc8c0-76d4-4d1b-807b-9b5a354d0537}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{917a6c3c-8577-48ea-97b3-b23fc3c51052}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{9089cb34-1d74-4be6-acd0-ea939b811693}" />
@@ -100,6 +100,7 @@
 	<object class="MixerBusEffectChain" id="{57a6010f-181a-443f-9c55-5cdf3b4185b5}">
 		<relationship name="effects">
 			<destination>{6f1ac423-86d7-46b2-a2a1-b1f4a62b53f4}</destination>
+			<destination>{01faf9c0-f485-4a62-8d58-e2493831bccd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{549878c8-833d-4994-8b12-32352e1556c6}" />
@@ -121,4 +122,5 @@
 	</object>
 	<object class="MixerBusFader" id="{e29a6ef6-3f9d-4ee7-a91a-93181509a6b7}" />
 	<object class="MixerBusFader" id="{6f1ac423-86d7-46b2-a2a1-b1f4a62b53f4}" />
+	<object class="SpatialiserEffect" id="{01faf9c0-f485-4a62-8d58-e2493831bccd}" />
 </objects>
