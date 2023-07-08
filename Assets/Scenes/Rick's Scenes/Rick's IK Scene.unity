@@ -1260,7 +1260,7 @@ PrefabInstance:
         type: 3}
       propertyPath: solver.target
       value: 
-      objectReference: {fileID: 569419061}
+      objectReference: {fileID: 0}
     - target: {fileID: 4988013357611946779, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: solver.IKPosition.x
@@ -1270,6 +1270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: solver.IKPosition.z
       value: -0.66376114
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988013357611946779, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: solver.bendModifier
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4988013357611946779, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -1490,7 +1495,7 @@ PrefabInstance:
         type: 3}
       propertyPath: solver.target
       value: 
-      objectReference: {fileID: 441335274}
+      objectReference: {fileID: 0}
     - target: {fileID: 8864655416011354365, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: solver.IKPosition.x
@@ -1500,6 +1505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: solver.IKPosition.z
       value: -0.66376114
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864655416011354365, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: solver.bendModifier
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8864655416011354365, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -2560,12 +2570,6 @@ Transform:
   m_Father: {fileID: 554227493}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -19.108, y: 0, z: 0}
---- !u!4 &441335274 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7522874999047297111, guid: e05ef682c85ea0543892b432f0f3fa4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 147570137}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &448286484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,12 +2917,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558382701}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &569419061 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4206723337504964815, guid: e05ef682c85ea0543892b432f0f3fa4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 147570137}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &604447150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3203950882529943439, guid: e05ef682c85ea0543892b432f0f3fa4d,
@@ -5200,7 +5198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04145b3c2e18b444b9beece1b535dacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactPoint: {fileID: 0}
+  interactPoint: {fileID: 917894926}
+  dialogueSystem: {fileID: 0}
   ShowPopup: 1
   ShowOutline: 1
   playerManager: {fileID: 0}
