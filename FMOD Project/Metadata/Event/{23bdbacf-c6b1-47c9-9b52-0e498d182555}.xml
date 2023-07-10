@@ -5,7 +5,7 @@
 			<value>Atmos_ChurchGarden</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{5f2f11b5-8061-4136-a40d-c736b339e9bf}</destination>
@@ -56,7 +56,7 @@
 			<destination>{7198549f-a940-43be-a3b2-adb470594874}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{55a949aa-6cc2-491e-a82d-f2f87498bee5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6fdc0ef0-474b-4bd5-aab8-85d3de8b8fee}" />
@@ -75,6 +75,9 @@
 		<property name="volume">
 			<value>-22.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{129f6945-29f8-4764-b076-7b82dd7f7399}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{18f0747f-9d49-4c19-ba69-2e89f57b8ca1}</destination>
 		</relationship>
@@ -96,8 +99,23 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7198549f-a940-43be-a3b2-adb470594874}" />
+	<object class="ADSRModulator" id="{129f6945-29f8-4764-b076-7b82dd7f7399}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>420</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{18f0747f-9d49-4c19-ba69-2e89f57b8ca1}">
 		<relationship name="effects">
+			<destination>{3ea55d18-4747-4998-bbe7-0468d14f5df2}</destination>
 			<destination>{6caf22cb-4a4f-4863-b3a4-0a3b25856369}</destination>
 			<destination>{04312453-31bb-490f-95b0-b44c40994ab2}</destination>
 			<destination>{30984db8-e995-499f-9a26-c53afe78014a}</destination>
@@ -113,6 +131,23 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{30abf8a1-ee16-467c-8e12-b91a00673213}" />
+	<object class="SpatialiserEffect" id="{3ea55d18-4747-4998-bbe7-0468d14f5df2}">
+		<property name="minimumDistance">
+			<value>11</value>
+		</property>
+		<property name="maximumDistance">
+			<value>27</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="minimumExtent">
+			<value>360</value>
+		</property>
+	</object>
 	<object class="ThreeEQEffect" id="{6caf22cb-4a4f-4863-b3a4-0a3b25856369}">
 		<property name="lowGain">
 			<value>-9</value>
@@ -124,7 +159,7 @@
 			<value>-15</value>
 		</property>
 		<property name="inputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{52e78229-2d06-4e37-8c84-8938f6202905}</destination>

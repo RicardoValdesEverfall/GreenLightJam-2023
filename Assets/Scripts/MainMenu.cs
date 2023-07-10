@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.VFX;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class MainMenu : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Button play;
 
     private CanvasGroup currentWindow;
+
 
     // Start is called before the first frame update
     void Start()

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2be5f092-f80a-4d27-82e0-4cc575033389}">
 		<property name="name">
-			<value>In_Game_Music</value>
+			<value>Music_InGame</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -80,7 +80,7 @@
 			<destination>{43f1720b-5537-481b-a6bf-22ac5ca2c4ef}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{681e347d-0547-402e-8575-d2d08f7a468c}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{188149c7-347c-4709-9551-fb1e5f4f5223}" />
@@ -590,6 +590,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{21b4bf67-c79c-4847-8e91-cfa092de9c08}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{b41f0510-6699-4384-bb9a-ea6d736193f4}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{c9f8ee79-2e82-4a28-909d-bf8c4ce75ab3}</destination>
 		</relationship>
@@ -3546,6 +3552,23 @@
 		<relationship name="markerTrack">
 			<destination>{34c8a723-6490-4192-8090-afc16bf4177b}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{b41f0510-6699-4384-bb9a-ea6d736193f4}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>20</value>
+		</property>
+		<property name="releaseTime">
+			<value>2000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{c9f8ee79-2e82-4a28-909d-bf8c4ce75ab3}">
 		<relationship name="effects">

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3f20b046-a958-4d15-b1fd-bed5ed1d28b3}">
 		<property name="name">
-			<value>Menu_Music</value>
+			<value>Music_Menu</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -54,7 +54,7 @@
 			<destination>{1a80f324-868b-4fba-9b0d-5b7719996f1d}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{681e347d-0547-402e-8575-d2d08f7a468c}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{7f924f79-6b0e-4146-a50d-b3a26cc13583}" />
@@ -164,7 +164,10 @@
 			<value>-80</value>
 		</property>
 		<property name="attackTime">
-			<value>460</value>
+			<value>20</value>
+		</property>
+		<property name="releaseTime">
+			<value>2000</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>

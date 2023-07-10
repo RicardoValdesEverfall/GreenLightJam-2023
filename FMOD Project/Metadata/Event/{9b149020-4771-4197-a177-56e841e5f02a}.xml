@@ -56,7 +56,7 @@
 			<destination>{43dff4c7-e73f-4fad-8f4a-14e851f669f2}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{55a949aa-6cc2-491e-a82d-f2f87498bee5}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{11541905-1236-449f-8703-ac6128f6e846}" />
@@ -72,6 +72,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{4ad6fc40-c309-4edd-ae7d-1f98ec3d7563}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{9b315494-e83d-4119-baa1-58b9a7e3ae0b}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{64132291-107b-4134-a957-0fb014d4c73f}</destination>
 		</relationship>
@@ -93,14 +99,32 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{43dff4c7-e73f-4fad-8f4a-14e851f669f2}" />
+	<object class="ADSRModulator" id="{9b315494-e83d-4119-baa1-58b9a7e3ae0b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>380</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{64132291-107b-4134-a957-0fb014d4c73f}">
 		<relationship name="effects">
 			<destination>{3213c708-ac10-4990-99e7-ab96fb894f8e}</destination>
 			<destination>{f632e69f-b56b-461d-af9d-468ffd9f102a}</destination>
+			<destination>{eda8e8c6-9824-4dec-897a-2db57251b749}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1e80f876-723c-45f6-843c-31240a2f6d6f}" />
 	<object class="SingleSound" id="{056104bc-55aa-4c00-afef-5cccd75091b2}">
+		<property name="looping">
+			<value>true</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{fbf4905e-3628-4784-bba2-95ff6c722931}</destination>
 		</relationship>
@@ -117,5 +141,16 @@
 		<relationship name="mixerReturn">
 			<destination>{ba1af4f8-6583-4602-8e1e-6fa36c65b64b}</destination>
 		</relationship>
+	</object>
+	<object class="MultibandEqEffect" id="{eda8e8c6-9824-4dec-897a-2db57251b749}">
+		<property name="filterTypeA">
+			<value>4</value>
+		</property>
+		<property name="frequencyA">
+			<value>225.849808</value>
+		</property>
+		<property name="qualityA">
+			<value>0.1499805</value>
+		</property>
 	</object>
 </objects>

@@ -21,6 +21,7 @@
 		<relationship name="effects">
 			<destination>{55f6d892-96ef-4461-8f36-c94990ac70cc}</destination>
 			<destination>{aad61408-426b-4b72-8859-6e3e49d90472}</destination>
+			<destination>{004b3eb7-072f-4133-a94f-eb5b728f80cc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7deaf89e-7d9c-46cd-9efe-8c4f85f77182}" />
@@ -31,6 +32,14 @@
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{ba1af4f8-6583-4602-8e1e-6fa36c65b64b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{004b3eb7-072f-4133-a94f-eb5b728f80cc}">
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{52e78229-2d06-4e37-8c84-8938f6202905}</destination>
 		</relationship>
 	</object>
 </objects>
