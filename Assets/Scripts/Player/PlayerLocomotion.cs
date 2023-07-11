@@ -163,7 +163,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (moveDirection.magnitude < 0.2f)
         {
-            currentSpeed = Mathf.Lerp(currentSpeed, 0f, 1.8f * Time.deltaTime);
+            currentSpeed = Mathf.Lerp(currentSpeed, 0f, 2.8f * Time.deltaTime);
         }
 
         else if (isSprinting)
@@ -254,6 +254,7 @@ public class PlayerLocomotion : MonoBehaviour
         //Play jump sound
         
         isJumping = true;
+        playerManager.catAnimator.Play("Jump");
 
         if (isClimbing)
         {
