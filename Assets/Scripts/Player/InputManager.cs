@@ -83,7 +83,6 @@ public class InputManager : MonoBehaviour
 
 
         PlayerCamera.Instance.HandleCameraPivot(moveAmount);
-        //implement animation variables here.
     }
 
     private void HandleCameraInput()

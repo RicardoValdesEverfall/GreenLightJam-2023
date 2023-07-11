@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLocomotion : MonoBehaviour
 {
     private InputManager inputManager;
+    private PlayerManager playerManager;
 
     [Header("PLAYER COMPONENTS")]
     [SerializeField] private Transform cameraObject;
@@ -54,6 +55,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         playerCharacterController = GetComponent<CharacterController>();
         inputManager = GetComponent<InputManager>();
+        playerManager = GetComponent<PlayerManager>();
         cameraObject = Camera.main.transform;
 
         initialJumpVelocity = Mathf.Sqrt(-2 * gravity * maxJumpHeight);
@@ -81,7 +83,7 @@ public class PlayerLocomotion : MonoBehaviour
 
             HandleGravity();
         }
-        //HandleAnimations();
+        HandleAnimations();
 
     }
     
@@ -157,17 +159,23 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.Normalize();
 
         moveDirection.y = 0;
+        Debug.Log(moveDirection.magnitude);
 
-        if (isSprinting)
+        if (moveDirection.magnitude < 0.2f)
+        {
+            currentSpeed = Mathf.Lerp(currentSpeed, 0f, 1.8f * Time.deltaTime);
+        }
+
+        else if (isSprinting)
         { 
             playerCharacterController.Move(moveDirection * (sprintSpeed - (inputManager.jumpInputTimer * 6)) * Time.deltaTime);
-            currentSpeed = sprintSpeed;
+            currentSpeed = Mathf.Lerp(currentSpeed, sprintSpeed, 2.8f * Time.deltaTime);
         }
 
         else
         { 
             playerCharacterController.Move(moveDirection * (walkSpeed - (inputManager.jumpInputTimer * 3)) * Time.deltaTime);
-            currentSpeed = sprintSpeed;
+            currentSpeed = Mathf.Lerp(currentSpeed, walkSpeed, 1.8f * Time.deltaTime);
         }
         
     }
@@ -271,6 +279,14 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
+    private void HandleAnimations()
+    {
+        playerManager.catAnimator.SetFloat("Movement", currentSpeed);
+        playerManager.catAnimator.SetFloat("Jump", inputManager.jumpInputTimer);
+        playerManager.catAnimator.SetBool("Climbing", isClimbing);
+        playerManager.catAnimator.SetBool("Falling", isFalling);
+    }
+
     //stops the jump from climbing momentum after .25 secs
     IEnumerator StopClimbJumpMomentum()
     {
@@ -305,9 +321,6 @@ public class PlayerLocomotion : MonoBehaviour
             isClimbing = false;
         }
     }
-
-
-
 
     //DEBUG
     private void OnDrawGizmosSelected()

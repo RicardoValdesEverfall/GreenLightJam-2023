@@ -81,6 +81,5 @@ public abstract class Interactable : MonoBehaviour
     protected virtual void OnTriggerExit(Collider col)
     {
         if (isInRange) { isInRange = false; }
-
     }
 }

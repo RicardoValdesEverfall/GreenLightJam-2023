@@ -9,12 +9,11 @@ public class PlayerManager : MonoBehaviour
     private InputManager inputManager;
     private PlayerCamera playerCam;
 
-    
-
     [Header("DEBUG VALUES")]
     [SerializeField, ReadOnly] public PlayableDirector endCinematic;
     [SerializeField, ReadOnly] public Interactable objectToInteractWith;
     [SerializeField, ReadOnly] public Transform interactIKTarget;
+    [SerializeField, ReadOnly] public Animator catAnimator;
 
     [SerializeField, ReadOnly] public bool isCinematicPlaying;
     [SerializeField, ReadOnly] private int musicSheetCounter;
@@ -26,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         playerCam = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<PlayerCamera>();
-
+        catAnimator = gameObject.GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         inputManager = GetComponent<InputManager>();
     }
