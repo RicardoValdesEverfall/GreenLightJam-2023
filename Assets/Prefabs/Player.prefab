@@ -638,8 +638,8 @@ MonoBehaviour:
   PosSmoother: 0
   RotSmoother: 0.016
   MaxStretching: 1
-  Slithery: 0.25
-  AngleLimit: 24
+  Slithery: 0.15
+  AngleLimit: 20
   LimitSmoother: 0.061
   StraightenSpeed: 7.5
   TurboStraighten: 0
@@ -2431,12 +2431,14 @@ MonoBehaviour:
   endCinematic: {fileID: 0}
   objectToInteractWith: {fileID: 0}
   interactIKTarget: {fileID: 0}
+  catAnimator: {fileID: 0}
   isCinematicPlaying: 0
   musicSheetCounter: 0
   churchComplete: 0
   libraryComplete: 0
   kitchenComplete: 0
   dormComplete: 0
+  canInteract: 0
 --- !u!114 &1180593077989435814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2502,6 +2504,7 @@ MonoBehaviour:
   jumpInput: 0
   jumpInputTimer: 0
   meowInput: 0
+  interactInput: 0
 --- !u!143 &5021066563387024655
 CharacterController:
   m_ObjectHideFlags: 0
