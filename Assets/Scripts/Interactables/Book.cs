@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Book : Interactable
 {
-
+    [SerializeField] private Vector3 forcePush;
+    private Rigidbody bookRB;
 
     protected override void Awake()
     {
         base.Awake();
+        bookRB = GetComponent<Rigidbody>();
     }
 
     protected override void Update()
@@ -16,10 +18,10 @@ public class Book : Interactable
         base.Update();
     }
 
-    protected override void Interaction()
+    public override void Interaction()
     {
         base.Interaction();
-        playerManager.interactIKTarget.position = interactPoint.position;
+        bookRB.AddForceAtPosition(forcePush, interactPoint.position, ForceMode.Impulse);
 }
 
     protected override void OnTriggerEnter(Collider col)

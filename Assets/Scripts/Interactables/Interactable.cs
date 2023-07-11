@@ -54,9 +54,9 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
-    protected virtual void Interaction()
+    public virtual void Interaction()
     {
-        playerManager.HandleInteraction(this, this.tag);
+        
     }
 
     protected virtual void OnTriggerEnter(Collider col)
@@ -68,12 +68,12 @@ public abstract class Interactable : MonoBehaviour
                 if (!isInRange)
                 {
                     isInRange = true;
-                   
                 }
             }
 
-            playerManager = col.GetComponent<PlayerManager>();
+            if (playerManager == null) { playerManager = col.GetComponent<PlayerManager>(); }
             playerManager.objectToInteractWith = this;
+            playerManager.canInteract = true;
         }
 
     }
@@ -81,5 +81,7 @@ public abstract class Interactable : MonoBehaviour
     protected virtual void OnTriggerExit(Collider col)
     {
         if (isInRange) { isInRange = false; }
+        playerManager.canInteract = false;
+        playerManager.objectToInteractWith = null;
     }
 }

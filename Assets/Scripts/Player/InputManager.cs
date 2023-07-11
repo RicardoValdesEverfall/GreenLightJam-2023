@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls; //The input map where all input actions and types are defined & registered.
     public PlayerLocomotion playerLocomotion;
     private PlayerAudio playerAudio;
+    private PlayerManager playerManager;
 
     [Header("DEBUG")]
     [SerializeField, ReadOnly] public float verticalInput;
@@ -19,6 +21,7 @@ public class InputManager : MonoBehaviour
     [SerializeField, ReadOnly] public bool jumpInput;
     [SerializeField, ReadOnly] public float jumpInputTimer;
     [SerializeField, ReadOnly] public bool meowInput;
+    [SerializeField, ReadOnly] public bool interactInput;
 
 
     private Vector2 movementInput;
@@ -48,6 +51,9 @@ public class InputManager : MonoBehaviour
 
             playerControls.PlayerActions.Meow.started += i => meowInput = true;
             playerControls.PlayerActions.Meow.canceled += i => meowInput = false;
+
+            playerControls.PlayerActions.Interact.started += i => interactInput = true;
+            playerControls.PlayerActions.Interact.canceled += i => interactInput = false;
         }
 
         HandleCursorState(CursorLockMode.Locked);
@@ -58,6 +64,7 @@ public class InputManager : MonoBehaviour
     {
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerAudio = GetComponent<PlayerAudio>();
+        playerManager = GetComponent<PlayerManager>();
     }
 
     private void OnDisable()
@@ -72,7 +79,12 @@ public class InputManager : MonoBehaviour
         HandleSprintInput();
         HandleJumpInput();
         HandleMeowInput();
-        //HandleInteractInput
+        HandleInteractInput();
+    }
+
+    private void HandleInteractInput()
+    {
+        if (interactInput) { playerManager.HandleInteraction(); }
     }
 
     private void HandleMovementInput()
@@ -90,7 +102,6 @@ public class InputManager : MonoBehaviour
         camVerticalInput = cameraInput.y;
         camHorizontalInput = cameraInput.x;
     }
-
 
     private void HandleMeowInput()
     {

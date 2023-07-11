@@ -14,7 +14,7 @@ public class MusicSheet : Interactable
         base.Update();
     }
 
-    protected override void Interaction()
+    public override void Interaction()
     {
         base.Interaction();
     }
@@ -25,7 +25,7 @@ public class MusicSheet : Interactable
 
         if (col.CompareTag("Player"))
         {
-            Interaction();
+            playerManager.HandlePickup();
         }
     }
 

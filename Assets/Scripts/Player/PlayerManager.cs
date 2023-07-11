@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, ReadOnly] public bool libraryComplete;
     [SerializeField, ReadOnly] public bool kitchenComplete;
     [SerializeField, ReadOnly] public bool dormComplete;
+    [SerializeField, ReadOnly] public bool canInteract;
 
     private void Awake()
     {
@@ -48,23 +49,28 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void HandleInteraction(Interactable objToInteract, string name)
+    public void HandleInteraction()
     {
-        if (name == "MusicSheet")
+        if (objectToInteractWith != null)
         {
-            objToInteract.gameObject.SetActive(false);
-            musicSheetCounter++;
-
-            if (musicSheetCounter == 5)
+            if (canInteract)
             {
-                endCinematic.Play();
-                inputManager.HandleCursorState(CursorLockMode.Confined);
+                objectToInteractWith.Interaction();
             }
         }
+    }
 
-        if (name == "Book")
+    public void HandlePickup()
+    {
+        //Technically should add an IF or Switch statement here to check the type of pickup, but so far only the music sheets are pickups.
+
+        objectToInteractWith.gameObject.SetActive(false);
+        musicSheetCounter++;
+
+        if (musicSheetCounter == 5)
         {
-            
+            endCinematic.Play();
+            inputManager.HandleCursorState(CursorLockMode.Confined);
         }
     }
 }
