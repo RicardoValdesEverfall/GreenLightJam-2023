@@ -1,0 +1,1064 @@
+fileFormatVersion: 2
+guid: 359ff18cf2ac542ac8d5cc8fa1636fe8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9c14b7a41e245f69c1665f83a4fb3a
+      internalID: -926230226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97928403285c249edbb8efec0ff89743
+      internalID: 365350654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62844627c3360489ca638f54d375fe9f
+      internalID: -433304973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d96f7b3cda1a4692b5272fe906b58b6
+      internalID: 49357441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87548720329e4336a2c897252ab7051
+      internalID: 1999402231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d550b6f0ad69484ab3be4f0db824c03
+      internalID: -1338619956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 6840
+        y: 5400
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19192bc6edf145be8523c1fa6e5c718
+      internalID: -512772746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb43f496f5f94b3996e28ea1f6dbc3a
+      internalID: -747945069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df79c9d41e55f47d79b8b35cf5db06fb
+      internalID: 674380892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c5187261ae34e4b958e39f6bb37618
+      internalID: -1218977785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37924171c48d45398ecac5e4485c53b
+      internalID: 371219010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdec36554a4404633b92afcb216dba16
+      internalID: 1660173002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3859bb61cd534477b2167b83e7db9e6
+      internalID: 723178976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 6840
+        y: 4320
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e890f014bc1564f73a0651af177ff397
+      internalID: 988757187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdff61f72e344fc09ddd3023b7b5cb5
+      internalID: 705508920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6919b9b68ea4c47996eaaef3cd4cd1
+      internalID: -1968640709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8a3ef6313ee43adbcb8ecde2c3a318
+      internalID: -593609619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25da9a8537c0043c98dd4bdee675e097
+      internalID: -811796622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acf322c7457d4201996d558d0e25c3e
+      internalID: 627881714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fc6a652196c49c69ad83f1a8af0b72
+      internalID: -696800008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 6840
+        y: 3240
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70f4b88842e24fa2b2b8d8860f8e46f
+      internalID: -418357370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9626573a2f69e4109b443ad1f154ca83
+      internalID: -397042747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3177c21d76e8c4b56872d0f0fc283171
+      internalID: -500551535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1833d399a92154db28ea4a96da32d28b
+      internalID: 1361378488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bba730d5037e4961b93abbd41be813b
+      internalID: 469054465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0ed3d95091743b88ec1cc02d5d32bb
+      internalID: 1310688541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b9fae82ce1e4282a47b1165c425707
+      internalID: 1883195922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 6840
+        y: 2160
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b72577148ac345e7895fc737e62c5de
+      internalID: 318588933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a30a2a6287d414c89c172b7b6af08c
+      internalID: 2361898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6398e278b04b44a199c56f0eaa7aa48f
+      internalID: 1380888994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3bb0a8cbba5b4f11a4b5b805bdf76a0
+      internalID: -456215731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b02acd6f31f41d785590937cdc7edf
+      internalID: -1161362142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ad759ad1e814e21ba9e3df82bc21f6
+      internalID: -645157503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c7dc79dc909421ea221649eb80f732
+      internalID: 982538374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 6840
+        y: 1080
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7110c98e05cf64125acdd4aa090bd1f6
+      internalID: 864597826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c891836d022143f288751b717fb9f09
+      internalID: -1874432354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247fe2139f25242798403673b529b016
+      internalID: 2062549421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ebd5793bd7842349e4abd9188bbbca
+      internalID: -1411037099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc1ff6a88ca04e8dad332d87f0e9ba0
+      internalID: 1552182071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 4560
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07837c26524064d589ff5d9230679e1d
+      internalID: -1566599818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09ad7b4014624beca79ad8540cb500b
+      internalID: 715991473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loading-kitty-spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 6840
+        y: 0
+        width: 1140
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d623207a122ee4effa000877a0208562
+      internalID: 1170220017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      loading-kitty-spritesheet_0: -926230226
+      loading-kitty-spritesheet_1: 365350654
+      loading-kitty-spritesheet_10: 371219010
+      loading-kitty-spritesheet_11: 1660173002
+      loading-kitty-spritesheet_12: 723178976
+      loading-kitty-spritesheet_13: 988757187
+      loading-kitty-spritesheet_14: 705508920
+      loading-kitty-spritesheet_15: -1968640709
+      loading-kitty-spritesheet_16: -593609619
+      loading-kitty-spritesheet_17: -811796622
+      loading-kitty-spritesheet_18: 627881714
+      loading-kitty-spritesheet_19: -696800008
+      loading-kitty-spritesheet_2: -433304973
+      loading-kitty-spritesheet_20: -418357370
+      loading-kitty-spritesheet_21: -397042747
+      loading-kitty-spritesheet_22: -500551535
+      loading-kitty-spritesheet_23: 1361378488
+      loading-kitty-spritesheet_24: 469054465
+      loading-kitty-spritesheet_25: 1310688541
+      loading-kitty-spritesheet_26: 1883195922
+      loading-kitty-spritesheet_27: 318588933
+      loading-kitty-spritesheet_28: 2361898
+      loading-kitty-spritesheet_29: 1380888994
+      loading-kitty-spritesheet_3: 49357441
+      loading-kitty-spritesheet_30: -456215731
+      loading-kitty-spritesheet_31: -1161362142
+      loading-kitty-spritesheet_32: -645157503
+      loading-kitty-spritesheet_33: 982538374
+      loading-kitty-spritesheet_34: 864597826
+      loading-kitty-spritesheet_35: -1874432354
+      loading-kitty-spritesheet_36: 2062549421
+      loading-kitty-spritesheet_37: -1411037099
+      loading-kitty-spritesheet_38: 1552182071
+      loading-kitty-spritesheet_39: -1566599818
+      loading-kitty-spritesheet_4: 1999402231
+      loading-kitty-spritesheet_40: 715991473
+      loading-kitty-spritesheet_41: 1170220017
+      loading-kitty-spritesheet_5: -1338619956
+      loading-kitty-spritesheet_6: -512772746
+      loading-kitty-spritesheet_7: -747945069
+      loading-kitty-spritesheet_8: 674380892
+      loading-kitty-spritesheet_9: -1218977785
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

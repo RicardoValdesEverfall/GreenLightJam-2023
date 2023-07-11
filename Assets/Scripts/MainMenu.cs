@@ -36,6 +36,7 @@ public class MainMenu : MonoBehaviour
     {
         loadingBackground.alpha = 0;
         loadingBackground.gameObject.SetActive(false);
+        loadingItems.alpha = 0;
         windowMain.alpha = 0;
         windowCredits.gameObject.SetActive(false);
         windowCredits.alpha = 0;
@@ -70,6 +71,7 @@ public class MainMenu : MonoBehaviour
         var seq = DOTween.Sequence();
         //lets get the position
         seq.Append(loadingBackground.DOFade(1, 0.5f));
+        seq.Append(loadingItems.DOFade(1, 1f));
         seq.Append(loadingItems.DOFade(0, 1).SetDelay(10f));
         seq.OnComplete(() =>
         {
