@@ -45,8 +45,8 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField, ReadOnly] public bool isJumping;
     [SerializeField, ReadOnly] public bool isJumpingFromClimb;
     [SerializeField, ReadOnly] public bool isGrounded;
-    [SerializeField, ReadOnly] private bool isFalling;
-    [SerializeField, ReadOnly] private bool isClimbing;
+    [SerializeField, ReadOnly] public bool isFalling;
+    [SerializeField, ReadOnly] public bool isClimbing;
     [SerializeField, ReadOnly] private float inAirTimer;
     [SerializeField, ReadOnly] private float initialJumpVelocity;
     [SerializeField, ReadOnly] public float currentSpeed;

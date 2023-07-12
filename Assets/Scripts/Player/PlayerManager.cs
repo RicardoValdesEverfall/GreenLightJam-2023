@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -16,12 +17,16 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, ReadOnly] public Animator catAnimator;
 
     [SerializeField, ReadOnly] public bool isCinematicPlaying;
-    [SerializeField, ReadOnly] private int musicSheetCounter;
+    [SerializeField, ReadOnly] public int musicSheetCounter;
     [SerializeField, ReadOnly] public bool churchComplete;
     [SerializeField, ReadOnly] public bool libraryComplete;
     [SerializeField, ReadOnly] public bool kitchenComplete;
     [SerializeField, ReadOnly] public bool dormComplete;
     [SerializeField, ReadOnly] public bool canInteract;
+
+
+    //Unity Events
+    public UnityEvent<int> itemCounter;
 
     private void Awake()
     {
@@ -66,6 +71,7 @@ public class PlayerManager : MonoBehaviour
 
         objectToInteractWith.gameObject.SetActive(false);
         musicSheetCounter++;
+        itemCounter.Invoke(musicSheetCounter);
 
         if (musicSheetCounter == 5)
         {

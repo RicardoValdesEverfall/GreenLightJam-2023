@@ -4015,6 +4015,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 268469091}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 268469095}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &268469089 stripped
 Transform:
@@ -4107,6 +4111,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &268469095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268469090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &275713451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5778803255678573570, guid: d3224d31ca9fa6440897674643174199,
@@ -10576,6 +10611,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 759681692}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 759681696}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &759681690 stripped
 Transform:
@@ -10668,6 +10707,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &759681696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759681691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &768087911
 GameObject:
   m_ObjectHideFlags: 0
@@ -11729,6 +11799,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ba58c08ecffe4b86295d3b80eb476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &831724791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1180593077989435814, guid: e05ef682c85ea0543892b432f0f3fa4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6540478561138704765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831724783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9ced302288acb4097c024aece13670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &840652796
 GameObject:
   m_ObjectHideFlags: 0
@@ -12127,6 +12209,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 841717875}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 841717879}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &841717873 stripped
 Transform:
@@ -12219,6 +12305,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &841717879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841717874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &846140072
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,6 +12529,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 859175188}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 859175192}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &859175186 stripped
 Transform:
@@ -12504,6 +12625,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &859175192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859175187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &867581527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13907,7 +14059,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.00872
+      value: 42.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -13917,7 +14069,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.258314
+      value: -23.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -13989,6 +14141,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 970245360}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 970245364}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &970245358 stripped
 Transform:
@@ -14081,6 +14237,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &970245364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970245359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &971047306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14796,7 +14983,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.00872
+      value: 42.25999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -14806,7 +14993,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.75832
+      value: -28.76001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -14878,6 +15065,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1001254416}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1001254420}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &1001254414 stripped
 Transform:
@@ -14970,6 +15161,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1001254420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001254415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1001331221
 GameObject:
   m_ObjectHideFlags: 0
@@ -15361,7 +15583,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.00872
+      value: 42.25999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -15371,7 +15593,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.758314
+      value: -24.760004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -15443,6 +15665,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1018177875}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1018177879}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &1018177873 stripped
 Transform:
@@ -15535,6 +15761,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1018177879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018177874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1020172771
 GameObject:
   m_ObjectHideFlags: 0
@@ -21213,7 +21470,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.00872
+      value: 42.25999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -21223,7 +21480,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.258314
+      value: -27.260004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -21295,6 +21552,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1414868644}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1414868648}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &1414868642 stripped
 Transform:
@@ -21387,6 +21648,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1414868648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414868643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1428576390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5778803255678573570, guid: d3224d31ca9fa6440897674643174199,
@@ -25150,7 +25442,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.00872
+      value: 42.25999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -25160,7 +25452,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.008314
+      value: -26.010004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9dcdb1433f57034ba86786b3182156d,
         type: 3}
@@ -25232,6 +25524,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1631357859}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1631357863}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &1631357857 stripped
 Transform:
@@ -25324,6 +25620,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1631357863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631357858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1636121001
 GameObject:
   m_ObjectHideFlags: 0
@@ -27613,6 +27940,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817078554}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1819006910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3451904838139463583, guid: 99b108f3884a6498e8bbb425a5089e17,
+    type: 3}
+  m_PrefabInstance: {fileID: 8880668481202940578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d588b2cf7fc474637b8d6afbf8c8ca09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1819407710
 GameObject:
   m_ObjectHideFlags: 0
@@ -28206,6 +28545,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1843239007}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9dcdb1433f57034ba86786b3182156d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1843239011}
   m_SourcePrefab: {fileID: 100100000, guid: f9dcdb1433f57034ba86786b3182156d, type: 3}
 --- !u!4 &1843239005 stripped
 Transform:
@@ -28298,6 +28641,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1843239011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843239006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1642636677
+      Data2: 1244811037
+      Data3: -1084696178
+      Data4: -82057726
+    Path: event:/Items/Item_MusicSheet
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1845776649
 GameObject:
   m_ObjectHideFlags: 0
@@ -34071,6 +34445,251 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 257
       objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralPosition.y
+      value: -0.0059999824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralPosition.z
+      value: 25.447153
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralRotation.y
+      value: 0.89888835
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralRotation.z
+      value: -0.43817782
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralPosition.y
+      value: 0.2814028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralPosition.z
+      value: 25.671896
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralRotation.w
+      value: 0.9971585
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralRotation.x
+      value: 0.07533184
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralPosition.y
+      value: 0.29515576
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralPosition.z
+      value: 25.581392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralRotation.w
+      value: 0.99580365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralRotation.x
+      value: -0.091515966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralPosition.y
+      value: 0.27627409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralPosition.z
+      value: 25.479532
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.w
+      value: 0.99991035
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.x
+      value: 0.013391877
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralPosition.y
+      value: 0.2791238
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralPosition.z
+      value: 25.373163
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.w
+      value: 0.99984396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.x
+      value: -0.017665818
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralPosition.y
+      value: 0.2766471
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralPosition.z
+      value: 25.303097
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralRotation.w
+      value: 0.98976296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralRotation.x
+      value: 0.14272095
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralPosition.x
+      value: -58.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralPosition.y
+      value: 0.29515558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralPosition.z
+      value: 25.240253
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralRotation.w
+      value: 0.98976296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralRotation.x
+      value: 0.14272095
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4491581710502475480, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: m_RootOrder
@@ -34125,6 +34744,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796386225955803242, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: itemCounter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796386225955803242, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: itemCounter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1819006910}
+    - target: {fileID: 5796386225955803242, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: itemCounter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796386225955803242, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: itemCounter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateItemParameter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796386225955803242, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: itemCounter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MusicManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796386225955803242, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: itemCounter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6913409546406123319, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -34249,9 +34898,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3451904838139463583, guid: 99b108f3884a6498e8bbb425a5089e17,
         type: 3}
+      propertyPath: intensityRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451904838139463583, guid: 99b108f3884a6498e8bbb425a5089e17,
+        type: 3}
       propertyPath: playerManager
       value: 
       objectReference: {fileID: 831724785}
+    - target: {fileID: 3451904838139463583, guid: 99b108f3884a6498e8bbb425a5089e17,
+        type: 3}
+      propertyPath: playerLocomotion
+      value: 
+      objectReference: {fileID: 831724791}
     - target: {fileID: 3840164453179017180, guid: 99b108f3884a6498e8bbb425a5089e17,
         type: 3}
       propertyPath: m_Name
