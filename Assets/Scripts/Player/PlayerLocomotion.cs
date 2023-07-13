@@ -159,7 +159,7 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.Normalize();
 
         moveDirection.y = 0;
-        Debug.Log(moveDirection.magnitude);
+        //Debug.Log(moveDirection.magnitude);
 
         if (moveDirection.magnitude < 0.2f)
         {

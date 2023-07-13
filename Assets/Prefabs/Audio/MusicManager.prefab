@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d588b2cf7fc474637b8d6afbf8c8ca09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
+  playerLocomotion: {fileID: 0}
   musicInGame:
     Guid:
       Data1: 736489618
@@ -58,5 +60,12 @@ MonoBehaviour:
       Data3: -708903503
       Data4: -1289216531
     Path: event:/Music/Music_Menu
+  musicBank: Music
   mainMenuScene: 0_MainMenu
   mainGameScene: 01_GameScene
+  sprintingIntensity: 0.05
+  jumpingIntensity: 0.1
+  climbingIntensity: 0.2
+  fallingIntensity: 20
+  intensityDecreaseRate: 60
+  currentIntensityValue: 0

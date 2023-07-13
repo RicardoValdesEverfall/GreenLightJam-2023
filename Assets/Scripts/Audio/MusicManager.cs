@@ -27,6 +27,9 @@ public class MusicManager : MonoBehaviour
     //Item Variables
     private int itemCounter;
 
+    //GameObject Variables
+    GameObject playerGameObject;
+
     [Header("FMOD Intensity Parameter")]
     [SerializeField] private float sprintingIntensity = 0.05f;
     [SerializeField] private float jumpingIntensity = 0.1f;
@@ -38,7 +41,9 @@ public class MusicManager : MonoBehaviour
 
 
     private void Awake()
-    {
+    {        
+        playerManager?.itemCounter.AddListener(UpdateItemParameter);
+
         MusicManager[] musicManagers = FindObjectsOfType<MusicManager>();
         if (musicManagers.Length > 1)
         {
@@ -47,6 +52,11 @@ public class MusicManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        GetPlayerGameObject();
         SceneManager.activeSceneChanged += ChangedActiveScene;
     }
 
@@ -54,7 +64,7 @@ public class MusicManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += ChangedActiveScene;
-        //itemCounter += UpdateItemParameter(itemCounter);
+        playerManager?.itemCounter.AddListener(UpdateItemParameter);
 
     }
 
@@ -63,7 +73,7 @@ public class MusicManager : MonoBehaviour
     {
         SceneManager.activeSceneChanged -= ChangedActiveScene;
         musicInstance.release();
-        //itemCounter -= UpdateItemParameter(itemCounter);
+        playerManager?.itemCounter.RemoveListener(UpdateItemParameter);
     }
 
 
@@ -85,19 +95,22 @@ public class MusicManager : MonoBehaviour
     //Changes music depending on the current scene
     public void ChangedActiveScene(Scene previousScene, Scene changedScene)
     {
+        GetPlayerGameObject();
+
         if (previousMusicInstance.isValid() && previousMusicInstance.handle == musicInstance.handle)
         {
             previousMusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             previousMusicInstance.release();
         }
 
-
         if (changedScene.name == mainMenuScene)
         {
+            //StartCoroutine(WaitForBankLoad());
             musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             musicInstance.release();
             PlayMusic(musicMenu);
         }
+
         else if (changedScene.name == mainGameScene)
         {
             musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -107,6 +120,22 @@ public class MusicManager : MonoBehaviour
 
     }
 
+    //Find game objects that have scripts required for MusicManager
+    private void GetPlayerGameObject()
+    {
+        if (playerManager || playerLocomotion == null)
+        {
+            playerGameObject = GameObject.Find("Player")?.gameObject;
+            playerManager = playerGameObject?.GetComponent<PlayerManager>();
+            playerLocomotion = playerGameObject?.GetComponent<PlayerLocomotion>();
+            playerManager?.itemCounter.AddListener(UpdateItemParameter);
+        }
+        else
+        {
+            Debug.Log("Cannot find Player GameObject");
+        }
+
+    }
 
     //Updates the music item parameter when you collect an item
     public void UpdateItemParameter(int itemCounter)
@@ -144,7 +173,9 @@ public class MusicManager : MonoBehaviour
     {
         musicInstance.getParameterByName("Intensity", out currentIntensityValue);
 
+
         //Sprinting
+
         if (playerLocomotion.isSprinting)
         {
             currentIntensityValue += sprintingIntensity;
@@ -182,7 +213,11 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-       MusicIntensity();
+        if (playerLocomotion != null)
+        {
+            MusicIntensity();
+        }
+
        LowerIntensityOverTime();
     }
 
