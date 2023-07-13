@@ -7,6 +7,7 @@ using UnityEngine.VFX;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] VisualEffect activeEffect;
     [SerializeField] Button back;
     [SerializeField] Button play;
+
 
     private CanvasGroup currentWindow;
 
@@ -72,27 +74,36 @@ public class MainMenu : MonoBehaviour
         seq.OnComplete(() =>
         {
             currentWindow = windowMain;
-            play.Select();
+            //play.Select();
         });
     }
 
     public void StartGame()
     {
-        StartCoroutine(LoadScene(gameScene, gameBanks));
-        activeEffect.Stop();
+        Debug.Log("start game");
+        currentWindow.interactable = false;
+        //disable any selected button at the moment
+        EventSystem.current.SetSelectedGameObject(null);
         loadingBackground.gameObject.SetActive(true);
 
         var seq = DOTween.Sequence();
-
-        //lets get the position
-        seq.Append(loadingBackground.DOFade(1, 0.5f));
+        seq.Append(loadingBackground.DOFade(1, 1f).OnComplete(() =>
+        {
+            StartCoroutine(LoadScene(gameScene, gameBanks));
+            activeEffect.Stop();
+        }));
         seq.Append(loadingItems.DOFade(1, 1f));
+
     }
 
     public void GoBack()
     {
         var seq = DOTween.Sequence();
-        //lets get the position
+
+        currentWindow.interactable = false;
+        //disable any selected button at the moment
+        EventSystem.current.SetSelectedGameObject(null);
+
         seq.Append(currentWindow.DOFade(0, 1).OnComplete(() => {
             currentWindow.gameObject.SetActive(false);
             windowMain.gameObject.SetActive(true);
@@ -101,14 +112,19 @@ public class MainMenu : MonoBehaviour
         seq.OnComplete(() =>
         {
             currentWindow = windowMain;
+            currentWindow.interactable = true;
             play.Select();
         });
     }
 
     public void ShowCredits()
     {
+        currentWindow.interactable = false;
+        //disable any selected button at the moment
+        EventSystem.current.SetSelectedGameObject(null);
+
         var seq = DOTween.Sequence();
-        //lets get the position
+
         seq.Append(currentWindow.DOFade(0, 1).OnComplete(() => {
             currentWindow.gameObject.SetActive(false);
             windowCredits.gameObject.SetActive(true);
@@ -117,6 +133,7 @@ public class MainMenu : MonoBehaviour
         seq.OnComplete(() =>
         {
             currentWindow = windowCredits;
+            currentWindow.interactable = true;
             back.Select();
         });
 
@@ -148,28 +165,28 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadScene(string sceneToLoad, List<string> bankFMOD)
     {
-        //loadingBackground.gameObject.SetActive(true);        
-
-        Scene currentScene = SceneManager.GetActiveScene();
 
         AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
         async.allowSceneActivation = false;
 
         StartCoroutine(LoadBanks(bankFMOD));
-             
-        while (!async.isDone)
+
+        float t = Time.time;
+        while (async.progress < 0.9f)
         {
-            float progressValue = Mathf.Clamp01(async.progress / 0.9f);
-            //Debug.Log("Async progress: " + progressValue);
-            yield return null;
-        }                  
-        
+            yield return new WaitForSeconds(0.1f);
+        }
+        Debug.Log("Loading took: " + (Time.time - t));
+        yield return new WaitForSeconds(1f);
+
         //Finished loading
         var seq = DOTween.Sequence();
-        seq.Append(loadingBackground.DOFade(1, 0.5f));
-        seq.Append(loadingItems.DOFade(1, 1f));
-        seq.Append(loadingItems.DOFade(0, 1));
-        async.allowSceneActivation = true;
+        seq.Append(loadingItems.DOFade(0, 2f).OnComplete(() =>
+        {
+            //change to new scene on complete
+            async.allowSceneActivation = true;
+
+        }));
         //inputModule.enabled = true;
         Debug.Log("Scene: " + sceneToLoad + " has loaded");
     }
