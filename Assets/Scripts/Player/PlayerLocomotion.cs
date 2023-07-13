@@ -286,6 +286,7 @@ public class PlayerLocomotion : MonoBehaviour
         playerManager.catAnimator.SetFloat("Jump", inputManager.jumpInputTimer);
         playerManager.catAnimator.SetBool("Climbing", isClimbing);
         playerManager.catAnimator.SetBool("Falling", isFalling);
+        playerManager.catAnimator.SetBool("Grounded", isGrounded);
     }
 
     //stops the jump from climbing momentum after .25 secs
@@ -309,7 +310,6 @@ public class PlayerLocomotion : MonoBehaviour
                 isJumping = false;
 
                 transform.rotation = Quaternion.LookRotation(collision.transform.up, contactPointNormal);
-
             }
 
         }

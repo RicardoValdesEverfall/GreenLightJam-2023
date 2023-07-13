@@ -71,7 +71,7 @@ public class PlayerManager : MonoBehaviour
 
         objectToInteractWith.gameObject.SetActive(false);
         musicSheetCounter++;
-        itemCounter.Invoke(musicSheetCounter);
+        itemCounter.Invoke(musicSheetCounter); //What's this for?
 
         if (musicSheetCounter == 5)
         {
