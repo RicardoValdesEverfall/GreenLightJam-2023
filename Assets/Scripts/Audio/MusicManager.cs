@@ -52,12 +52,12 @@ public class MusicManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        SceneManager.activeSceneChanged += ChangedActiveScene;
     }
 
     private void Start()
     {
         GetPlayerGameObject();
+        SceneManager.activeSceneChanged += ChangedActiveScene;
     }
 
 
@@ -103,13 +103,14 @@ public class MusicManager : MonoBehaviour
             previousMusicInstance.release();
         }
 
-
         if (changedScene.name == mainMenuScene)
         {
+            //StartCoroutine(WaitForBankLoad());
             musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             musicInstance.release();
             PlayMusic(musicMenu);
         }
+
         else if (changedScene.name == mainGameScene)
         {
             musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -119,6 +120,7 @@ public class MusicManager : MonoBehaviour
 
     }
 
+    //Find game objects that have scripts required for MusicManager
     private void GetPlayerGameObject()
     {
         if (playerManager || playerLocomotion == null)
