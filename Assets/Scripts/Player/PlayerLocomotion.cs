@@ -140,12 +140,11 @@ public class PlayerLocomotion : MonoBehaviour
                 moveDirection += transform.right * inputManager.horizontalInput;
             }
             //Along the X axis
-            
-            Debug.Log("vertical input: " + inputManager.verticalInput);
-            Debug.Log("move dir: " + moveDirection);
 
             moveDirection.Normalize();
-            playerCharacterController.Move(moveDirection * (notMoving ? fallingClimbingSpeed : walkSpeed * 0.3f) * Time.deltaTime);
+            Vector3 climbMovement = moveDirection * (notMoving ? fallingClimbingSpeed : walkSpeed * 0.3f);
+            playerManager.catAnimator.SetFloat("Climb Movement", climbMovement.magnitude);
+            playerCharacterController.Move(climbMovement * Time.deltaTime);
 
         }
         else
