@@ -94,7 +94,7 @@ public class InputManager : MonoBehaviour
         moveAmount = Mathf.Clamp01(Mathf.Abs(verticalInput) + Mathf.Abs(horizontalInput));
 
 
-        PlayerCamera.Instance.HandleCameraPivot(moveAmount);
+        //PlayerCamera.Instance.HandleCameraPivot(moveAmount);
     }
 
     private void HandleCameraInput()

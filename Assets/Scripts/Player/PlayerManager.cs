@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        playerCam = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<PlayerCamera>();
+        //playerCam = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<PlayerCamera>();
         catAnimator = gameObject.GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         inputManager = GetComponent<InputManager>();
@@ -50,7 +50,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (!isCinematicPlaying)
         {
-            playerCam.HandleCamera();
+            //playerCam.HandleCamera();
         }
     }
 
