@@ -32,8 +32,7 @@ public class PlayerAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetermineMaterial();
-        
+        DetermineMaterial();    
         
     }
 
@@ -152,6 +151,7 @@ public class PlayerAudio : MonoBehaviour
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(catMeowInstance, GetComponent<Transform>(), cachedRigidBody);
             catMeowInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, cachedRigidBody));
             catMeowInstance.start();
+            Debug.Log("Cat meow played");
             catMeowInstance.release();
         }
     }
