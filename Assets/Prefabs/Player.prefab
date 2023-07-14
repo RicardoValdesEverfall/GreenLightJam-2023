@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9389b707478daf9439a5f83720735846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpineAnimatorAmount: 1
+  SpineAnimatorAmount: 0.30107528
   _Editor_Category: 1
   _Editor_PivotoffsetXYZ: 1
   ModelForwardAxis: {x: 0, y: 0, z: 1}
@@ -645,7 +645,7 @@ MonoBehaviour:
   TurboStraighten: 0
   GoBackSpeed: 0
   Springiness: 0
-  MotionInfluence: 1
+  MotionInfluence: 0.471
   MotionSpace: {fileID: 0}
   mainPivotOffsetTransform: {fileID: 0}
   SegmentsPivotOffset: {x: 0, y: 0, z: 0}
