@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class ReadableItem : Interactable
 {
 	[SerializeField] DialogueRunner dialogueRunner;
+    [SerializeField] RectTransform txtGroup;
 	[SerializeField] string yarnNode;
     private bool isCurrentConversation = false;
 
@@ -31,6 +33,8 @@ public class ReadableItem : Interactable
         base.Interaction();
         if(!isCurrentConversation && !dialogueRunner.IsDialogueRunning)
         {
+            LayoutRebuilder.MarkLayoutForRebuild(txtGroup);
+            Canvas.ForceUpdateCanvases();
 		    dialogueRunner.StartDialogue(yarnNode);
             isCurrentConversation = true;
         }
