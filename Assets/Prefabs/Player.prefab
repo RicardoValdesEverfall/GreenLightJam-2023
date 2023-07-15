@@ -2500,7 +2500,7 @@ MonoBehaviour:
   groundCheckBox: {x: 0.1, y: 0.01, z: 0.2}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   climbableTag: 
   climbableLayer:
     serializedVersion: 2
