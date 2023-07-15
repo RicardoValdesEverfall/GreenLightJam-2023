@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b3a66b3b-edf2-47c6-96e1-5ce76ca9921f}">
+		<property name="name">
+			<value>Organ Distance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{4277ac63-2a6d-4838-a135-a0b9c98a36fb}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{68ceae59-ad0e-4fe0-9af6-c723037173a8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{68ceae59-ad0e-4fe0-9af6-c723037173a8}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
