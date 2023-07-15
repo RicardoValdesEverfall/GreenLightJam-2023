@@ -2585,7 +2585,6 @@ MonoBehaviour:
       Data3: -552612697
       Data4: -1983216898
     Path: event:/Player/Cat_Meow
-  currentMaterial: 0
 --- !u!54 &7368046469734855472
 Rigidbody:
   m_ObjectHideFlags: 0

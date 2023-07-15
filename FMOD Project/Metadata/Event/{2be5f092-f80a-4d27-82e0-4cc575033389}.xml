@@ -3269,7 +3269,7 @@
 	</object>
 	<object class="TransitionDestinationSound" id="{56ce37f2-b738-45d9-9474-7ee1f3c515cd}">
 		<property name="length">
-			<value>1.267605633802817</value>
+			<value>1.2676056338028172</value>
 		</property>
 	</object>
 	<object class="TransitionSourceSound" id="{99de6666-eac2-48a5-82be-8b7b295a38ae}">
@@ -15366,7 +15366,7 @@
 	</object>
 	<object class="AutomationPoint" id="{ba43c8d7-4193-4310-a974-31a94d82f716}">
 		<property name="position">
-			<value>0</value>
+			<value>0.097591308663234067</value>
 		</property>
 		<property name="value">
 			<value>1</value>

@@ -39,7 +39,6 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private float currentIntensityValue;
 
 
-
     private void Awake()
     {        
         playerManager?.itemCounter.AddListener(UpdateItemParameter);
@@ -175,7 +174,6 @@ public class MusicManager : MonoBehaviour
 
 
         //Sprinting
-
         if (playerLocomotion.isSprinting)
         {
             currentIntensityValue += sprintingIntensity;
