@@ -137,6 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3145388861955960913}
+  - component: {fileID: 7254272185073858412}
   m_Layer: 0
   m_Name: DEF_Toe_B_R
   m_TagString: Untagged
@@ -159,6 +160,33 @@ Transform:
   m_Father: {fileID: 3983315470005773334}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7254272185073858412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628992924534733677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ac73db1a5c46fba8494813fdb686d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -1487004690
+      Data2: 1256863379
+      Data3: 621988261
+      Data4: 2132810174
+    Path: event:/Player/Cat_Footsteps
+  currentMaterial: 1
+  raycastDistance: 0.04
+  raycastOrigin: {fileID: 3145388861955960913}
+  raycastOffset: {x: 0, y: 0.02, z: 0}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 8
+  hitBufferTime: 0.01
 --- !u!1 &643629350429522383
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740473415188745790}
+  - component: {fileID: 2750228729661391207}
   m_Layer: 0
   m_Name: DEF_Toe_F_R
   m_TagString: Untagged
@@ -381,6 +410,33 @@ Transform:
   m_Father: {fileID: 250117255969373206}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2750228729661391207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640354486405600239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ac73db1a5c46fba8494813fdb686d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -1487004690
+      Data2: 1256863379
+      Data3: 621988261
+      Data4: 2132810174
+    Path: event:/Player/Cat_Footsteps
+  currentMaterial: 1
+  raycastDistance: 0.04
+  raycastOrigin: {fileID: 5740473415188745790}
+  raycastOffset: {x: 0, y: 0.02, z: 0}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 8
+  hitBufferTime: 0.01
 --- !u!1 &1711235162558526018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6597972939851512295}
+  - component: {fileID: 2811628010101325498}
   m_Layer: 0
   m_Name: DEF_Toe_B_L
   m_TagString: Untagged
@@ -2946,6 +3003,33 @@ Transform:
   m_Father: {fileID: 2614909285646076679}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2811628010101325498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415602774820910823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ac73db1a5c46fba8494813fdb686d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -1487004690
+      Data2: 1256863379
+      Data3: 621988261
+      Data4: 2132810174
+    Path: event:/Player/Cat_Footsteps
+  currentMaterial: 1
+  raycastDistance: 0.04
+  raycastOrigin: {fileID: 6597972939851512295}
+  raycastOffset: {x: 0, y: 0.02, z: 0}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 8
+  hitBufferTime: 0.01
 --- !u!1 &8596885046735610012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,6 +3166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5561128618105131611}
+  - component: {fileID: 2057882325678376525}
   m_Layer: 0
   m_Name: DEF_Toe_F_L
   m_TagString: Untagged
@@ -3104,6 +3189,33 @@ Transform:
   m_Father: {fileID: 8909960436448318117}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2057882325678376525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977975219574687652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550ac73db1a5c46fba8494813fdb686d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -1487004690
+      Data2: 1256863379
+      Data3: 621988261
+      Data4: 2132810174
+    Path: event:/Player/Cat_Footsteps
+  currentMaterial: 1
+  raycastDistance: 0.04
+  raycastOrigin: {fileID: 5561128618105131611}
+  raycastOffset: {x: 0, y: 0.02, z: 0}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 8
+  hitBufferTime: 0.01
 --- !u!1 &9061661661724375221
 GameObject:
   m_ObjectHideFlags: 0
