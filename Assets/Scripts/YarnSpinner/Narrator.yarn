@@ -1,6 +1,6 @@
 ﻿title: Narrator
 tags:
-position: -245,-146
+position: -81,-276
 ---
 <<wait 0.5>>
 Fascinating how advanced our Hellenic counterparts are in the study of the stars… #line:0b85daf 
@@ -8,8 +8,25 @@ Oh, how’s Pangur Ban doing? He’s doing–I mean, he was doing fine… #line:
 No, he’s not getting better… What should I do… How is this the one problem I can’t solve… #line:0f52539 
 
 ===
-title: Example
-position: -228,49
+title: poem1
+position: -472,-287
 ---
-This is an example text to show
+"Pangur Bán and I at work,
+Adepts, equals, cat and clerk:
+His whole instinct is to hunt,
+Mine to free the meaning pent.
+
+More than loud acclaim, I love
+Books, silence, thought, my alcove.
+Happy for me, Pangur Bán
+Child-plays round some mouse’s den."
+===
+title: Poem2
+position: -465,-116
+---
+Truth to tell, just being here, Housed alone, housed together,
+Adds up to its own reward: Concentration, stealthy art.
+Next thing an unwary mouse Bares his flank: Pangur pounces.
+Next thing lines that held and held
+Meaning back begin to yield.
 ===

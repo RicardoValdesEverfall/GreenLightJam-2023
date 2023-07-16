@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 using Yarn.Unity;
 
 public class ReadableItem : Interactable
 {
 	[SerializeField] DialogueRunner dialogueRunner;
-    [SerializeField] RectTransform txtGroup;
 	[SerializeField] string yarnNode;
     private bool isCurrentConversation = false;
 
@@ -33,8 +32,6 @@ public class ReadableItem : Interactable
         base.Interaction();
         if(!isCurrentConversation && !dialogueRunner.IsDialogueRunning)
         {
-            LayoutRebuilder.MarkLayoutForRebuild(txtGroup);
-            Canvas.ForceUpdateCanvases();
 		    dialogueRunner.StartDialogue(yarnNode);
             isCurrentConversation = true;
         }
@@ -42,10 +39,10 @@ public class ReadableItem : Interactable
 
     private void EndConversation()
     {
+				Debug.Log("End dialogue event");
         if(isCurrentConversation)
         {
             isCurrentConversation = false;
-            Debug.Log("converation ended");
         }
         playerManager.isCinematicPlaying = false;
         StartCoroutine(MakeInteractiveAgain());
@@ -57,6 +54,7 @@ public class ReadableItem : Interactable
         isInteractive = false;
         playerManager.canInteract = false;
         playerManager.objectToInteractWith = null;
+        
     }
 
     protected override void OnTriggerEnter(Collider col)

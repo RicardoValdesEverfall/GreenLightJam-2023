@@ -4,7 +4,11 @@
     "**/*.yarn"
   ],
   "excludeFiles": [],
-  "localisation": {},
+  "localisation": {
+    "en": {
+      "assets": "${UnityProjectRoot}/Assets/StreamingAssets/Dialogue/ENG"
+    }
+  },
   "baseLanguage": "en",
   "compilerOptions": {}
 }
