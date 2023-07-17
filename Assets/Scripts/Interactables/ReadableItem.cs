@@ -44,13 +44,13 @@ public class ReadableItem : Interactable
         {
             isCurrentConversation = false;
         }
-        playerManager.isCinematicPlaying = false;
+        //playerManager.isCinematicPlaying = false;
         StartCoroutine(MakeInteractiveAgain());
     }
 
     private void BeforeStartingItemDialogue()
     {
-        playerManager.isCinematicPlaying = true;
+        //playerManager.isCinematicPlaying = true;
         isInteractive = false;
         playerManager.canInteract = false;
         playerManager.objectToInteractWith = null;

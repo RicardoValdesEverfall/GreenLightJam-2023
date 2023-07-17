@@ -3056,7 +3056,7 @@ Transform:
   - {fileID: 1485072097702811862}
   - {fileID: 2973193621425164884}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5796386225955803242
 MonoBehaviour:
@@ -3096,7 +3096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9ced302288acb4097c024aece13670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraObject: {fileID: 0}
   playerCharacterController: {fileID: 5021066563387024655}
   walkSpeed: 3
   sprintSpeed: 6
@@ -3111,12 +3110,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 257
-  climbableTag: 
+  climbableTag: Climbable
   climbableLayer:
     serializedVersion: 2
-    m_Bits: 0
-  checkWithCollider: 0
-  fallingClimbingSpeed: 0
+    m_Bits: 512
+  checkWithCollider: 1
+  fallingClimbingSpeed: 0.1
   moveDirection: {x: 0, y: 0, z: 0}
   yVelocity: {x: 0, y: 0, z: 0}
   isSprinting: 0
@@ -3237,12 +3236,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.46469474, y: 0.19860476, z: 0.32206818}
-  m_Center: {x: 0.0526264, y: 0.28489518, z: 0.13785301}
+  m_Size: {x: 0.3522287, y: 0.5811322, z: 0.31170723}
+  m_Center: {x: -0.003606614, y: 0.24602258, z: 0.14303346}
 --- !u!1 &7059056992853835914
 GameObject:
   m_ObjectHideFlags: 0

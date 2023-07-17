@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7726640679106764154}
-  - component: {fileID: 3435159303087827272}
   - component: {fileID: 2826881571800410560}
-  - component: {fileID: 7595125627958532689}
   - component: {fileID: 736954623717604390}
   - component: {fileID: 6864844934196152690}
+  - component: {fileID: 6389879817435029123}
+  - component: {fileID: 4885415979972845006}
   m_Layer: 0
   m_Name: Readable Item
   m_TagString: Untagged
@@ -28,23 +28,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3536167451538089139}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -56.911236, y: 0, z: 26.724192}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 300, y: 449.99997, z: 464.34583}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6892987317578177797}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3435159303087827272
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536167451538089139}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2826881571800410560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 49535682a6bcd4c7bbe123a8a1178d8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,27 +79,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7595125627958532689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536167451538089139}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.7557961, y: 0.99999976, z: 1.4534955}
-  m_Center: {x: -0.051953297, y: 0, z: 0.046951346}
 --- !u!114 &736954623717604390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 1
   PopupCanvasGroup: {fileID: 0}
   isInteractive: 1
@@ -147,6 +117,35 @@ MonoBehaviour:
   isInRange: 0
   dialogueRunner: {fileID: 0}
   yarnNode: BookOfHymns
+--- !u!33 &6389879817435029123
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3536167451538089139}
+  m_Mesh: {fileID: 7927833547885237065, guid: 68ffca644f6404586b738b5276007a7c, type: 3}
+--- !u!65 &4885415979972845006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3536167451538089139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.000475247, y: 0.0019391805, z: 0.00047339255}
+  m_Center: {x: 0.000009448515, y: 0.0000000014842954, z: 0.000007288858}
 --- !u!1 &7942471394242491463
 GameObject:
   m_ObjectHideFlags: 0

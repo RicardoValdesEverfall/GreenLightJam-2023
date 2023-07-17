@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLocomotion : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class PlayerLocomotion : MonoBehaviour
 
 
     [Header("DEBUG")]
+    [SerializeField] private bool testing;
     [SerializeField, ReadOnly] private Vector3 moveDirection;
     [SerializeField, ReadOnly] private Vector3 yVelocity;
     [SerializeField, ReadOnly] public bool isSprinting;
@@ -67,6 +69,20 @@ public class PlayerLocomotion : MonoBehaviour
         }
 
     }
+
+    private void Update()
+    {
+        Debug.Log(testing);
+        if(testing)
+        {
+            Debug.Log("can reset");
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+    }
+
 
     public void HandleAllLocomotion()
     {
@@ -265,7 +281,11 @@ public class PlayerLocomotion : MonoBehaviour
                 yVelocity += (currentRug.forward * 2f);
             }
             else
-                yVelocity += transform.right * inputManager.horizontalInput * -1 * 2.5f;
+            {
+                yVelocity += transform.right * inputManager.horizontalInput * 2.5f;
+                yVelocity += (currentRug.forward * 1.5f);
+
+            }
 
             isClimbing = false;
             //we need to force perpendicular to where the cat is

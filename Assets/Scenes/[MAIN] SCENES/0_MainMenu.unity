@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.3069225, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingBackground: {fileID: 771099039}
   loadingItems: {fileID: 322883846}
-  gameScene: 01_GameScene
+  gameScene: W4_production
   mainMenuScene: 0_MainMenu
   windowMain: {fileID: 1325733132}
   windowCredits: {fileID: 1821475505}
@@ -4042,6 +4042,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3451904838139463583, guid: 99b108f3884a6498e8bbb425a5089e17,
+        type: 3}
+      propertyPath: mainGameScene
+      value: W4_production
+      objectReference: {fileID: 0}
     - target: {fileID: 3840164453179017180, guid: 99b108f3884a6498e8bbb425a5089e17,
         type: 3}
       propertyPath: m_Name
