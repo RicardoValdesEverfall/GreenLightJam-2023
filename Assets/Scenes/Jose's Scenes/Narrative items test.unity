@@ -2041,6 +2041,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.13277552
       objectReference: {fileID: 0}
+    - target: {fileID: 896041122566497459, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 896041122566497459, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_FollowOffset.z
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508550439716837187, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508550439716837187, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_FollowOffset.z
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3370713337085684687, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_RootOrder
@@ -2195,6 +2215,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.08705681
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342267329958630851, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342267329958630851, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_FollowOffset.z
+      value: -2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17894,7 +17924,7 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[0].ProceduralPosition.x
-      value: -56.998985
+      value: -56.87655
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -17904,22 +17934,32 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[0].ProceduralPosition.z
-      value: 31.860657
+      value: 31.799038
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[0].ProceduralRotation.w
-      value: 0.89888835
+      value: 0.63561004
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[0].ProceduralRotation.x
-      value: 0.43817782
+      value: 0.30983847
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralRotation.y
+      value: 0.63561
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[0].ProceduralRotation.z
+      value: -0.30983847
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[1].ProceduralPosition.x
-      value: -56.998985
+      value: -57.10129
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -17929,22 +17969,32 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[1].ProceduralPosition.z
-      value: 31.635914
+      value: 31.799038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralRotation.w
+      value: 0.7050975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[1].ProceduralRotation.x
+      value: 0.053267766
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[1].ProceduralRotation.y
-      value: 0.9971585
+      value: -0.70509756
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[1].ProceduralRotation.z
-      value: -0.075332
+      value: 0.053267766
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[2].ProceduralPosition.x
-      value: -56.998985
+      value: -57.010788
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -17954,22 +18004,32 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[2].ProceduralPosition.z
-      value: 31.726418
+      value: 31.799038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralRotation.w
+      value: 0.7041395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[2].ProceduralRotation.x
+      value: -0.064711556
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[2].ProceduralRotation.y
-      value: 0.99580365
+      value: -0.7041395
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[2].ProceduralRotation.z
-      value: 0.091515966
+      value: -0.064711556
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[3].ProceduralPosition.x
-      value: -56.998985
+      value: -56.908928
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -17979,17 +18039,32 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[3].ProceduralPosition.z
-      value: 31.828278
+      value: 31.799038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.w
+      value: 0.70704335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.x
+      value: 0.009469387
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[3].ProceduralRotation.y
+      value: -0.7070434
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[3].ProceduralRotation.z
-      value: -0.013391737
+      value: 0.009469387
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[4].ProceduralPosition.x
-      value: -56.998985
+      value: -56.80256
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -17999,17 +18074,32 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[4].ProceduralPosition.z
-      value: 31.934647
+      value: 31.799038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.w
+      value: 0.70699644
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.x
+      value: -0.012491808
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[4].ProceduralRotation.y
+      value: -0.70699644
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[4].ProceduralRotation.z
-      value: 0.017666085
+      value: -0.012491808
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[5].ProceduralPosition.x
-      value: -56.998985
+      value: -56.732494
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -18019,22 +18109,32 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[5].ProceduralPosition.z
-      value: 32.00471
+      value: 31.799038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralRotation.w
+      value: 0.6998682
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[5].ProceduralRotation.x
+      value: 0.10091865
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[5].ProceduralRotation.y
-      value: 0.989763
+      value: -0.69986814
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[5].ProceduralRotation.z
-      value: -0.14272052
+      value: 0.10091865
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[6].ProceduralPosition.x
-      value: -56.998985
+      value: -56.66965
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
@@ -18044,17 +18144,27 @@ PrefabInstance:
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[6].ProceduralPosition.z
-      value: 32.067554
+      value: 31.799038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralRotation.w
+      value: 0.6998682
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: SpineBones.Array.data[6].ProceduralRotation.x
+      value: 0.10091865
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[6].ProceduralRotation.y
-      value: 0.989763
+      value: -0.69986814
       objectReference: {fileID: 0}
     - target: {fileID: 1555340612010280453, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: SpineBones.Array.data[6].ProceduralRotation.z
-      value: -0.14272052
+      value: 0.10091865
       objectReference: {fileID: 0}
     - target: {fileID: 4491581710502475480, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
