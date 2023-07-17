@@ -321,34 +321,6 @@ namespace FIMSpace
 
             return newB;
         }
-#else
-        public static Bounds RotateBoundsByMatrix(this Bounds b, Quaternion rotation)
-        {
-            if (QIsZero(rotation)) return b;
-
-            Matrix4x4 rot = Matrix4x4.Rotate(rotation);
-
-            Bounds newB = new Bounds();
-            Vector3 fr1 = rot.MultiplyPoint(new Vector3(b.max.x, b.min.y, b.max.z));
-            Vector3 br1 = rot.MultiplyPoint(new Vector3(b.max.x, b.min.y, b.min.z));
-            Vector3 bl1 = rot.MultiplyPoint(new Vector3(b.min.x, b.min.y, b.min.z));
-            Vector3 fl1 = rot.MultiplyPoint(new Vector3(b.min.x, b.min.y, b.max.z));
-            newB.Encapsulate(fr1);
-            newB.Encapsulate(br1);
-            newB.Encapsulate(bl1);
-            newB.Encapsulate(fl1);
-
-            Vector3 fr = rot.MultiplyPoint(new Vector3(b.max.x, b.max.y, b.max.z));
-            Vector3 br = rot.MultiplyPoint(new Vector3(b.max.x, b.max.y, b.min.z));
-            Vector3 bl = rot.MultiplyPoint(new Vector3(b.min.x, b.max.y, b.min.z));
-            Vector3 fl = rot.MultiplyPoint(new Vector3(b.min.x, b.max.y, b.max.z));
-            newB.Encapsulate(fr);
-            newB.Encapsulate(br);
-            newB.Encapsulate(bl);
-            newB.Encapsulate(fl);
-
-            return newB;
-        }
 #endif
 
         /// <summary>

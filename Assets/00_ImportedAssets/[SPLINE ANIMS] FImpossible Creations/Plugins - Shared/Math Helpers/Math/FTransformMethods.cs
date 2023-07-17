@@ -59,7 +59,7 @@ namespace FIMSpace
             foreach (Transform child in transformToSearchIn.GetComponentsInChildren<Transform>(includeInactive))
             {
                 T component = child.GetComponent<T>();
-                if (component) if (components.Contains(component) == false) components.Add(component);
+                if (component) components.Add(component);
             }
 
             return components;

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FIMSpace
 {
@@ -34,29 +33,6 @@ namespace FIMSpace
             Debug.Log(MarkerColor("#E0D300") + log + EndColorMarker());
         }
 
-        private static readonly System.Diagnostics.Stopwatch _debugWatch = new System.Diagnostics.Stopwatch();
-        public static void StartMeasure()
-        {
-            _debugWatch.Reset();
-            _debugWatch.Start();
-        }
-
-        public static void PauseMeasure()
-        {
-            _debugWatch.Stop();
-        }
-
-        public static void ResumeMeasure()
-        {
-            _debugWatch.Start();
-        }
-
-        public static void EndMeasureAndLog(string v)
-        {
-            _debugWatch.Stop();
-            UnityEngine.Debug.Log("Measure " + v + ": " + _debugWatch.ElapsedTicks + " ticks   " + _debugWatch.ElapsedMilliseconds + "ms");
-        }
-
         /// <summary>
         /// Rich text marker for color
         /// </summary>
@@ -74,17 +50,17 @@ namespace FIMSpace
         }
 
 
-        public static void DrawBounds2D(this Bounds b, Color c, float y = 0f, float scale = 1f, float duration = 1.1f)
+        public static void DrawBounds2D(this Bounds b, Color c, float y = 0f, float scale = 1f)
         {
             Vector3 fr1 = new Vector3(b.max.x, y, b.max.z) * scale;
             Vector3 br1 = new Vector3(b.max.x, y, b.min.z) * scale;
             Vector3 bl1 = new Vector3(b.min.x, y, b.min.z) * scale;
             Vector3 fl1 = new Vector3(b.min.x, y, b.max.z) * scale;
-            Debug.DrawLine(fr1, br1, c, duration);
-            Debug.DrawLine(br1, bl1, c, duration);
-            Debug.DrawLine(br1, bl1, c, duration);
-            Debug.DrawLine(bl1, fl1, c, duration);
-            Debug.DrawLine(fl1, fr1, c, duration);
+            Debug.DrawLine(fr1, br1, c, 1.1f);
+            Debug.DrawLine(br1, bl1, c, 1.1f);
+            Debug.DrawLine(br1, bl1, c, 1.1f);
+            Debug.DrawLine(bl1, fl1, c, 1.1f);
+            Debug.DrawLine(fl1, fr1, c, 1.1f);
         }
 
         public static void DrawBounds3D(this Bounds b, Color c, float scale = 1f)

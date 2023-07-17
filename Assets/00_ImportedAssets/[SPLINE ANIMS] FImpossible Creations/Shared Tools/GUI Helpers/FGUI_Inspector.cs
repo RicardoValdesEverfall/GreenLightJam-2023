@@ -50,7 +50,7 @@ namespace FIMSpace.FEditor
         public static void FoldHeaderStart(ref bool foldout, GUIContent title, GUIStyle textStyle, GUIStyle vertStyle, Texture icon = null, int height = 22)
         {
             if (vertStyle != null) GUILayout.BeginVertical(vertStyle);
-            if (GUILayout.Button(new GUIContent("   " + FGUI_Resources.GetFoldSimbol(foldout, 10, "►") + "  " + title.text, icon, title.tooltip), textStyle, GUILayout.Height(height))) foldout = !foldout;
+            if (GUILayout.Button(new GUIContent("  " + FGUI_Resources.GetFoldSimbol(foldout, 10, "►") + "  " + title.text, icon, title.tooltip), textStyle, GUILayout.Height(height))) foldout = !foldout;
         }
 
         /// <summary>

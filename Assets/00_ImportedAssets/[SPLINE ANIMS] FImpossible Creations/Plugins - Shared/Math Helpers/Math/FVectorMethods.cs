@@ -89,10 +89,7 @@ namespace FIMSpace
         {
             return new Vector2(toBeFlattened.x, toBeFlattened.z);
         }
-        public static Vector3 XOZ(this Vector3 toBeFlattened, float yValue = 0f)
-        {
-            return new Vector3(toBeFlattened.x, yValue, toBeFlattened.z);
-        }
+
 
         public static float DistanceTopDown(Vector3 from, Vector3 to)
         {
@@ -105,11 +102,6 @@ namespace FIMSpace
             return Mathf.Abs(from.x - to.x) + Mathf.Abs(from.z - to.z);
         }
 
-
-        public static float BoundsSizeOnAxis(this Bounds bounds, Vector3 normalized)
-        {
-            return Vector3.Scale(bounds.size, normalized).magnitude;
-        }
 
         public static Vector3 ChooseDominantAxis(Vector3 axis)
         {
@@ -149,43 +141,12 @@ namespace FIMSpace
 
         public static Vector3 FlattenVector(Vector3 v, float to = 90f)
         {
-            //Vector3 moved = v;
-
             v.x = Mathf.Round(v.x / to) * to;
             v.y = Mathf.Round(v.y / to) * to;
             v.z = Mathf.Round(v.z / to) * to;
-
-            //float modulo = to % 2;
-            //if (modulo > 0f && modulo < 1f)
-            //{
-            //    moved = v - moved;
-            //    Vector3 offset = Vector3.zero;
-            //    if (moved.x != 0f) offset.x = Mathf.Sign(moved.x) * modulo;
-            //    if (moved.y != 0f) offset.y = Mathf.Sign(moved.y) * modulo;
-            //    if (moved.z != 0f) offset.z = Mathf.Sign(moved.z) * modulo;
-
-            //    v += offset;
-            //    UnityEngine.Debug.Log("modulo " + modulo + " moved " + moved + " offset by " + offset);
-            //}
-
             return v;
         }
 
-        public static Vector3 FlattenVectorFlr(Vector3 v, float to = 90f)
-        {
-            v.x = Mathf.Floor(v.x / to) * to;
-            v.y = Mathf.Floor(v.y / to) * to;
-            v.z = Mathf.Floor(v.z / to) * to;
-            return v;
-        }
-
-        public static Vector3 FlattenVectorCeil(Vector3 v, float to = 90f)
-        {
-            v.x = Mathf.Ceil(v.x / to) * to;
-            v.y = Mathf.Ceil(v.y / to) * to;
-            v.z = Mathf.Ceil(v.z / to) * to;
-            return v;
-        }
 
         public static Vector3 FlattenVector(Vector3 v, Vector3 to)
         {

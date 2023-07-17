@@ -94,22 +94,8 @@ namespace FIMSpace.FEditor
             return toSave;
         }
 
-        static bool IsAnyTexture(Object[] list)
-        {
-            if (list.Length == 0) return false;
 
-            for (int i = 0; i < list.Length; i++)
-            {
-                Object ob = Selection.objects[i];
-                if (AssetDatabase.Contains(ob) == false) continue;
-                if (ob is Texture2D ) return true;
-            }
-
-            return false;
-        }
-
-
-        #endregion
+#endregion
 
     }
 }

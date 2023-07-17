@@ -285,6 +285,7 @@ public class PlayerLocomotion : MonoBehaviour
         playerManager.catAnimator.SetFloat("Jump", inputManager.jumpInputTimer * 3);
         playerManager.catAnimator.SetBool("Climbing", isClimbing);
         playerManager.catAnimator.SetBool("Falling", isFalling);
+        playerManager.catAnimator.SetFloat("AirTimer", inAirTimer);
         playerManager.catAnimator.SetBool("Grounded", isGrounded);
     }
 
