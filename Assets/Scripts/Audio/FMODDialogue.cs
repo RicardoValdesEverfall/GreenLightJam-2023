@@ -12,6 +12,8 @@ public class FMODDialogue : MonoBehaviour
 
     public FMODUnity.EventReference DialogueNarration;
     public static FMODDialogue Instance;
+    private FMOD.Studio.EventInstance previousDialogueInstance;
+    private FMOD.Studio.EventInstance dialogueInstance;
 
 #if UNITY_EDITOR
     private void Reset()
@@ -35,14 +37,21 @@ public class FMODDialogue : MonoBehaviour
 
     public void PlayDialogue(string lineID)
     {
-        var dialogueInstance = FMODUnity.RuntimeManager.CreateInstance(DialogueNarration);
+        if (previousDialogueInstance.isValid() && previousDialogueInstance.handle == dialogueInstance.handle)
+        {
+            previousDialogueInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            previousDialogueInstance.release();
+        }
 
-        GCHandle stringHandle = GCHandle.Alloc(lineID);
-        dialogueInstance.setUserData(GCHandle.ToIntPtr(stringHandle));
+            dialogueInstance = FMODUnity.RuntimeManager.CreateInstance(DialogueNarration);
+            previousDialogueInstance = dialogueInstance;
 
-        dialogueInstance.setCallback(dialogueCallback);
-        dialogueInstance.start();
-        dialogueInstance.release();
+            GCHandle stringHandle = GCHandle.Alloc(lineID);
+            dialogueInstance.setUserData(GCHandle.ToIntPtr(stringHandle));
+
+            dialogueInstance.setCallback(dialogueCallback);
+            dialogueInstance.start();
+            dialogueInstance.release();            
     }
 
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
@@ -119,26 +128,6 @@ public class FMODDialogue : MonoBehaviour
         return FMOD.RESULT.OK;
     }
 
-
-        void Update()
-        {
-            
-
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                PlayDialogue("line:0b85daf");
-                
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                PlayDialogue("line:02c62d9");
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                PlayDialogue("line:0f52539");
-            }
-
-        }
 
 
 }

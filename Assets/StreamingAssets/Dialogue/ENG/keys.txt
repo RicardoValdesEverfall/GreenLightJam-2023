@@ -1,0 +1,230 @@
+////Poem 01////
+//Pangur Bán and I at work
+line:013c235,Dialogue_Narration_PangurBanPoem01_001_PangurBanAnd.wav
+
+//Adepts equals cat and clerk
+line:019638c,Dialogue_Narration_PangurBanPoem01_002_AdeptsEqualsCat.wav
+
+//His whole instinct is to hunt
+line:0b55736,Dialogue_Narration_PangurBanPoem01_003_HisWholeInstinct.wav
+
+//Mine to free the meaning pent
+line:0f744d5,Dialogue_Narration_PangurBanPoem01_004_MineToFree.wav
+
+//More than loud acclaim I love
+line:0b26df5,Dialogue_Narration_PangurBanPoem01_005_MoreThanLoud.wav
+
+//Books silence thought my alcove
+line:05af327,Dialogue_Narration_PangurBanPoem01_006_BooksSilenceThought.wav
+
+//Happy for me Pangur Bán
+line:0e9049f,Dialogue_Narration_PangurBanPoem01_007_HappyForMe.wav
+
+//Child-plays round some mouse’s den
+line:044ca5e,Dialogue_Narration_PangurBanPoem01_008_ChildPlaysRound.wav
+
+
+
+////Poem 02////
+//Truth to tell just being here
+line:00f8f51,Dialogue_Narration_PangurBanPoem02_001_TruthToTell.wav
+
+//Housed alone housed together
+line:0efa18c,Dialogue_Narration_PangurBanPoem02_002_HousedAloneHoused.wav
+
+//Adds up to its own reward
+line:0e94ae5,Dialogue_Narration_PangurBanPoem02_003_AddsUpTo.wav
+
+//Concentration stealthy art
+line:045695f,Dialogue_Narration_PangurBanPoem02_004_ConcentrationStealthyArt.wav
+
+//Next thing an unwary mouse Bares his flank
+line:02c1648,Dialogue_Narration_PangurBanPoem02_005_NextThingAn.wav
+
+//Pangur pounces
+line:03faee2,Dialogue_Narration_PangurBanPoem02_006_PangerPounces.wav
+
+//Next thing lines that held and held 
+line:0018225,Dialogue_Narration_PangurBanPoem02_007_NextThingLines.wav
+
+//Meaning back begin to yield
+line:0248f8f,Dialogue_Narration_PangurBanPoem02_008_MeaningBackBegin.wav
+
+
+
+////Poem 03////
+//All the while his round bright eye
+line:0147b41,Dialogue_Narration_PangurBanPoem03_001_AllTheWhile.wav
+
+//Fixes on the wall
+line:0c76052,Dialogue_Narration_PangurBanPoem03_002_FixesOnThe.wav
+
+//while I focus my less piercing gaze
+line:07129e5,Dialogue_Narration_PangurBanPoem03_003_WhileIFocus.wav
+
+//On the challenge of the page
+line:04397d4,Dialogue_Narration_PangurBanPoem03_004_OnTheChallenge.wav
+
+//With his unsheathed perfect nails
+line:0644b73,Dialogue_Narration_PangurBanPoem03_005_WithHisUnsheathed.wav
+
+//Pangur springs exults and kills
+line:04b25a5,Dialogue_Narration_PangurBanPoem03_006_PangurSpringsExults.wav
+
+//When the longed-for difficult answers come I too exult
+line:0d479e5,Dialogue_Narration_PangurBanPoem03_007_WhenTheLounged.wav
+
+//How did I not find an answer to fix his ailment
+line:0aba347,Dialogue_Narration_PangurBanPoem03_008_HowDidI.wav
+
+
+
+////Poem 04 Start////
+//Who are you?
+line:0f5f2e4,Dialogue_Narration_PangurBanPoem04_Start_001_WhoAreYou.wav
+
+//Oh um
+line:08afe16,Dialogue_Narration_PangurBanPoem04_Start_002_OhErm.wav
+
+//thank you for returning this
+line:0d2de3a,Dialogue_Narration_PangurBanPoem04_Start_003_ThankYouFor.wav
+
+//You wish to hear it
+line:04f38ca,Dialogue_Narration_PangurBanPoem04_Start_004_YouWishTo.wav
+
+Well what's there to lose
+line:0dad885,Dialogue_Narration_PangurBanPoem04_Start_005_WellWhatsThere.wav
+
+
+
+////Poem 04////
+//So it goes. To each his own
+line:0dd64d8,Dialogue_Narration_PangurBanPoem04_001_SoItGoes.wav
+
+//No vying No vexation
+line:0345181,Dialogue_Narration_PangurBanPoem04_002_NoVyingNo.wav
+
+//Taking pleasure
+line:0110aee,Dialogue_Narration_PangurBanPoem04_003_TakingPleasure.wav
+
+//taking pains
+line:044e54a,Dialogue_Narration_PangurBanPoem04_004_TakingPains.wav
+
+//Kindred spirits veterans
+line:02a29fc,Dialogue_Narration_PangurBanPoem04_005_KindredSpiritsVeterans.wav
+
+//Day and night soft purr soft pad
+line:076b917,Dialogue_Narration_PangurBanPoem04_006_DayAndNight.wav
+
+//Pangur Bán has learned his trade
+line:0cfe488,Dialogue_Narration_PangurBanPoem04_007_PangurBanHas.wav
+
+Day and night my own hard work
+line:0c4712d,Dialogue_Narration_PangurBanPoem04_008_DayAndNigh.wav
+
+//Solves the cruxes makes a mark
+line:03acb09,Dialogue_Narration_PangurBanPoem04_009_SolvesTheCruxes.wav
+
+
+
+////Book Of Hymns////
+//You say that... there's more mice than usual?
+line:08c9a17,Dialogue_Narration_BookOfHymns_001_YouSayThat.wav
+
+//I suppose that adds up
+line:0fd6a68,Dialogue_Narration_BookOfHymns_002_ISupposeThat.wav
+
+//Pangur Ban has been staring...
+line:0e0ec88,Dialogue_Narration_BookOfHymns_003_PangurBanHas.wav
+
+//Yeah he just sits on his rug and stares at the windowsill
+line:0c81942,Dialogue_Narration_BookOfHymns_004_YeahHeJust.wav
+
+//even when mice approach him.
+line:0f6d2e8,Dialogue_Narration_BookOfHymns_005_EvenWhenMice.wav
+
+//Why?
+line:09145a7,Dialogue_Narration_BookOfHymns_006_Why.wav
+
+
+
+////Scrolls Of The Stars/////
+//Look Pangur Ban!
+line:0b6139b,Dialogue_Narration_ScrollsOfTheStars_001_LookPangurBan.wav
+
+//There's Orion see?
+line:0cfd1e1,Dialogue_Narration_ScrollsOfTheStars_002_TheresOrionSee.wav
+
+//Over there is Polaris...
+line:0db0111,Dialogue_Narration_ScrollsOfTheStars_003_OverThereIs.wav
+
+//oh and how could I forget!
+line:06bcfe2,Dialogue_Narration_ScrollsOfTheStars_004_OhAndHow.wav
+
+//The Ursa Minor's right over yonder.
+line:07df56c,Dialogue_Narration_ScrollsOfTheStars_005_TheUrsaMinor.wav
+
+//I must write all of this down the nuns won't believe these discoveries!
+line:080a04a,Dialogue_Narration_ScrollsOfTheStars_006_IMustWrite.wav
+
+
+
+////Condolences
+//To think your mark would have affected so many people...
+line:026720c,Dialogue_Narration_CondolencesOfTheCongregation_001_ToThinkYour.wav
+
+//I hope you see this Pangur Ban.
+line:09bfeff,Dialogue_Narration_CondolencesOfTheCongregation_002_IHopeYou.wav
+
+
+/////Druids/////
+//Perhaps following the advice from the druid will help you...
+line:076cbc7,Dialogue_Narration_DruidsMissive_001_PerhapsFollowingThe.wav
+
+//First I must gather a handful of grass
+line:0ff40a8,Dialogue_Narration_DruidsMissive_002_FirstIMust.wav
+
+and... horse teeth?
+line:05626c4,Dialogue_Narration_DruidsMissive_003_AndHorseTeeth.wav
+
+
+
+////Ovate////
+//He really seems to like you--how odd
+line:0a8093c,Dialogue_Narration_MessageFromTheOvate_001_HeReallySeems.wav
+
+//he tends be to aloof around the nuns
+line:0f40e4e,Dialogue_Narration_MessageFromTheOvate_002_HeTendsTo.wav
+
+//but warms up to the ovate immediately.
+line:03a4fca,Dialogue_Narration_MessageFromTheOvate_003_ButWarmsUp.wav
+
+
+
+////Stained Glass////
+//When the longed-for difficult answers come I too exult
+line:0a586db,Dialogue_Narration_StainedGlass_001_WhenTheLonged.wav
+
+//Answers...
+line:0eeaf9c,Dialogue_Narration_StainedGlass_002_Answers.wav
+
+//I need answers what do I do...
+line:0976d72,Dialogue_Narration_StainedGlass_003_INeedAnswers.wav
+
+
+
+////Unfinished Letter////
+//My days and nights have been quieter than ever--
+line:0b6b223,Dialogue_Narration_UnfinishedLetter_001_MyDaysAnd.wav
+
+//perhaps it's best for me to remain isolated bishop for just a while longer...
+line:018662a,Dialogue_Narration_UnfinishedLetter_002_PerhapsItsBest.wav
+
+//no that doesn't sound right.
+line:03de894,Dialogue_Narration_UnfinishedLetter_003_NoThatDoesnt.wav
+
+//Ahem to my sisterhood...
+line:0154a37,Dialogue_Narration_UnfinishedLetter_004_ToMySisterhood.wav
+
+//no not that either...
+line:03fb859,Dialogue_Narration_UnfinishedLetter_005_NoNotThat.wav
