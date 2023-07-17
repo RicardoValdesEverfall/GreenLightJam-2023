@@ -8,7 +8,7 @@ using DG.Tweening;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] public Transform interactPoint;
-    [SerializeField] private FMODDialogue dialogueSystem;
+    //[SerializeField] private FMODDialogue dialogueSystem;
     [SerializeField] private bool ShowPopup;
     [SerializeField] private CanvasGroup PopupCanvasGroup;
 
@@ -35,6 +35,7 @@ public abstract class Interactable : MonoBehaviour
         cam = Camera.main;
         myOutline = GetComponent<Outline>();
         myOutline.enabled = false;
+        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
@@ -58,7 +59,6 @@ public abstract class Interactable : MonoBehaviour
                 PopupCanvasGroup.DOFade(1, .15f);
             }
 
-            if (playerManager == null) { playerManager = col.GetComponent<PlayerManager>(); }
             playerManager.objectToInteractWith = this;
             playerManager.canInteract = true;
 

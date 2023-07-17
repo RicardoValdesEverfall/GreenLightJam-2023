@@ -188,9 +188,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6323660373342406721}
-  - component: {fileID: 2997029581700009159}
   - component: {fileID: 3611856444225303091}
   - component: {fileID: 746555518081192631}
+  - component: {fileID: 4745721674085997476}
   m_Layer: 5
   m_Name: Line View
   m_TagString: Untagged
@@ -219,19 +219,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: -394, y: 140}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &2997029581700009159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349501547589817458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d376469e1183f42eaa356d7ca74c3d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineTextGroup: {fileID: 940681754555019447}
 --- !u!114 &3611856444225303091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,17 +232,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 746555518081192631}
-  useFadeEffect: 0
+  useFadeEffect: 1
   fadeInTime: 0.25
   fadeOutTime: 0.05
   lineText: {fileID: 3376368729516697853}
   showCharacterNameInLineView: 1
   characterNameText: {fileID: 0}
-  useTypewriterEffect: 0
+  useTypewriterEffect: 1
   onCharacterTyped:
     m_PersistentCalls:
       m_Calls: []
-  typewriterEffectSpeed: 120
+  typewriterEffectSpeed: 55
   continueButton: {fileID: 0}
   holdTime: 1
   autoAdvance: 0
@@ -271,6 +258,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4745721674085997476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349501547589817458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb87ae987c60e9d4f8346202d271648d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTimeOnLineFinish: 0.05
+  waitTimeBeforeLineStart: 0
+  waitTimeAfterLineComplete: 0
+  audioSource: {fileID: 0}
 --- !u!1 &6669097705305763591
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6205395932116092783}
   - component: {fileID: 3549250533003423565}
-  - component: {fileID: 96219036207037711}
+  - component: {fileID: 4125165357330650454}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -319,7 +322,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &96219036207037711
+--- !u!114 &4125165357330650454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,17 +331,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 6669097705305763591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &6714207547914092708
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,10 +373,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7934296098492702626}
   - component: {fileID: 5499479346921781862}
+  - component: {fileID: 2629493587820886625}
   - component: {fileID: 4698212624455395270}
   - component: {fileID: 415618203517789597}
   - component: {fileID: 8498525149968850979}
-  - component: {fileID: 2629493587820886625}
   m_Layer: 0
   m_Name: Dialogue System
   m_TagString: Untagged
@@ -394,7 +418,6 @@ MonoBehaviour:
   _variableStorage: {fileID: 4698212624455395270}
   dialogueViews:
   - {fileID: 3611856444225303091}
-  - {fileID: 2997029581700009159}
   startNode: Narrator
   startAutomatically: 0
   runSelectedOptionAsLine: 0
@@ -415,6 +438,41 @@ MonoBehaviour:
   onCommand:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2629493587820886625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714207547914092708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097b95c9f69f04f2d8c08a817e7786af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueView: {fileID: 3611856444225303091}
+  continueActionType: 3
+  continueActionKeyCode: 32
+  continueActionReference: {fileID: 4794047033392391186, guid: d54f3126d1e74264cad038c433aa318e,
+    type: 3}
+  continueAction:
+    m_Name: Skip
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: e3d9f791-6e2b-4319-9522-8d4a5abdeb1c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b963e547-b815-4446-a306-8e2af3986b3e
+      m_Path: Submit
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Skip
+      m_Flags: 0
+    m_Flags: 0
+  enableActionOnStart: 1
 --- !u!114 &4698212624455395270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,41 +520,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fMODDialogue: {fileID: 415618203517789597}
   textLanguageCode: en-CA
---- !u!114 &2629493587820886625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6714207547914092708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b95c9f69f04f2d8c08a817e7786af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueView: {fileID: 3611856444225303091}
-  continueActionType: 3
-  continueActionKeyCode: 32
-  continueActionReference: {fileID: 4794047033392391186, guid: d54f3126d1e74264cad038c433aa318e,
-    type: 3}
-  continueAction:
-    m_Name: Skip
-    m_Type: 1
-    m_ExpectedControlType: 
-    m_Id: e3d9f791-6e2b-4319-9522-8d4a5abdeb1c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: b963e547-b815-4446-a306-8e2af3986b3e
-      m_Path: Submit
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skip
-      m_Flags: 0
-    m_Flags: 0
-  enableActionOnStart: 1
 --- !u!1 &6796419949037757009
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,8 +556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 743, y: 0}
+  m_SizeDelta: {x: 1052.9, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &413735877050386180
 CanvasRenderer:

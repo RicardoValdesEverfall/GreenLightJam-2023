@@ -1,6 +1,6 @@
 ﻿title: Narrator
 tags:
-position: -81,-276
+position: 231,-341
 ---
 <<wait 0.5>>
 Fascinating how advanced our Hellenic counterparts are in the study of the stars… #line:0b85daf 
@@ -8,25 +8,119 @@ Oh, how’s Pangur Ban doing? He’s doing–I mean, he was doing fine… #line:
 No, he’s not getting better… What should I do… How is this the one problem I can’t solve… #line:0f52539 
 
 ===
-title: poem1
-position: -472,-287
+title: Poem1
+position: -767,-536
 ---
-"Pangur Bán and I at work,
-Adepts, equals, cat and clerk:
-His whole instinct is to hunt,
-Mine to free the meaning pent.
+"Pangur Bán and I at work, #line:013c235 
+Adepts, equals, cat and clerk: #line:019638c 
+His whole instinct is to hunt, #line:0b55736 
+Mine to free the meaning pent. #line:0f744d5 
 
-More than loud acclaim, I love
-Books, silence, thought, my alcove.
-Happy for me, Pangur Bán
-Child-plays round some mouse’s den."
+More than loud acclaim, I love #line:0b26df5 
+Books, silence, thought, my alcove. #line:05af327 
+Happy for me, Pangur Bán #line:0e9049f 
+Child-plays round some mouse’s den." #line:044ca5e 
 ===
 title: Poem2
-position: -465,-116
+position: -521,-535
 ---
-Truth to tell, just being here, Housed alone, housed together,
-Adds up to its own reward: Concentration, stealthy art.
-Next thing an unwary mouse Bares his flank: Pangur pounces.
-Next thing lines that held and held
-Meaning back begin to yield.
+Truth to tell, just being here, 
+Housed alone, housed together, #line:0efa18c 
+Adds up to its own reward: 
+Concentration, stealthy art. #line:045695f 
+Next thing an unwary mouse Bares his flank: 
+Pangur pounces. #line:03faee2 
+Next thing lines that held and held #line:0018225 
+Meaning back begin to yield. #line:0248f8f 
+===
+title: Poem3
+position: -289,-533
+---
+"All the while, his round bright eye
+Fixes on the wall, 
+while I focus my less piercing gaze
+On the challenge of the page.
+With his unsheathed, perfect nails
+Pangur springs, exults and kills.
+When the longed-for, difficult answers come, I too exult.
+How did I not find an answer to fix his ailment...."
+===
+title: Poem4Startt
+position: -46,-547
+---
+"Who are you? 
+Oh, um, 
+thank you for returning this... 
+You wish to hear it? 
+Well, what's there to lose... 
+===
+title: Poem4
+position: -46,-547
+---
+"So it goes. To each his own.
+No vying. No vexation.
+Taking pleasure, 
+taking pains,
+Kindred spirits, veterans.
+Day and night, soft purr, soft pad,
+Pangur Bán has learned his trade.
+Day and night, my own hard work
+Solves the cruxes, makes a mark."
+===
+title: BookOfHymns
+position: -507,-354
+---
+"You say that... there's more mice than usual?#line:Dialogue_Narration_BookOfHymns_001_YouSayThat
+I suppose that adds up, 
+Pangur Ban has been staring... #line:0e0ec88 
+Yeah, he just sits on his rug and stares at the windowsill 
+even when mice approach him. 
+Why?" #line:09145a7 
+===
+title: ScrollsOfTheStars
+position: -762,-352
+---
+"Look, Pangur Ban! 
+There's Orion, see? 
+Over there is Polaris... 
+oh, and how could I forget! 
+The Ursa Minor's right over yonder. 
+I must write all of this down, the nuns won't believe these discoveries!"
+===
+title: Condolences
+position: -281,-137
+---
+"To think your mark would have affected so many people...
+I hope you see this, Pangur Ban."
+===
+title: Druids
+position: -282,-356
+---
+"Perhaps following the advice from the druid will help you...
+First, I must gather a handful of grass
+and... horse teeth?"
+===
+title: Ovate
+position: -804,139
+---
+"He really seems to like you--how odd,
+he tends be to aloof around the nuns
+but warms up to the ovate immediately."
+===
+
+title: StainedGlass
+position: -46,-547
+---
+"When the longed-for, difficult answers come, I too exult.
+Answers... 
+I need answers, what do I do..."
+===
+title: UnfinishedLetter
+position: -46,-547
+---
+"My days and nights have been quieter than ever--
+perhaps it's best for me to remain isolated, bishop, for just a while longer...
+no, that doesn't sound right. 
+Ahem, to my sisterhood...
+no, not that either..."
 ===
