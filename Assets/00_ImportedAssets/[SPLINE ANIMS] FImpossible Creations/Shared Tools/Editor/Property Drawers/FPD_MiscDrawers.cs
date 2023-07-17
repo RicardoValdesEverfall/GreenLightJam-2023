@@ -22,7 +22,6 @@ namespace FIMSpace.FEditor
             var boolRect = new Rect(position.x, position.y, Attribute.LabelWidth + 15f, position.height);
 
             EditorGUIUtility.labelWidth = Attribute.LabelWidth;
-            EditorGUI.PrefixLabel(position, label);
             EditorGUI.PropertyField(boolRect, boolProp);
 
             EditorGUIUtility.labelWidth = 14;
@@ -66,7 +65,6 @@ namespace FIMSpace.FEditor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUIUtility.labelWidth = Attribute.LabelWidth;
-            EditorGUI.PrefixLabel(position, label);
             EditorGUI.PropertyField(position, property);
             EditorGUIUtility.labelWidth = 0;
         }
@@ -83,7 +81,6 @@ namespace FIMSpace.FEditor
         {
             EditorGUIUtility.labelWidth = Attribute.LabelsWidth;
             for (int i = 0; i < Attribute.IndentCount; i++) EditorGUI.indentLevel++;
-            EditorGUI.PrefixLabel(position, label);
             EditorGUI.PropertyField(position, property);
             for (int i = 0; i < Attribute.IndentCount; i++) EditorGUI.indentLevel--;
             EditorGUIUtility.labelWidth = 0;

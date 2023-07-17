@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FIMSpace
 {
@@ -214,25 +213,6 @@ namespace FIMSpace
 
         #endregion
 
-
-
-        public static bool ContainsIndex<T>(this List<T> list, int i, bool falseIfNull = true) where T : class
-        {
-            if (list == null) return false;
-            if (i < 0) return false;
-            if (i >= list.Count) return false;
-            if (falseIfNull) if (list[i] == null) return false;
-            return true;
-        }
-
-        public static bool ContainsIndex<T>(this T[] list, int i, bool falseIfNull) where T : class
-        {
-            if (list == null) return false;
-            if (i < 0) return false;
-            if (i >= list.Length) return false;
-            if (falseIfNull) if (list[i] == null) return false;
-            return true;
-        }
 
     }
 }

@@ -28,8 +28,6 @@ namespace FIMSpace.FEditor
         private static GUIStyle __inBoxLightStyle = null;
         public static GUIStyle ButtonStyle { get { if (__buttStyle != null) return __buttStyle; __buttStyle = new GUIStyle(EditorStyles.miniButton); __buttStyle.fixedHeight = 0; __buttStyle.padding = new RectOffset(3, 3, 3, 3); __buttStyle.normal.background = Resources.Load<Texture2D>("Fimp/Backgrounds/Fbutton"); __buttStyle.hover.background = Resources.Load<Texture2D>("Fimp/FbuttonHover"); __buttStyle.focused.background = __buttStyle.hover.background; __buttStyle.active.background = Resources.Load<Texture2D>("Fimp/Backgrounds/FbuttonPress"); return __buttStyle; } }
         private static GUIStyle __buttStyle = null;
-        public static GUIStyle ButtonStyleR { get { if (__buttStyler != null) return __buttStyler; __buttStyler = new GUIStyle(EditorStyles.miniButton); __buttStyler.fixedHeight = 0; __buttStyler.padding = new RectOffset(3, 3, 3, 3); __buttStyler.normal.background = Resources.Load<Texture2D>("Fimp/Backgrounds/Fbutton"); __buttStyler.hover.background = Resources.Load<Texture2D>("Fimp/FbuttonHover"); __buttStyler.focused.background = __buttStyler.hover.background; __buttStyler.active.background = Resources.Load<Texture2D>("Fimp/Backgrounds/FbuttonPress"); __buttStyler.richText = true; return __buttStyler; } }
-        private static GUIStyle __buttStyler = null;
 
         /// Text Styles ----------------------------------------------------
 #if UNITY_2019_3_OR_NEWER
@@ -74,8 +72,6 @@ namespace FIMSpace.FEditor
         private static Texture2D __texAdd = null;
         public static Texture2D Tex_Gear { get { if (__texGear != null) return __texGear; __texGear = Resources.Load<Texture2D>("Fimp/Icons/FGear"); return __texGear; } }
         private static Texture2D __texGear = null;
-        public static Texture2D Tex_Expose { get { if (__texExpose != null) return __texExpose; __texExpose = Resources.Load<Texture2D>("Fimp/Icons/FExpose"); return __texExpose; } }
-        private static Texture2D __texExpose = null;
         public static Texture2D Tex_Knob { get { if (__texKnob != null) return __texKnob; __texKnob = Resources.Load<Texture2D>("Fimp/Icons/FKnob"); return __texKnob; } }
         private static Texture2D __texKnob = null;
         public static Texture2D Tex_Repair { get { if (__texRepair != null) return __texRepair; __texRepair = Resources.Load<Texture2D>("Fimp/Icons/FRepair"); return __texRepair; } }
@@ -90,10 +86,6 @@ namespace FIMSpace.FEditor
         private static Texture2D __texModls = null;
         public static Texture2D Tex_Limits { get { if (__texLimts != null) return __texLimts; __texLimts = Resources.Load<Texture2D>("Fimp/Icons/FLimits"); return __texLimts; } }
         private static Texture2D __texLimts = null;
-        public static Texture2D Tex_ExportIcon { get { if (_texExportIc != null) return _texExportIc; _texExportIc = Resources.Load<Texture2D>("Fimp/Icons/FExport"); return _texExportIc; } }
-        private static Texture2D _texExportIc = null;
-        public static Texture2D Tex_Load { get { if (__texLoadIc != null) return __texLoadIc; __texLoadIc = Resources.Load<Texture2D>("Fimp/Icons/FLoad"); return __texLoadIc; } }
-        private static Texture2D __texLoadIc = null;
 
         /// Misc Icons ----------------------------------------------------
         public static Texture2D Tex_ArrowUp { get { if (__texArrUp != null) return __texArrUp; __texArrUp = Resources.Load<Texture2D>("Fimp/Misc Icons/FArrowUp"); return __texArrUp; } }
@@ -121,8 +113,7 @@ namespace FIMSpace.FEditor
         private static Texture2D __texDef = null;
         public static Texture2D Tex_HierSwitch { get { if (__hierSwitch != null) return __hierSwitch; __hierSwitch = Resources.Load<Texture2D>("Fimp/Misc Icons/FHierarchySwitch"); return __hierSwitch; } }
         private static Texture2D __hierSwitch = null;
-        public static Texture2D Tex_Rectangle { get { if (__texRect != null) return __texRect; __texRect = Resources.Load<Texture2D>("Fimp/Misc Icons/FRect"); return __texRect; } }
-        private static Texture2D __texRect = null;
+
         public static Texture2D Tex_RightFold { get { if (__texRightFold != null) return __texRightFold; __texRightFold = Resources.Load<Texture2D>("Fimp/Misc Icons/FRightFolded"); return __texRightFold; } }
         private static Texture2D __texRightFold = null;
         public static Texture2D Tex_LeftFold { get { if (__texLeftFold != null) return __texLeftFold; __texLeftFold = Resources.Load<Texture2D>("Fimp/Misc Icons/FLeftFolded"); return __texLeftFold; } }
@@ -131,49 +122,15 @@ namespace FIMSpace.FEditor
         private static Texture2D __texUpFold = null;
         public static Texture2D Tex_DownFold { get { if (__texDownFold != null) return __texDownFold; __texDownFold = Resources.Load<Texture2D>("Fimp/Misc Icons/FUnfolded"); return __texDownFold; } }
         private static Texture2D __texDownFold = null;
-
-        public static Texture2D Tex_RightFoldGray { get { if (__texRightFoldG != null) return __texRightFoldG; __texRightFoldG = Resources.Load<Texture2D>("Fimp/Misc Icons/FGRightFolded"); return __texRightFoldG; } }
-        private static Texture2D __texRightFoldG = null;
-        public static Texture2D Tex_LeftFoldGray { get { if (__texLeftFoldG != null) return __texLeftFoldG; __texLeftFoldG = Resources.Load<Texture2D>("Fimp/Misc Icons/FGLeftFolded"); return __texLeftFoldG; } }
-        private static Texture2D __texLeftFoldG = null;
-        public static Texture2D Tex_UpFoldGray { get { if (__texUpFoldG != null) return __texUpFoldG; __texUpFoldG = Resources.Load<Texture2D>("Fimp/Misc Icons/FGUpFolded"); return __texUpFoldG; } }
-        private static Texture2D __texUpFoldG = null;
-        public static Texture2D Tex_DownFoldGray { get { if (__texDownFoldG != null) return __texDownFoldG; __texDownFoldG = Resources.Load<Texture2D>("Fimp/Misc Icons/FGUnfolded"); return __texDownFoldG; } }
-        private static Texture2D __texDownFoldG = null;
-
         public static Texture2D TexWaitIcon { get { if (__texWaitIcon != null) return __texWaitIcon; __texWaitIcon = Resources.Load<Texture2D>("Fimp/Misc Icons/FWait"); return __texWaitIcon; } }
         private static Texture2D __texWaitIcon = null;
         public static Texture2D Tex_Random { get { if (__texRand != null) return __texRand; __texRand = Resources.Load<Texture2D>("Fimp/Misc Icons/FRandom"); return __texRand; } }
         private static Texture2D __texRand = null;
 
-        /// GUI Contents
-
-        public static GUIContent GUIC_FoldGrayLeft { get { if (__guicFoldGrL != null) return __guicFoldGrL; __guicFoldGrL = new GUIContent(Tex_LeftFoldGray); return __guicFoldGrL; } }
-        private static GUIContent __guicFoldGrL = null;
-        public static GUIContent GUIC_FoldGrayRight { get { if (__guicFoldGrR != null) return __guicFoldGrR; __guicFoldGrR = new GUIContent(Tex_RightFoldGray); return __guicFoldGrR; } }
-        private static GUIContent __guicFoldGrR = null;
-        public static GUIContent GUIC_FoldGrayDown { get { if (__guicFoldGrD != null) return __guicFoldGrD; __guicFoldGrD = new GUIContent(Tex_DownFoldGray); return __guicFoldGrD; } }
-        private static GUIContent __guicFoldGrD = null;
-        public static GUIContent GUIC_FoldGrayUp { get { if (__guicFoldGrU != null) return __guicFoldGrU; __guicFoldGrU = new GUIContent(Tex_UpFoldGray); return __guicFoldGrU; } }
-        private static GUIContent __guicFoldGrU = null;
-
-        public static GUIContent GUIC_Info { get { if (__guicInfo != null) return __guicInfo; __guicInfo = new GUIContent(Tex_Info, "Click to display info dialog."); return __guicInfo; } }
-        private static GUIContent __guicInfo = null;
-        public static GUIContent GUIC_More { get { if (__guicMore != null) return __guicMore; __guicMore = new GUIContent(Tex_MoreMenu, "Click to display more options menu"); return __guicMore; } }
-        private static GUIContent __guicMore = null;
-        public static GUIContent GUIC_Remove { get { if (__guicRemv != null) return __guicRemv; __guicRemv = new GUIContent(Tex_Remove, "Click to remove element"); return __guicRemv; } }
-        private static GUIContent __guicRemv = null;
-        public static GUIContent GUIC_Save { get { if (__guicInfo != null) return __guicInfo; __guicInfo = new GUIContent(Tex_Save, "Click to save file in project files."); return __guicInfo; } }
-        private static GUIContent __guicSave = null;
-
-
         /// Small Icons ----------------------------------------------------
-
 
         public static Texture2D Tex_Info { get { if (__texInfo != null) return __texInfo; __texInfo = Resources.Load<Texture2D>("Fimp/Small Icons/Finfo"); return __texInfo; } }
         private static Texture2D __texInfo = null;
-        public static Texture2D Tex_Save { get { if (__texSave != null) return __texSave; __texSave = Resources.Load<Texture2D>("Fimp/Icons/FSave"); return __texSave; } }
-        private static Texture2D __texSave = null;
         public static Texture2D Tex_Warning { get { if (__texWarning != null) return __texWarning; __texWarning = Resources.Load<Texture2D>("Fimp/Small Icons/FWarning"); return __texWarning; } }
         private static Texture2D __texWarning = null;
         public static Texture2D Tex_Error { get { if (__texError != null) return __texError; __texError = Resources.Load<Texture2D>("Fimp/Small Icons/FError"); return __texError; } }
@@ -193,8 +150,7 @@ namespace FIMSpace.FEditor
         private static Texture2D __texSmOptimizeIcon = null;
         public static Texture2D Tex_MiniGear { get { if (__texSGear != null) return __texSGear; __texSGear = Resources.Load<Texture2D>("Fimp/Small Icons/MiniGear"); return __texSGear; } }
         private static Texture2D __texSGear = null;
-        public static Texture2D Tex_Debug { get { if (__texDebg != null) return __texDebg; __texDebg = Resources.Load<Texture2D>("Fimp/Small Icons/FDebug"); return __texDebg; } }
-        private static Texture2D __texDebg = null;
+
         public static Texture2D Tex_Refresh { get { if (__texRefresh != null) return __texRefresh; __texRefresh = Resources.Load<Texture2D>("Fimp/Small Icons/FRefresh"); return __texRefresh; } }
         private static Texture2D __texRefresh = null;
         public static Texture2D Tex_MiniMotion { get { if (__texMiniMotion != null) return __texMiniMotion; __texMiniMotion = Resources.Load<Texture2D>("Fimp/Small Icons/MiniMotion"); return __texMiniMotion; } }
@@ -218,18 +174,6 @@ namespace FIMSpace.FEditor
         public static Texture2D Tex_Rotation { get { if (__texRotation != null) return __texRotation; __texRotation = Resources.Load<Texture2D>("Fimp/Small Icons/FRotation"); return __texRotation; } }
         private static Texture2D __texRotation = null;
 
-        public static Texture2D Tex_Connections { get { if (__texConns != null) return __texConns; __texConns = Resources.Load<Texture2D>("Fimp/Small Icons/Connections"); return __texConns; } }
-        private static Texture2D __texConns = null;
-        public static Texture2D Tex_MoreMenu { get { if (__texMoreMnu != null) return __texMoreMnu; __texMoreMnu = Resources.Load<Texture2D>("Fimp/Small Icons/FMore"); return __texMoreMnu; } }
-        private static Texture2D __texMoreMnu = null;
-        public static Texture2D Tex_Preview { get { if (__texPrev != null) return __texPrev; __texPrev = Resources.Load<Texture2D>("Fimp/Small Icons/Preview"); return __texPrev; } }
-        private static Texture2D __texPrev = null;
-        public static Texture2D Tex_Variables { get { if (__texVars != null) return __texVars; __texVars = Resources.Load<Texture2D>("Fimp/Small Icons/Variables"); return __texVars; } }
-        private static Texture2D __texVars = null;
-        public static Texture2D Tex_VariablesArrows { get { if (__texVarsArr != null) return __texVarsArr; __texVarsArr = Resources.Load<Texture2D>("Fimp/Small Icons/Variables2"); return __texVarsArr; } }
-        private static Texture2D __texVarsArr = null;
-        public static Texture2D Tex_Prepare { get { if (__texPrep != null) return __texPrep; __texPrep = Resources.Load<Texture2D>("Fimp/Small Icons/FPrepare"); return __texPrep; } }
-        private static Texture2D __texPrep = null;
 
         // Additional ----------------------------
 
@@ -284,15 +228,6 @@ namespace FIMSpace.FEditor
 #endif
         }
 
-        public static string GetFoldSimbol(bool foldout, bool rightArrow)
-        {
-            if (foldout) { return "▼"; } else { if (rightArrow) return "►"; else return "▲"; }
-        }
-
-        public static GUIContent GetFoldSimbolTex(bool foldout, bool rightArrow)
-        {
-            if (foldout) { return GUIC_FoldGrayDown; } else { if (rightArrow) return GUIC_FoldGrayRight; else return GUIC_FoldGrayUp; }
-        }
     }
 }
 

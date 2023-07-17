@@ -19,7 +19,7 @@ namespace FIMSpace.FEditor
             GUIContent suff = new GUIContent(Attribute.Suffix);
             Vector2 fieldS = EditorStyles.label.CalcSize(suff);
 
-            float fieldSize = 34 + fieldS.x + Attribute.widerField;
+            float fieldSize = 34 + fieldS.x;
             var percField = new Rect(position.x + position.width - fieldSize + 5, position.y, fieldSize, position.height);
             Rect floatField = position;
 
@@ -37,6 +37,10 @@ namespace FIMSpace.FEditor
             sliderVal = GUI.HorizontalSlider(position, property.floatValue, Attribute.Min, Attribute.Max);
 
             float pre, value;
+            int indent;
+
+            indent = EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 0;
 
             switch (Attribute.Mode)
             {
@@ -84,7 +88,7 @@ namespace FIMSpace.FEditor
                 case FPD_SuffixAttribute.SuffixMode.FromMinToMaxRounded:
 
                     pre = Mathf.Round(sliderVal);
-                    value = EditorGUI.FloatField(floatField, Mathf.Round(sliderVal) );
+                    value = EditorGUI.FloatField(floatField, Mathf.Round(sliderVal));
                     if (value != pre) sliderVal = value;
 
                     EditorGUI.LabelField(percField, Attribute.Suffix);
@@ -93,6 +97,7 @@ namespace FIMSpace.FEditor
             }
 
             property.floatValue = sliderVal;
+            EditorGUI.indentLevel = indent;
 
             EditorGUI.EndProperty();
 
