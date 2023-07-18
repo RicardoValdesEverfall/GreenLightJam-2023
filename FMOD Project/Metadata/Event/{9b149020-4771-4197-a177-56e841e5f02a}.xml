@@ -5,7 +5,7 @@
 			<value>Atmos_Church</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{5f2f11b5-8061-4136-a40d-c736b339e9bf}</destination>
@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{4ad6fc40-c309-4edd-ae7d-1f98ec3d7563}">
 		<property name="volume">
-			<value>-7</value>
+			<value>-13.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{9b315494-e83d-4119-baa1-58b9a7e3ae0b}</destination>
@@ -90,7 +90,7 @@
 	</object>
 	<object class="MultiSound" id="{0a2e6255-edcf-4711-a63d-7f99d4678e95}">
 		<relationship name="sounds">
-			<destination>{056104bc-55aa-4c00-afef-5cccd75091b2}</destination>
+			<destination>{9a13c138-2512-4530-9e8f-d480832007fc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{9d464b65-168d-45d5-9580-afaf9866a30e}">
@@ -115,42 +115,39 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{64132291-107b-4134-a957-0fb014d4c73f}">
 		<relationship name="effects">
+			<destination>{d8c62c17-d00c-4c54-af8e-923324ae3433}</destination>
 			<destination>{3213c708-ac10-4990-99e7-ab96fb894f8e}</destination>
 			<destination>{f632e69f-b56b-461d-af9d-468ffd9f102a}</destination>
-			<destination>{eda8e8c6-9824-4dec-897a-2db57251b749}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1e80f876-723c-45f6-843c-31240a2f6d6f}" />
-	<object class="SingleSound" id="{056104bc-55aa-4c00-afef-5cccd75091b2}">
-		<property name="looping">
-			<value>true</value>
-		</property>
+	<object class="SingleSound" id="{9a13c138-2512-4530-9e8f-d480832007fc}">
 		<relationship name="audioFile">
-			<destination>{fbf4905e-3628-4784-bba2-95ff6c722931}</destination>
+			<destination>{e233319b-eda3-4ca0-b49c-d84bfe527021}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{c61b9b47-d156-4362-afa6-082d04baab7f}" />
+	<object class="SpatialiserEffect" id="{d8c62c17-d00c-4c54-af8e-923324ae3433}">
+		<property name="panBlend">
+			<value>0.469999999</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>90.9700699</value>
+		</property>
+		<property name="userStereoAxis">
+			<value>-180</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{3213c708-ac10-4990-99e7-ab96fb894f8e}" />
 	<object class="MixerSend" id="{f632e69f-b56b-461d-af9d-468ffd9f102a}">
 		<property name="level">
 			<value>-8</value>
 		</property>
 		<property name="inputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{ba1af4f8-6583-4602-8e1e-6fa36c65b64b}</destination>
 		</relationship>
-	</object>
-	<object class="MultibandEqEffect" id="{eda8e8c6-9824-4dec-897a-2db57251b749}">
-		<property name="filterTypeA">
-			<value>4</value>
-		</property>
-		<property name="frequencyA">
-			<value>225.849808</value>
-		</property>
-		<property name="qualityA">
-			<value>0.1499805</value>
-		</property>
 	</object>
 </objects>
