@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Events;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, ReadOnly] public bool dormComplete;
     [SerializeField, ReadOnly] public bool canInteract;
 
+    //Week 4 - production Temp
+    private int numScrolls = 0;
+    private int scrollsCollected = 0;
+    [SerializeField] TextMeshProUGUI scrollsTxt;
+
 
     //Unity Events
     public UnityEvent<int> itemCounter;
@@ -34,6 +40,9 @@ public class PlayerManager : MonoBehaviour
         catAnimator = gameObject.GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         inputManager = GetComponent<InputManager>();
+
+        numScrolls = GameObject.FindGameObjectsWithTag("NarrativeItem").Length;
+        scrollsTxt.text = scrollsCollected + "/" + numScrolls;
     }
 
     private void Update()
@@ -51,6 +60,19 @@ public class PlayerManager : MonoBehaviour
         if (!isCinematicPlaying)
         {
             //playerCam.HandleCamera();
+        }
+    }
+
+    //Week 4 tempo
+    public void CollectScroll()
+    {
+        scrollsCollected++;
+        scrollsTxt.text = scrollsCollected + "/" + numScrolls;
+        if(scrollsCollected >= numScrolls)
+        {
+            //endCinematic.Play();
+            //inputManager.HandleCursorState(CursorLockMode.Confined);
+            scrollsTxt.text = "all collected! Thanks for playing";
         }
     }
 

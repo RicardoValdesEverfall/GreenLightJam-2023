@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     [Header("Loading screen")]
     [SerializeField] CanvasGroup loadingBackground;
     [SerializeField] CanvasGroup loadingItems;
+    [SerializeField] CanvasGroup continuePopup;
     [SerializeField] string gameScene;
     [SerializeField] string mainMenuScene;
 
@@ -28,6 +29,8 @@ public class MainMenu : MonoBehaviour
 
 
     private CanvasGroup currentWindow;
+    private bool canContinue = false;
+    private AsyncOperation asyncLeveLoad;
 
     //FMOD
     //List banks to load
@@ -54,6 +57,7 @@ public class MainMenu : MonoBehaviour
         windowCredits.gameObject.SetActive(false);
         windowCredits.alpha = 0;
         logo.alpha = 0;
+        continuePopup.alpha = 0;
 
 
     }
@@ -61,7 +65,10 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(canContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            KeyToContinueGame();
+        }
     }
 
     private void IntroMainMenu()
@@ -89,8 +96,8 @@ public class MainMenu : MonoBehaviour
         var seq = DOTween.Sequence();
         seq.Append(loadingBackground.DOFade(1, 1f).OnComplete(() =>
         {
-            StartCoroutine(LoadScene(gameScene, gameBanks));
             activeEffect.Stop();
+            StartCoroutine(LoadScene(gameScene, gameBanks));
         }));
         seq.Append(loadingItems.DOFade(1, 1f));
 
@@ -166,29 +173,37 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadScene(string sceneToLoad, List<string> bankFMOD)
     {
 
-        AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
-        async.allowSceneActivation = false;
+        asyncLeveLoad = SceneManager.LoadSceneAsync(sceneToLoad);
+        asyncLeveLoad.allowSceneActivation = false;
 
         StartCoroutine(LoadBanks(bankFMOD));
 
         float t = Time.time;
-        while (async.progress < 0.9f)
+        while (asyncLeveLoad.progress < 0.9f)
         {
             yield return new WaitForSeconds(0.1f);
         }
         Debug.Log("Loading took: " + (Time.time - t));
-        yield return new WaitForSeconds(1f);
+        canContinue = true;
+        continuePopup.alpha = 1;
+        //yield return new WaitForSeconds(1f);
 
         //Finished loading
-        var seq = DOTween.Sequence();
-        seq.Append(loadingItems.DOFade(0, 2f).OnComplete(() =>
-        {
-            //change to new scene on complete
-            async.allowSceneActivation = true;
-
-        }));
+        
         //inputModule.enabled = true;
         Debug.Log("Scene: " + sceneToLoad + " has loaded");
+    }
+
+    private void KeyToContinueGame()
+    {
+        var seq = DOTween.Sequence();
+        seq.Append(continuePopup.DOFade(0, 1f));
+        seq.Join(loadingItems.DOFade(0, 1f).OnComplete(() =>
+        {
+            //change to new scene on complete
+            asyncLeveLoad.allowSceneActivation = true;
+
+        }));
     }
 
 

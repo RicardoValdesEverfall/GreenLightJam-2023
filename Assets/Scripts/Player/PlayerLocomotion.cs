@@ -72,10 +72,8 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(testing);
         if(testing)
         {
-            Debug.Log("can reset");
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

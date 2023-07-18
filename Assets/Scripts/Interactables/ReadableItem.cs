@@ -9,6 +9,7 @@ public class ReadableItem : Interactable
 	[SerializeField] DialogueRunner dialogueRunner;
 	[SerializeField] string yarnNode;
     private bool isCurrentConversation = false;
+    private bool alreadyCollected = false;
 
     protected override void Awake()
     {
@@ -34,23 +35,29 @@ public class ReadableItem : Interactable
         {
 		    dialogueRunner.StartDialogue(yarnNode);
             isCurrentConversation = true;
+            //week 4 temp
+            if(!alreadyCollected)
+            {
+                alreadyCollected = true;
+                playerManager.CollectScroll();
+            }
         }
 	}
 
     private void EndConversation()
     {
-				Debug.Log("End dialogue event");
+		Debug.Log("End dialogue event");
         if(isCurrentConversation)
         {
             isCurrentConversation = false;
         }
-        //playerManager.isCinematicPlaying = false;
+        playerManager.isCinematicPlaying = false;
         StartCoroutine(MakeInteractiveAgain());
     }
 
     private void BeforeStartingItemDialogue()
     {
-        //playerManager.isCinematicPlaying = true;
+        playerManager.isCinematicPlaying = true;
         isInteractive = false;
         playerManager.canInteract = false;
         playerManager.objectToInteractWith = null;
