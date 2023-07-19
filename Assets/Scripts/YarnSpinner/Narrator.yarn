@@ -1,15 +1,5 @@
-﻿title: Narrator
-tags:
-position: 231,-341
----
-<<wait 0.5>>
-Fascinating how advanced our Hellenic counterparts are in the study of the stars… #line:0b85daf 
-Oh, how’s Pangur Ban doing? He’s doing–I mean, he was doing fine… #line:02c62d9 
-No, he’s not getting better… What should I do… How is this the one problem I can’t solve… #line:0f52539 
-
-===
-title: Poem1
-position: -767,-536
+﻿title: Poem1
+position: -779,-901
 ---
 "Pangur Bán and I at work, #line:013c235 
 Adepts, equals, cat and clerk: #line:019638c 
@@ -22,7 +12,7 @@ Happy for me, Pangur Bán #line:0e9049f
 Child-plays round some mouse’s den." #line:044ca5e 
 ===
 title: Poem2
-position: -521,-535
+position: -562,-903
 ---
 Truth to tell, just being here,  #line:00f8f51 
 Housed alone, housed together, #line:0efa18c 
@@ -34,7 +24,7 @@ Next thing lines that held and held #line:0018225
 Meaning back begin to yield. #line:0248f8f 
 ===
 title: Poem3
-position: -289,-533
+position: -345,-903
 ---
 "All the while, his round bright eye #line:0147b41 
 Fixes on the wall,  #line:0c76052 
@@ -46,7 +36,7 @@ When the longed-for, difficult answers come, I too exult. #line:0d479e5
 How did I not find an answer to fix his ailment...." #line:0aba347 
 ===
 title: Poem4Start
-position: -46,-547
+position: -125,-903
 ---
 "Who are you?  #line:0f5f2e4 
 Oh, um,  #line:08afe16 
@@ -55,7 +45,7 @@ You wish to hear it?  #line:04f38ca
 Well, what's there to lose...  #line:0dad885 
 ===
 title: Poem4
-position: -46,-547
+position: 103,-906
 ---
 "So it goes. To each his own. #line:0dd64d8 
 No vying. No vexation. #line:0345181 
@@ -68,7 +58,7 @@ Day and night, my own hard work #line:0c4712d
 Solves the cruxes, makes a mark." #line:03acb09 
 ===
 title: BookOfHymns
-position: -507,-354
+position: -774,-526
 ---
 "You say that... there's more mice than usual? #line:08c9a17 
 I suppose that adds up,  #line:0fd6a68 
@@ -78,7 +68,7 @@ even when mice approach him.  #line:0f6d2e8
 Why?" #line:09145a7 
 ===
 title: ScrollsOfTheStars
-position: -762,-352
+position: -776,-684
 ---
 "Look, Pangur Ban!  #line:0b6139b 
 There's Orion, see?  #line:0cfd1e1 
@@ -88,20 +78,20 @@ The Ursa Minor's right over yonder.  #line:07df56c
 I must write all of this down, the nuns won't believe these discoveries!" #line:080a04a 
 ===
 title: Condolences
-position: -281,-137
+position: -772,-60
 ---
 "To think your mark would have affected so many people... #line:026720c 
 I hope you see this, Pangur Ban." #line:09bfeff 
 ===
 title: Druids
-position: -282,-356
+position: -771,-371
 ---
 "Perhaps following the advice from the druid will help you... #line:076cbc7 
 First, I must gather a handful of grass #line:0ff40a8 
 and... horse teeth?" #line:05626c4 
 ===
 title: Ovate
-position: -804,139
+position: -768,-214
 ---
 "He really seems to like you--how odd, #line:0a8093c 
 he tends be to aloof around the nuns #line:0f40e4e 
@@ -109,18 +99,53 @@ but warms up to the ovate immediately." #line:03a4fca
 ===
 
 title: StainedGlass
-position: -46,-547
+position: -769,97
 ---
 "When the longed-for, difficult answers come, I too exult. #line:0a586db 
 Answers...  #line:0eeaf9c 
 I need answers, what do I do..." #line:0976d72 
 ===
 title: UnfinishedLetter
-position: -46,-547
+position: -769,253
 ---
 "My days and nights have been quieter than ever-- #line:0b6b223 
 perhaps it's best for me to remain isolated, bishop, for just a while longer... #line:018662a 
 no, that doesn't sound right.  #line:03de894 
 Ahem, to my sisterhood... #line:0154a37 
 no, not that either..." #line:03fb859 
+===
+title: ScrollsOfTheHoly
+position: -770,409
+---
+The night is cold as usual. #line:02d4d9c 
+Pangur that's a candle! Do not knock it down you silly cat! #line:0fe689d 
+Ah, there goes my scrolls... #line:01a9340 
+===
+title: TheMonksChair
+position: -768,562
+---
+My musings about the stars, my observations and prayers, #line:06bec30 
+this chair has witnessed them all. #line:01bc124 
+In spite of the scratches Pangur Bán has left on it. #line:0ac28e6 
+Awww, isn't he the cutest? #line:0299b50 
+I should check up on him. #line:09948ce 
+I'll leave the quill here for now. #line:05f805d 
+===
+title: Quill
+position: -770,714
+---
+Oh, that's where I left my quill. #line:06f9fa0 
+Pangur Bán brought a dead bird to the chapel once #line:0cfe374 
+and its feathes were strong enough to hold ink. #line:0eeedf7 
+The bishop did not like it one bit. #line:04d076a 
+He held on to his rosary tightly that day. #line:0f43c58 
+===
+title: MorsJournal
+position: -768,869
+---
+So many musings of mine shall remain secrets only my god, #line:0d1c637 
+well and Pangur Bán will know about in this journal. #line:0e2ea3b 
+Research papers, #line:0b3efbe 
+letters to druids, #line:04f6853 
+so many will remain hidden. #line:0ddd4c1 
 ===

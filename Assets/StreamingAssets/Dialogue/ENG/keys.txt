@@ -228,3 +228,72 @@ line:0154a37,Dialogue_Narration_UnfinishedLetter_004_ToMySisterhood.wav
 
 //no not that either...
 line:03fb859,Dialogue_Narration_UnfinishedLetter_005_NoNotThat.wav
+
+
+
+////Scrolls Of The Holy////
+//The night is cold as usual.
+line:02d4d9c,Dialogue_Narration_ScrollsOfTheHoly_001_TheNightIs.wav
+
+//Pangur that's a candle! Do not knock it down you silly cat!
+line:0fe689d,Dialogue_Narration_ScrollsOfTheHoly_002_PangerThatsA.wav
+
+//Ah there goes my scrolls...
+line:01a9340,Dialogue_Narration_ScrollsOfTheHoly_003_AhhThereGoes.wav
+
+
+
+////The Monk's Chair////
+//My musings about the stars my observations and prayers
+line:06bec30,Dialogue_Narration_TheMonksChair_001_MyMusingsAbout.wav
+
+//this chair has witnessed them all
+line:01bc124,Dialogue_Narration_TheMonksChair_002_ThisChairHas.wav
+
+//In spite of the scratches Pangur Bán has left on it
+line:0ac28e6,Dialogue_Narration_TheMonksChair_003_InSpiteOf.wav
+
+//Awww isn't he the cutest?
+line:0299b50,Dialogue_Narration_TheMonksChair_004_AwwIsntHe.wav
+
+//I should check up on him
+line:09948ce,Dialogue_Narration_TheMonksChair_005_IShouldCheck.wav
+
+//I'll leave the quill here for now
+line:05f805d,Dialogue_Narration_TheMonksChair_006_IllLeaveThe.wav
+
+
+
+////Quill////
+Oh that's where I left my quill
+line:06f9fa0,Dialogue_Narration_Quill_001_OhThatsWhere.wav
+
+//Pangur Bán brought a dead bird to the chapel once
+line:0cfe374,Dialogue_Narration_Quill_002_PangerBanBrought.wav
+
+//and its feathes were strong enough to hold ink
+line:0eeedf7,Dialogue_Narration_Quill_003_AndItsFeathers.wav
+
+//The bishop did not like it one bit
+line:04d076a,Dialogue_Narration_Quill_004_TheBishopDid.wav
+
+//He held on to his rosary tightly that day
+line:0f43c58,Dialogue_Narration_Quill_005_HeHeldOn.wav
+
+
+
+////Mor's Journal////
+//So many musings of mine shall remain secrets only my god
+line:0d1c637,Dialogue_Narration_MorsJournal_001_SoManyMusings.wav
+
+//well and Pangur Bán will know about in this journal
+line:0e2ea3b,Dialogue_Narration_MorsJournal_002_WellAndPanger.wav
+
+//Research papers
+line:0b3efbe,Dialogue_Narration_MorsJournal_003_ResearchPapers.wav
+
+//letters to druids
+line:04f6853,Dialogue_Narration_MorsJournal_004_LettersToDruids.wav
+
+//so many will remain hidden
+line:0ddd4c1,Dialogue_Narration_MorsJournal_005_SoManyWill.wav
