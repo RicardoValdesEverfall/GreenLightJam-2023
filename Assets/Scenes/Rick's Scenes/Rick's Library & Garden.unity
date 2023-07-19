@@ -834,11 +834,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &68108561
 MonoBehaviour:
@@ -911,12 +910,12 @@ PrefabInstance:
     - target: {fileID: 715073787989663589, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000035129917
+      value: 0.0000035508044
       objectReference: {fileID: 0}
     - target: {fileID: 715073787989663589, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000066012456
+      value: 0.00000066723004
       objectReference: {fileID: 0}
     - target: {fileID: 851538865244645083, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
@@ -1001,22 +1000,42 @@ PrefabInstance:
     - target: {fileID: 6444858130303908000, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000035479472
+      value: 0.000003564975
       objectReference: {fileID: 0}
     - target: {fileID: 6444858130303908000, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000005153357
+      value: 0.000000517809
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776115817519141952, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4940023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776115817519141952, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.646944
       objectReference: {fileID: 0}
     - target: {fileID: 7776115817519141952, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000035257644
+      value: 0.0000035871587
       objectReference: {fileID: 0}
     - target: {fileID: 7776115817519141952, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000051211373
+      value: 0.0000005210312
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776115817519141952, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.98961544
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776115817519141952, guid: 1d2eb933dddab4b1aaea296d9fa94666,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.14374067
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2339,11 +2358,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &110956934
 MonoBehaviour:
@@ -7795,11 +7813,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &423581181
 MonoBehaviour:
@@ -8853,11 +8870,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &473845673
 MonoBehaviour:
@@ -18967,11 +18983,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &1082406865
 MonoBehaviour:
@@ -23977,11 +23992,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &1410960852
 MonoBehaviour:
@@ -26201,11 +26215,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &1491840491
 MonoBehaviour:
@@ -28628,11 +28641,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &1669659005
 MonoBehaviour:
@@ -29737,11 +29749,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &1729570810
 MonoBehaviour:
@@ -34758,11 +34769,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  dialogueSystem: {fileID: 0}
   ShowPopup: 0
-  ShowOutline: 0
+  PopupCanvasGroup: {fileID: 0}
+  isInteractive: 1
   playerManager: {fileID: 0}
-  PopupText: {fileID: 0}
   isInRange: 0
 --- !u!114 &2028218244
 MonoBehaviour:

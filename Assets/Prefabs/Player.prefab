@@ -3034,6 +3034,7 @@ GameObject:
   - component: {fileID: 988673636851549936}
   - component: {fileID: 7368046469734855472}
   - component: {fileID: 2781924085550372990}
+  - component: {fileID: 1388838384733028890}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -3081,6 +3082,7 @@ MonoBehaviour:
   kitchenComplete: 0
   dormComplete: 0
   canInteract: 0
+  scrollsTxt: {fileID: 0}
   itemCounter:
     m_PersistentCalls:
       m_Calls: []
@@ -3096,6 +3098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9ced302288acb4097c024aece13670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObject: {fileID: 0}
   playerCharacterController: {fileID: 5021066563387024655}
   walkSpeed: 3
   sprintSpeed: 6
@@ -3116,6 +3119,7 @@ MonoBehaviour:
     m_Bits: 512
   checkWithCollider: 1
   fallingClimbingSpeed: 0.1
+  testing: 0
   moveDirection: {x: 0, y: 0, z: 0}
   yVelocity: {x: 0, y: 0, z: 0}
   isSprinting: 0
@@ -3242,6 +3246,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3522287, y: 0.5811322, z: 0.31170723}
   m_Center: {x: -0.003606614, y: 0.24602258, z: 0.14303346}
+--- !u!114 &1388838384733028890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913409546406123319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d54f3126d1e74264cad038c433aa318e,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: PlayerLocomotion
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &7059056992853835914
 GameObject:
   m_ObjectHideFlags: 0

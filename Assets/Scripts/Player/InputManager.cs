@@ -6,7 +6,7 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
-    private PlayerControls playerControls; //The input map where all input actions and types are defined & registered.
+    public PlayerControls playerControls; //The input map where all input actions and types are defined & registered.
     public PlayerLocomotion playerLocomotion;
     private PlayerAudio playerAudio;
     private PlayerManager playerManager;
