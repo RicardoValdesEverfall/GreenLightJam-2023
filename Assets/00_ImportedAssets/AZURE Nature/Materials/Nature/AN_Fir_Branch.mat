@@ -69,6 +69,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SmoothnessTexture1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SmoothnessTexture3:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -101,6 +105,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.35
     - _BumpScale: 1
@@ -120,7 +137,9 @@ Material:
     - _Cutoff1: 0.35
     - _DetailNormalMapScale: 1
     - _DirectLightInt: 1
+    - _DirectLightInt1: 1
     - _DirectLightOffset: 0
+    - _DirectLightOffset1: 0
     - _DstBlend: 0
     - _EnableColor2: 0
     - _Fixthebaseoffoliage: 1
@@ -131,15 +150,18 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _IndirectLightInt: 1
+    - _IndirectLightInt1: 1
     - _InvertColor2: 0
     - _Keyword0: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _SNOW: 0
     - _Smoothness: 0.07
-    - _Smoothness1: 0
+    - _Smoothness1: 0.07
     - _SmoothnessTextureChannel: 0
     - _Snow: 0
     - _Snow1: 0
@@ -160,6 +182,7 @@ Material:
     - _TransShadow: 0.95
     - _Translucency: 1
     - _TranslucencyInt: 8
+    - _TranslucencyInt1: 1
     - _TreeType: 1
     - _UVSec: 0
     - _WIND: 1
@@ -175,10 +198,11 @@ Material:
     - __dirty: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.13867462, g: 0.46099997, b: 0.27734932, a: 0}
-    - _Color2: {r: 0.1597293, g: 0.44339612, b: 0.044339478, a: 0}
+    - _Color1: {r: 0.13867468, g: 0.46099997, b: 0.27734938, a: 0}
+    - _Color2: {r: 0.15972936, g: 0.44339618, b: 0.044339523, a: 0}
     - _Color3: {r: 0, g: 0, b: 0, a: 0}
     - _CoverageColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowColor: {r: 0.51693714, g: 0.5647059, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
