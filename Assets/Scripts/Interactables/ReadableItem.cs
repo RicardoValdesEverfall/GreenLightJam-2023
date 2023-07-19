@@ -39,7 +39,7 @@ public class ReadableItem : Interactable
             if(!alreadyCollected)
             {
                 alreadyCollected = true;
-                playerManager.CollectScroll();
+                //playerManager.CollectScroll();
             }
         }
 	}

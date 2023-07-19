@@ -3,7 +3,12 @@ guid: 8fad018165a614d9c943441e9e63a002
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vitrail
+    second: {fileID: 2100000, guid: 4f483127d18394664bca076cc67b482f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

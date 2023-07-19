@@ -41,8 +41,8 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
         inputManager = GetComponent<InputManager>();
 
-        numScrolls = GameObject.FindGameObjectsWithTag("NarrativeItem").Length;
-        scrollsTxt.text = scrollsCollected + "/" + numScrolls;
+        //numScrolls = GameObject.FindGameObjectsWithTag("NarrativeItem").Length;
+        //scrollsTxt.text = scrollsCollected + "/" + numScrolls;
     }
 
     private void Update()
@@ -64,7 +64,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     //Week 4 tempo
-    public void CollectScroll()
+    /*public void CollectScroll()
     {
         scrollsCollected++;
         scrollsTxt.text = scrollsCollected + "/" + numScrolls;
@@ -74,7 +74,7 @@ public class PlayerManager : MonoBehaviour
             //inputManager.HandleCursorState(CursorLockMode.Confined);
             scrollsTxt.text = "all collected! Thanks for playing";
         }
-    }
+    }*/
 
     public void HandleInteraction()
     {
