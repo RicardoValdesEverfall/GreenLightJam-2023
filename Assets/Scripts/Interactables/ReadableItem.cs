@@ -6,8 +6,8 @@ using Yarn.Unity;
 
 public class ReadableItem : Interactable
 {
-	[SerializeField] DialogueRunner dialogueRunner;
 	[SerializeField] string yarnNode;
+	DialogueRunner dialogueRunner;
     private bool isCurrentConversation = false;
     private bool alreadyCollected = false;
 
