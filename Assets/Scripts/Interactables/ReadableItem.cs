@@ -22,6 +22,12 @@ public class ReadableItem : Interactable
         }
     }
 
+    public void SetupItem(DialogueRunner dialogueRunner, CanvasGroup PopupCanvasGroup)
+    {
+        this.dialogueRunner = dialogueRunner;
+        this.popupCanvasGroup = PopupCanvasGroup;
+    }
+
     // Update is called once per frame
     protected override void Update()
     {

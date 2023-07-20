@@ -4,12 +4,17 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Events;
 using TMPro;
+using Yarn.Unity;
 
 public class PlayerManager : MonoBehaviour
 {
     private PlayerLocomotion playerLocomotion;
     private InputManager inputManager;
     private PlayerCamera playerCam;
+
+    [Header("Narrative Management")]
+    [SerializeField] private DialogueRunner itemDialogues;
+    [SerializeField] private CanvasGroup itemsPopup;
 
     [Header("DEBUG VALUES")]
     [SerializeField, ReadOnly] public PlayableDirector endCinematic;
@@ -24,6 +29,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, ReadOnly] public bool kitchenComplete;
     [SerializeField, ReadOnly] public bool dormComplete;
     [SerializeField, ReadOnly] public bool canInteract;
+    [SerializeField, ReadOnly] private ReadableItem[] narrativeItems;
 
     //Week 4 - production Temp
     private int numScrolls = 0;
@@ -43,6 +49,11 @@ public class PlayerManager : MonoBehaviour
 
         //numScrolls = GameObject.FindGameObjectsWithTag("NarrativeItem").Length;
         //scrollsTxt.text = scrollsCollected + "/" + numScrolls;
+        narrativeItems = FindObjectsOfType<ReadableItem>();
+        foreach (ReadableItem item in narrativeItems)
+        {
+            item.SetupItem(itemDialogues, itemsPopup);
+        }
     }
 
     private void Update()

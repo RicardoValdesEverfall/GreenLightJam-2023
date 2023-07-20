@@ -10,7 +10,7 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField] public Transform interactPoint;
     //[SerializeField] private FMODDialogue dialogueSystem;
     [SerializeField] private bool ShowPopup;
-    [SerializeField] private CanvasGroup PopupCanvasGroup;
+    [SerializeField] protected CanvasGroup popupCanvasGroup;
 
     private Vector3 startSize;
     private Outline myOutline;
@@ -27,7 +27,11 @@ public abstract class Interactable : MonoBehaviour
             //make text face the camera
             float popupPos = (GetComponent<Collider>().bounds.extents.y) + 0.25f;
             Vector3 worldPos = transform.position + (Vector3.up * popupPos);
-            PopupCanvasGroup.transform.position = cam.WorldToScreenPoint(worldPos);
+            Vector3 inScreenPos = cam.WorldToScreenPoint(worldPos);
+            inScreenPos.x = Mathf.Clamp(inScreenPos.x, 0, Screen.width);
+            inScreenPos.y = Mathf.Clamp(inScreenPos.y, 0, Screen.height);
+
+            popupCanvasGroup.transform.position = inScreenPos;
         }
     }
     protected virtual void Awake()
@@ -56,7 +60,7 @@ public abstract class Interactable : MonoBehaviour
             if (ShowPopup)
             {
                 isInRange = true;
-                PopupCanvasGroup.DOFade(1, .15f);
+                popupCanvasGroup.DOFade(1, .15f);
             }
 
             playerManager.objectToInteractWith = this;
@@ -81,7 +85,7 @@ public abstract class Interactable : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             myOutline.enabled = false;
-            PopupCanvasGroup.DOFade(0, .15f);
+            popupCanvasGroup.DOFade(0, .15f);
         }
         if (isInRange) { isInRange = false; }
         playerManager.canInteract = false;

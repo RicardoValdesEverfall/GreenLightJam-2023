@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Vitrail
-    second: {fileID: 2100000, guid: 4f483127d18394664bca076cc67b482f, type: 2}
+    second: {fileID: 2100000, guid: 3135a22460da449569fc148e5f0726db, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
