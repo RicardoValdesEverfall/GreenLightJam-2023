@@ -13,7 +13,7 @@ public class PlayerFootsteps : MonoBehaviour
     [SerializeField]
     private CURRENT_MATERIAL currentMaterial;
 
-    private enum CURRENT_MATERIAL { Wood, Concrete, Grass, LaminatedWood, Plastic, ThinMetal };
+    private enum CURRENT_MATERIAL { Wood, Concrete, Grass, Gravel };
 
     private Vector3 rayCastOffSet = new Vector3(0f, 0.1f, 0f);
 
@@ -25,8 +25,7 @@ public class PlayerFootsteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetermineMaterial();
-
+        
     }
 
     private void FixedUpdate()
@@ -35,51 +34,192 @@ public class PlayerFootsteps : MonoBehaviour
     }
 
 
-    // Raycase below to see what material layer it is
+
+    private Dictionary<string, CURRENT_MATERIAL> textureToMaterialMapping = new Dictionary<string, CURRENT_MATERIAL>()
+    {
+        { "Wood", CURRENT_MATERIAL.Wood },
+        { "Floor", CURRENT_MATERIAL.Concrete },
+        { "Floor tileable", CURRENT_MATERIAL.Concrete },
+        { "Grass", CURRENT_MATERIAL.Grass },
+        { "Gravel", CURRENT_MATERIAL.Gravel },
+        { "Ground", CURRENT_MATERIAL.Gravel }
+    };
+
+    RaycastHit hit;
+    bool isRaycastHit;
+
+    private void RaycastFootHitDetection()
+    {
+        originPosition = raycastOrigin.position + raycastOrigin.TransformDirection(raycastOffset);
+        raycastDirection = raycastOrigin.TransformDirection(Vector3.forward);
+
+
+        isRaycastHit = Physics.Raycast(originPosition, raycastDirection, out hit, raycastDistance, ~layerToIgnore);
+
+        
+
+        if (isRaycastHit && !hasHitObject && Time.time - lastHitTime >= hitBufferTime)
+        {
+            DetermineMaterial();
+            SelectAndPlayFootstep();
+            hasHitObject = true;
+            lastHitTime = Time.time;
+        }
+        else if (!isRaycastHit)
+        {
+            hasHitObject = false;
+        }
+
+        Debug.DrawRay(originPosition, raycastDirection * raycastDistance, Color.red);
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(originPosition, raycastDirection * raycastDistance);
+    }
+
+
+
     private void DetermineMaterial()
     {
 
-        RaycastHit hit;
-        Ray ray = new Ray(transform.position + rayCastOffSet, Vector3.down);
-        //Debug.DrawRay(transform.position + rayCastOffSet, Vector3.down, Color.red);
+        //bool isRaycastHit = Physics.Raycast(originPosition, raycastDirection, out hit, raycastDistance, ~layerToIgnore);
+        //Debug.DrawRay(originPosition, raycastDirection, Color.red);
 
-
-        if (Physics.Raycast(ray, out hit, 1.0f, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+        if (hit.collider is TerrainCollider terrainCollider)
         {
-
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Wood"))
+            DetermineTerrainMaterial(terrainCollider);            
+        }
+        else
+        {
+            Renderer renderer = FindRendererInChildren(hit.collider.transform);
+            if (renderer != null)
             {
-                currentMaterial = CURRENT_MATERIAL.Wood;
+                DetermineMeshMaterial(renderer);
             }
-
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Concrete"))
+            else
             {
-                currentMaterial = CURRENT_MATERIAL.Concrete;
+                Debug.Log("Renderer component not found in childred of the hit object.");
             }
-
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Grass"))
-            {
-                currentMaterial = CURRENT_MATERIAL.Grass;
-            }
-
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("LaminatedWood"))
-            {
-                currentMaterial = CURRENT_MATERIAL.LaminatedWood;
-            }
-
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Plastic"))
-            {
-                currentMaterial = CURRENT_MATERIAL.Plastic;
-            }
-
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ThinMetal"))
-            {
-                currentMaterial = CURRENT_MATERIAL.ThinMetal;
-            }
-
-            //Debug.Log(currentMaterial);
         }
     }
+
+    private void DetermineTerrainMaterial(TerrainCollider terrainCollider)
+    {
+        TerrainData terrainData = terrainCollider.terrainData;
+
+        // Get the UV coordinates of the hit point
+        Vector3 hitPoint = hit.point;
+        Vector3 terrainPosition = terrainCollider.transform.position;
+        Vector3 terrainLocalPos = hitPoint - terrainPosition;
+        Vector3 normalisedPos = new Vector3(
+            terrainLocalPos.x / terrainData.size.x,
+            terrainLocalPos.y / terrainData.size.y,
+            terrainLocalPos.z / terrainData.size.z
+            );
+
+        Texture2D texture = GetTextureIndexAtUVCoordinates(terrainData, normalisedPos);
+        if (texture != null)
+        {
+            Debug.Log("Hit Texture Name: " + texture.name);
+
+            if (textureToMaterialMapping.TryGetValue(texture.name, out CURRENT_MATERIAL materialType))
+            {
+                currentMaterial = materialType;
+            }
+            else
+            {
+                currentMaterial = CURRENT_MATERIAL.Concrete; //Default material
+            }
+        }
+        else
+        {
+            Debug.Log("No Texture found at the hit point's UV coordinates.");
+        }
+    }
+
+
+    private void DetermineMeshMaterial(Renderer renderer)
+    {
+        Material material = renderer.material;
+
+        if (material != null)
+        {
+            Texture texture = material.mainTexture;
+            if (texture != null)
+            {
+                Debug.Log("Texture name: " + texture.name);
+
+                textureToMaterialMapping.TryGetValue(texture.name, out CURRENT_MATERIAL materialType);
+
+                currentMaterial = materialType;
+            }
+            else
+            {
+                Debug.Log("Material does not have a mainTexture.");
+            }
+
+        }
+        else
+        {
+            Debug.Log("Renderer does not have a material.");
+        }
+    }
+
+
+
+    private Renderer FindRendererInChildren(Transform parent)
+    {
+        Renderer renderer = parent.GetComponent<Renderer>();
+        if (renderer != null)
+            return renderer;
+
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            renderer = FindRendererInChildren(parent.GetChild(i));
+            if (renderer != null)
+                return renderer;
+        }
+
+        return null;
+    }
+ 
+    private Texture2D GetTextureIndexAtUVCoordinates(TerrainData terrainData, Vector3 uvCoordinates)
+    {
+        TerrainLayer[] terrainLayers = terrainData.terrainLayers;
+        int splatMapWidth = terrainData.alphamapWidth;
+        int splatMapHeight = terrainData.alphamapHeight;
+        int numLayers = terrainData.terrainLayers.Length;
+        float[,,] splatmapData = terrainData.GetAlphamaps(0, 0, splatMapWidth, splatMapHeight);
+
+        // Convert UV Coordinates to splatmap coordinates
+        int mapX = Mathf.FloorToInt(uvCoordinates.x * splatMapWidth);
+        int mapZ = Mathf.FloorToInt(uvCoordinates.z * splatMapHeight);
+
+        //Find the most dominate texture (highest value) at the specified UV coordinates
+        float maxTextureStrength = -1f;
+        int dominantTextureIndex = 1;
+        for (int textureIndex = 0; textureIndex < numLayers; textureIndex++)
+        {
+            float textureStrength = splatmapData[mapZ, mapX, textureIndex];
+            if (textureStrength > maxTextureStrength)
+            {
+                maxTextureStrength = textureStrength;
+                dominantTextureIndex = textureIndex;
+            }
+
+        }
+
+        if (dominantTextureIndex >= 0 && dominantTextureIndex < numLayers)
+        {
+            return terrainLayers[dominantTextureIndex].diffuseTexture;
+        }
+
+        return null;
+    }
+
 
     // Method to switch materials in FMOD
     public void SelectAndPlayFootstep()
@@ -100,22 +240,13 @@ public class PlayerFootsteps : MonoBehaviour
                 PlayFootstep(2);
                 break;
 
-            case CURRENT_MATERIAL.LaminatedWood:
+            case CURRENT_MATERIAL.Gravel:
                 PlayFootstep(3);
-                break;
-
-            case CURRENT_MATERIAL.Plastic:
-                PlayFootstep(4);
-                break;
-
-            case CURRENT_MATERIAL.ThinMetal:
-                PlayFootstep(5);
                 break;
 
             default:
                 PlayFootstep(0);
                 break;
-
         }
     }
 
@@ -148,45 +279,123 @@ public class PlayerFootsteps : MonoBehaviour
     public float hitBufferTime = 0.1f;
     private float lastHitTime = 0f;
 
-    private void RaycastFootHitDetection()
-    {
-        RaycastHit hit;
 
 
 
-        originPosition = raycastOrigin.position + raycastOrigin.TransformDirection(raycastOffset);
-        raycastDirection = raycastOrigin.TransformDirection(Vector3.forward);
-        
 
-
-        bool isRaycastHit = Physics.Raycast(originPosition, raycastDirection, out hit, raycastDistance, ~layerToIgnore);
-
-        if (isRaycastHit && !hasHitObject && Time.time - lastHitTime >= hitBufferTime)
-        {
-            SelectAndPlayFootstep();
-            hasHitObject = true;
-            lastHitTime = Time.time;
-        }
-        else if (!isRaycastHit)
-        {
-            hasHitObject = false;
-        }
-
-        Debug.DrawRay(originPosition, raycastDirection * raycastDistance, Color.red);
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(originPosition, raycastDirection * raycastDistance);
-    }
 
 }
+
+
+
+
+
+
+
 
 /*
 rotationOffset = rotation * raycastOffset;
 originPosition = raycastOrigin.position + rotatedOffset;
 raycastDirection = raycastOrigin.TransformDirection(Vector3.forward);
 rotation = Quaternion.Euler(raycastRotation);
+*/
+
+
+
+
+/*
+
+
+// Raycase below to see what material layer it is
+private void DetermineMaterial()
+{
+
+    RaycastHit hit;
+    bool isRaycastHit = Physics.Raycast(originPosition, raycastDirection, out hit, raycastDistance, ~layerToIgnore);
+    Debug.DrawRay(originPosition, raycastDirection, Color.red);
+
+
+    if (isRaycastHit && hit.collider != null)
+    {
+        Renderer renderer = FindRendererInChildren(hit.collider.transform);
+        Debug.Log("Raycast hit object: " + hit.collider.gameObject.name);
+
+
+        if (hit.collider is TerrainCollider terrainCollider)
+        {
+            TerrainData terrainData = terrainCollider.terrainData;
+
+            // Get the UV coordinates of the hit point
+            Vector3 hitPoint = hit.point;
+            Vector3 terrainPosition = terrainCollider.transform.position;
+            Vector3 terrainLocalPos = hitPoint - terrainPosition;
+            Vector3 normalisedPos = new Vector3(
+                terrainLocalPos.x / terrainData.size.x,
+                terrainLocalPos.y / terrainData.size.y,
+                terrainLocalPos.z / terrainData.size.z
+                );
+
+            Texture2D texture = GetTextureIndexAtUVCoordinates(terrainData, normalisedPos);
+            if (texture != null)
+            {
+                Debug.Log("Hit Texture Name: " + texture.name);
+            }
+            else
+            {
+                Debug.Log("No Texture found at the hit point's UV coordinates.");
+            }
+
+        }
+
+        if (renderer != null)
+        {
+            Debug.Log("Renderer found in children hierarchy: " + renderer.gameObject.name);
+            Material material = renderer.material;
+            if (material != null)
+            {
+                Texture texture = material.mainTexture;
+                if (texture != null)
+                {
+                    Debug.Log("Texture name: " + texture.name);
+
+
+                    if (texture.name.Contains("Wood"))
+                    {
+                        currentMaterial = CURRENT_MATERIAL.Wood;
+                    }
+
+                    else if (texture.name.Contains("Floor") || texture.name.Contains("Floor tileable"))
+                    {
+                        currentMaterial = CURRENT_MATERIAL.Concrete;
+                    }
+
+                    else if (texture.name.Contains("Grass"))
+                    {
+                        currentMaterial = CURRENT_MATERIAL.Grass;
+                    }
+
+                    else if (texture.name.Contains("Gravel"))
+                    {
+                        currentMaterial = CURRENT_MATERIAL.Gravel;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Material does not have a mainTexture.");
+                }
+
+            }
+            else
+            {
+                Debug.Log("Renderer does not have a material.");
+            }
+        }
+        else
+        {
+            Debug.Log("Renderer component not found in children of the hit object.");
+        }
+
+    }
+}
+
 */
