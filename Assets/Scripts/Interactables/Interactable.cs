@@ -8,15 +8,16 @@ using DG.Tweening;
 public abstract class Interactable : MonoBehaviour
 {
 
-    public enum PopUpDir { Top, Left, Right };
+    public enum PopUpDir { Top, Left, Right, Center };
 
     [SerializeField] public Transform interactPoint;
     //[SerializeField] private FMODDialogue dialogueSystem;
+    [SerializeField] private bool floatEffect = false;
     [SerializeField] private bool showOutline = true;
     [SerializeField] private bool showPopup = true;
     [SerializeField] protected string popUpText = "E";
-    [SerializeField] private PopUpDir popUpPosition;
     [SerializeField] protected CanvasGroup popupCanvasGroup;
+    [SerializeField] private PopUpDir popUpPosition;
 
     [SerializeField, ReadOnly] public PlayerManager playerManager;
     [SerializeField, ReadOnly] private bool isInRange;
@@ -41,9 +42,9 @@ public abstract class Interactable : MonoBehaviour
             inScreenPos.y = Mathf.Clamp(inScreenPos.y, 0, Screen.height);
             popupCanvasGroup.transform.position = inScreenPos;
             
-
         }
     }
+
     protected virtual void Awake()
     {
         cam = Camera.main;
@@ -71,18 +72,26 @@ public abstract class Interactable : MonoBehaviour
                     popupPos = (GetComponent<Collider>().bounds.extents.x) + 0.25f;
                     popUpWorldPos = transform.position + (Vector3.right * popupPos);
                     break;
-                default:
+                case PopUpDir.Center:
                     popUpWorldPos = transform.position;
                     break;
             }
         }
     }
-    
 
-    // Update is called once per frame
+    private void Start()
+    {
+        if(floatEffect)
+        {
+            transform.DOMoveY(transform.position.y + 0.1f, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        }
+    }
+
     protected virtual void Update()
     {
+
     }
+
 
     public virtual void Interaction()
     {
