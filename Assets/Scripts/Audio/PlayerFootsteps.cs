@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FIMSpace.FSpine;
+using UnityEngine.Rendering;
 
 public class PlayerFootsteps : MonoBehaviour
 {
@@ -16,6 +17,24 @@ public class PlayerFootsteps : MonoBehaviour
     private enum CURRENT_MATERIAL { Wood, Concrete, Grass, Gravel };
 
     private Vector3 rayCastOffSet = new Vector3(0f, 0.1f, 0f);
+
+
+
+    //Raycast variables
+    public float raycastDistance = 0.03f;
+    public Transform raycastOrigin;
+    public Vector3 raycastOffset;
+    Vector3 originPosition;
+    Vector3 raycastDirection;
+    Vector3 rotatedOffset;
+    Vector3 raycastRotation;
+    Vector3 rotationOffset;
+    Quaternion rotation;
+    private bool hasHitObject = false;
+    public LayerMask layerToIgnore;
+    public float hitBufferTime = 0.1f;
+    private float lastHitTime = 0f;
+
 
     private void Start()
     {
@@ -35,15 +54,29 @@ public class PlayerFootsteps : MonoBehaviour
 
 
 
-    private Dictionary<string, CURRENT_MATERIAL> textureToMaterialMapping = new Dictionary<string, CURRENT_MATERIAL>()
+    //These two arrays are matching according to their index number
+    private string[] textureKeywords = new string[]
     {
-        { "Wood", CURRENT_MATERIAL.Wood },
-        { "Floor", CURRENT_MATERIAL.Concrete },
-        { "Floor tileable", CURRENT_MATERIAL.Concrete },
-        { "Grass", CURRENT_MATERIAL.Grass },
-        { "Gravel", CURRENT_MATERIAL.Gravel },
-        { "Ground", CURRENT_MATERIAL.Gravel }
+        "Unknown",   // Index 0 for textures not matching any keyword
+        "Wood",
+        "Floor",
+        "Floor tileable",
+        "Grass",
+        "Gravel",
+        "Ground"
     };
+
+    private CURRENT_MATERIAL[] textureMaterialMappings = new CURRENT_MATERIAL[]
+    {
+        CURRENT_MATERIAL.Concrete, // Index 0 for textures not matching any keyword
+        CURRENT_MATERIAL.Wood,
+        CURRENT_MATERIAL.Concrete,
+        CURRENT_MATERIAL.Concrete,
+        CURRENT_MATERIAL.Grass,
+        CURRENT_MATERIAL.Gravel,
+        CURRENT_MATERIAL.Gravel
+    };
+
 
     RaycastHit hit;
     bool isRaycastHit;
@@ -108,37 +141,35 @@ public class PlayerFootsteps : MonoBehaviour
 
     private void DetermineTerrainMaterial(TerrainCollider terrainCollider)
     {
-        TerrainData terrainData = terrainCollider.terrainData;
-
         // Get the UV coordinates of the hit point
         Vector3 hitPoint = hit.point;
         Vector3 terrainPosition = terrainCollider.transform.position;
         Vector3 terrainLocalPos = hitPoint - terrainPosition;
-        Vector3 normalisedPos = new Vector3(
-            terrainLocalPos.x / terrainData.size.x,
-            terrainLocalPos.y / terrainData.size.y,
-            terrainLocalPos.z / terrainData.size.z
+
+        Vector3 splatMapPosition = new Vector3(
+            terrainLocalPos.x / terrainCollider.terrainData.size.x,
+            0,
+            terrainLocalPos.z / terrainCollider.terrainData.size.z
             );
 
-        Texture2D texture = GetTextureIndexAtUVCoordinates(terrainData, normalisedPos);
-        if (texture != null)
-        {
-            Debug.Log("Hit Texture Name: " + texture.name);
+        int x = Mathf.FloorToInt(splatMapPosition.x * terrainCollider.terrainData.alphamapWidth);
+        int z = Mathf.FloorToInt(splatMapPosition.x * terrainCollider.terrainData.alphamapHeight);
 
-            if (textureToMaterialMapping.TryGetValue(texture.name, out CURRENT_MATERIAL materialType))
-            {
-                currentMaterial = materialType;
-            }
-            else
-            {
-                currentMaterial = CURRENT_MATERIAL.Concrete; //Default material
-            }
-        }
-        else
+        float[,,] alphaMap = terrainCollider.terrainData.GetAlphamaps(x, z, 1, 1);
+
+        int primaryIndex = 0;
+        for (int i = 1; i < alphaMap.Length; i++)
         {
-            Debug.Log("No Texture found at the hit point's UV coordinates.");
+            if (alphaMap[0, 0, i] > alphaMap[0, 0, primaryIndex])
+            {
+                primaryIndex = i;
+            }
         }
+        Texture texture = terrainCollider.terrainData.terrainLayers[primaryIndex].diffuseTexture;
+
+        currentMaterial = DetermineTextureMaterial(texture);
     }
+
 
 
     private void DetermineMeshMaterial(Renderer renderer)
@@ -151,10 +182,7 @@ public class PlayerFootsteps : MonoBehaviour
             if (texture != null)
             {
                 Debug.Log("Texture name: " + texture.name);
-
-                textureToMaterialMapping.TryGetValue(texture.name, out CURRENT_MATERIAL materialType);
-
-                currentMaterial = materialType;
+                currentMaterial = DetermineTextureMaterial(texture);
             }
             else
             {
@@ -168,6 +196,18 @@ public class PlayerFootsteps : MonoBehaviour
         }
     }
 
+    private CURRENT_MATERIAL DetermineTextureMaterial(Texture texture)
+    {
+        string textureName = texture.name;
+        for (int i = 1; i < textureKeywords.Length; i++)
+        {
+            if (textureName.Contains(textureKeywords[i]))
+            {
+                return textureMaterialMappings[i];
+            }
+        }
+        return CURRENT_MATERIAL.Concrete;
+    }
 
 
     private Renderer FindRendererInChildren(Transform parent)
@@ -181,40 +221,6 @@ public class PlayerFootsteps : MonoBehaviour
             renderer = FindRendererInChildren(parent.GetChild(i));
             if (renderer != null)
                 return renderer;
-        }
-
-        return null;
-    }
- 
-    private Texture2D GetTextureIndexAtUVCoordinates(TerrainData terrainData, Vector3 uvCoordinates)
-    {
-        TerrainLayer[] terrainLayers = terrainData.terrainLayers;
-        int splatMapWidth = terrainData.alphamapWidth;
-        int splatMapHeight = terrainData.alphamapHeight;
-        int numLayers = terrainData.terrainLayers.Length;
-        float[,,] splatmapData = terrainData.GetAlphamaps(0, 0, splatMapWidth, splatMapHeight);
-
-        // Convert UV Coordinates to splatmap coordinates
-        int mapX = Mathf.FloorToInt(uvCoordinates.x * splatMapWidth);
-        int mapZ = Mathf.FloorToInt(uvCoordinates.z * splatMapHeight);
-
-        //Find the most dominate texture (highest value) at the specified UV coordinates
-        float maxTextureStrength = -1f;
-        int dominantTextureIndex = 1;
-        for (int textureIndex = 0; textureIndex < numLayers; textureIndex++)
-        {
-            float textureStrength = splatmapData[mapZ, mapX, textureIndex];
-            if (textureStrength > maxTextureStrength)
-            {
-                maxTextureStrength = textureStrength;
-                dominantTextureIndex = textureIndex;
-            }
-
-        }
-
-        if (dominantTextureIndex >= 0 && dominantTextureIndex < numLayers)
-        {
-            return terrainLayers[dominantTextureIndex].diffuseTexture;
         }
 
         return null;
@@ -264,26 +270,6 @@ public class PlayerFootsteps : MonoBehaviour
     {
         Player_Footsteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
-
-    public float raycastDistance = 0.03f;
-    public Transform raycastOrigin;
-    public Vector3 raycastOffset;
-    Vector3 originPosition;
-    Vector3 raycastDirection;
-    Vector3 rotatedOffset;
-    Vector3 raycastRotation;
-    Vector3 rotationOffset;
-    Quaternion rotation;
-    private bool hasHitObject = false;
-    public LayerMask layerToIgnore;
-    public float hitBufferTime = 0.1f;
-    private float lastHitTime = 0f;
-
-
-
-
-
-
 }
 
 
@@ -298,12 +284,12 @@ rotationOffset = rotation * raycastOffset;
 originPosition = raycastOrigin.position + rotatedOffset;
 raycastDirection = raycastOrigin.TransformDirection(Vector3.forward);
 rotation = Quaternion.Euler(raycastRotation);
-*/
 
 
 
 
-/*
+
+
 
 
 // Raycase below to see what material layer it is
@@ -397,5 +383,103 @@ private void DetermineMaterial()
 
     }
 }
+
+
+    private void DetermineTerrainMaterial(TerrainCollider terrainCollider, RaycastHit hit)
+    {
+
+        if (cachedTerrainData == null)
+        {
+            cachedTerrainData = terrainCollider.terrainData;
+        }
+
+
+
+// Get the UV coordinates of the hit point
+Vector3 hitPoint = hit.point;
+Vector3 terrainPosition = terrainCollider.transform.position;
+Vector3 terrainLocalPos = hitPoint - terrainPosition;
+Vector3 normalisedPos = new Vector3(
+    terrainLocalPos.x / cachedTerrainData.size.x,
+    terrainLocalPos.y / cachedTerrainData.size.y,
+    terrainLocalPos.z / cachedTerrainData.size.z
+    );
+
+Texture2D texture = GetTextureIndexAtUVCoordinates(cachedTerrainData, normalisedPos);
+if (texture != null)
+{
+    Debug.Log("Hit Texture Name: " + texture.name);
+
+    currentMaterial = DetermineTextureMaterial(texture);
+}
+else
+{
+    Debug.Log("No Texture found at the hit point's UV coordinates.");
+}
+    }
+
+
+
+    private Texture2D GetTextureIndexAtUVCoordinates(TerrainData terrainData, Vector3 uvCoordinates)
+    {
+        TerrainLayer[] terrainLayers = terrainData.terrainLayers;
+        int splatMapWidth = terrainData.alphamapWidth;
+        int splatMapHeight = terrainData.alphamapHeight;
+        int numLayers = terrainData.terrainLayers.Length;
+        float[,,] splatmapData = terrainData.GetAlphamaps(0, 0, splatMapWidth, splatMapHeight);
+
+        // Convert UV Coordinates to splatmap coordinates
+        int mapX = Mathf.FloorToInt(uvCoordinates.x * splatMapWidth);
+        int mapZ = Mathf.FloorToInt(uvCoordinates.z * splatMapHeight);
+
+        //Find the most dominate texture (highest value) at the specified UV coordinates
+        float maxTextureStrength = -1f;
+        int dominantTextureIndex = 1;
+        for (int textureIndex = 0; textureIndex < numLayers; textureIndex++)
+        {
+            float textureStrength = splatmapData[mapZ, mapX, textureIndex];
+            if (textureStrength > maxTextureStrength)
+            {
+                maxTextureStrength = textureStrength;
+                dominantTextureIndex = textureIndex;
+            }
+
+        }
+
+        if (dominantTextureIndex >= 0 && dominantTextureIndex < numLayers)
+        {
+            return terrainLayers[dominantTextureIndex].diffuseTexture;
+        }
+
+        return null;
+    }
+
+
+    private void CacheTerrainTextures()
+    {
+        Terrain[] terrains = FindObjectsOfType<Terrain>();
+
+        foreach (Terrain terrain in terrains)
+        {
+            cachedTerrainData = terrain.terrainData;
+
+            // Get the UV coordinates of the terrain center
+            Vector3 center = terrain.transform.position + terrain.terrainData.size * 0.5f;
+            Vector3 normalizedCenter = new Vector3(
+                center.x / cachedTerrainData.size.x,
+                center.y / cachedTerrainData.size.y,
+                center.z / cachedTerrainData.size.z
+            );
+
+            Texture2D dominantTexture = GetTextureIndexAtUVCoordinates(cachedTerrainData, normalizedCenter);
+            if (dominantTexture != null)
+            {
+                cachedTerrainTextures[terrain] = dominantTexture;
+
+            }
+
+        }
+
+    }
 
 */
