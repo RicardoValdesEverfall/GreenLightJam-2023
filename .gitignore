@@ -112,9 +112,6 @@ fmod_editor.log
 
 # MacOS
 .DS_Store
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+
+
 Assets/Toon Fantasy Nature/Scenes/*
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset

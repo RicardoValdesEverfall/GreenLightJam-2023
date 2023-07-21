@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1717994029675884847}
   - component: {fileID: 8307495840835848616}
   - component: {fileID: 7899849400788625534}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,9 +116,8 @@ GameObject:
   - component: {fileID: 7726640679106764154}
   - component: {fileID: 736954623717604390}
   - component: {fileID: 6864844934196152690}
-  - component: {fileID: 6389879817435029123}
   - component: {fileID: 3583471595594564484}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Readable Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,20 +171,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 0}
-  ShowPopup: 1
+  floatEffect: 0
+  showOutline: 1
+  showPopup: 1
+  popUpText: E
   popupCanvasGroup: {fileID: 0}
-  isInteractive: 1
+  popUpPosition: 0
   playerManager: {fileID: 0}
   isInRange: 0
   yarnNode: BookOfHymns
---- !u!33 &6389879817435029123
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536167451538089139}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!135 &3583471595594564484
 SphereCollider:
   m_ObjectHideFlags: 0
