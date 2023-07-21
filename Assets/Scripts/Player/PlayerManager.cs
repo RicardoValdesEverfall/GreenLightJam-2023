@@ -14,7 +14,8 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Narrative Management")]
     [SerializeField] private DialogueRunner itemDialogues;
-    [SerializeField] private CanvasGroup itemsPopup;
+    [SerializeField] private CanvasGroup popUpUINarrative;
+    [SerializeField] private CanvasGroup popUpUIOthers;
 
     [Header("DEBUG VALUES")]
     [SerializeField, ReadOnly] public PlayableDirector endCinematic;
@@ -50,9 +51,25 @@ public class PlayerManager : MonoBehaviour
         //numScrolls = GameObject.FindGameObjectsWithTag("NarrativeItem").Length;
         //scrollsTxt.text = scrollsCollected + "/" + numScrolls;
         narrativeItems = FindObjectsOfType<ReadableItem>();
-        foreach (ReadableItem item in narrativeItems)
+        if (!itemDialogues)
+            itemDialogues = FindFirstObjectByType<DialogueRunner>();
+        
+    }
+
+    private void Start()
+    {
+        if (popUpUINarrative)
         {
-            item.SetupItem(itemDialogues, itemsPopup);
+            popUpUINarrative.alpha = 0;
+            foreach (ReadableItem item in narrativeItems)
+            {
+                item.SetupItem(itemDialogues, popUpUINarrative);
+            }
+
+        }
+        if(popUpUIOthers)
+        {
+            popUpUIOthers.alpha = 0;
         }
     }
 

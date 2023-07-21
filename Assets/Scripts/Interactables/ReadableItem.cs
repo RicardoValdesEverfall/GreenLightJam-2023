@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Yarn.Unity;
+using TMPro;
 
 public class ReadableItem : Interactable
 {
@@ -14,18 +15,19 @@ public class ReadableItem : Interactable
     protected override void Awake()
     {
         base.Awake();
-        if (dialogueRunner)
-        {
-            dialogueRunner.onDialogueComplete.AddListener(EndConversation);
-            dialogueRunner.onDialogueStart.AddListener(BeforeStartingItemDialogue);
-
-        }
     }
 
-    public void SetupItem(DialogueRunner dialogueRunner, CanvasGroup PopupCanvasGroup)
+    public void SetupItem(DialogueRunner dr, CanvasGroup popup)
     {
-        this.dialogueRunner = dialogueRunner;
-        this.popupCanvasGroup = PopupCanvasGroup;
+        dialogueRunner = dr;
+        popupCanvasGroup = popup;
+
+        //events
+        dialogueRunner.onDialogueComplete.AddListener(EndConversation);
+        dialogueRunner.onDialogueStart.AddListener(BeforeStartingItemDialogue);
+
+        popUpTextUI = popupCanvasGroup.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        popUpTextUI.text = popUpText;
     }
 
     // Update is called once per frame
@@ -39,10 +41,12 @@ public class ReadableItem : Interactable
         base.Interaction();
         if(!isCurrentConversation && !dialogueRunner.IsDialogueRunning)
         {
-		    dialogueRunner.StartDialogue(yarnNode);
             isCurrentConversation = true;
+		    dialogueRunner.StartDialogue(yarnNode);
+            //hide popup
+            TogglePopUp(false);
             //week 4 temp
-            if(!alreadyCollected)
+            if (!alreadyCollected)
             {
                 alreadyCollected = true;
                 //playerManager.CollectScroll();
@@ -56,17 +60,22 @@ public class ReadableItem : Interactable
         if(isCurrentConversation)
         {
             isCurrentConversation = false;
+            playerManager.isCinematicPlaying = false;
+            ShowInteractiveFeedback(false);
+            StartCoroutine(MakeInteractiveAgain());
         }
-        playerManager.isCinematicPlaying = false;
-        StartCoroutine(MakeInteractiveAgain());
     }
 
     private void BeforeStartingItemDialogue()
     {
-        playerManager.isCinematicPlaying = true;
-        isInteractive = false;
-        playerManager.canInteract = false;
-        playerManager.objectToInteractWith = null;
+        if(isCurrentConversation)
+        {
+            playerManager.isCinematicPlaying = true;
+            isInteractive = false;
+            playerManager.canInteract = false;
+            playerManager.objectToInteractWith = null;
+
+        }
         
     }
 
