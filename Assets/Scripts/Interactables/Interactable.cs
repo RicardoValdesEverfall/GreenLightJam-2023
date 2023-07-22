@@ -10,22 +10,27 @@ public abstract class Interactable : MonoBehaviour
 
     public enum PopUpDir { Top, Left, Right, Center };
 
-    [SerializeField] public Transform interactPoint;
-    //[SerializeField] private FMODDialogue dialogueSystem;
-    [SerializeField] private bool floatEffect = false;
+    [SerializeField, ReadOnly] public PlayerManager playerManager;
+    [SerializeField, ReadOnly] private bool isInRange;
+
+    [Header("UX")]
+    [SerializeField] private bool interactiveReminder = false;
+    [SerializeField] private float reminderLoopTime = 1f;
     [SerializeField] private bool showOutline = true;
+    [SerializeField] private bool floatEffect = false;
+    private Sequence reminderSequence;
+
+    [Header("Popup")]
     [SerializeField] private bool showPopup = true;
     [SerializeField] protected string popUpText = "E";
     [SerializeField] protected CanvasGroup popupCanvasGroup;
     [SerializeField] private PopUpDir popUpPosition;
 
-    [SerializeField, ReadOnly] public PlayerManager playerManager;
-    [SerializeField, ReadOnly] private bool isInRange;
-
     private Vector3 startSize;
     private Outline myOutline;
     private Camera cam;
     private Vector3 popUpWorldPos;
+    private bool interacted = false;
 
     protected bool isInteractive = true;
     protected TextMeshProUGUI popUpTextUI;
@@ -49,7 +54,7 @@ public abstract class Interactable : MonoBehaviour
     {
         cam = Camera.main;
         myOutline = GetComponent<Outline>();
-        myOutline.enabled = false;
+        myOutline.OutlineWidth = 0;
         playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         if(popupCanvasGroup)
         {
@@ -77,7 +82,23 @@ public abstract class Interactable : MonoBehaviour
                     break;
             }
         }
+
+        if(interactiveReminder)
+        {
+            reminderSequence = DOTween.Sequence();
+            reminderSequence.SetDelay(reminderLoopTime);
+            reminderSequence.Append(DOTween.To(x => myOutline.OutlineWidth = x, 0, 3, 1f)).SetRelative().SetEase(Ease
+                .InOutSine);
+            reminderSequence.SetLoops(-1, LoopType.Yoyo);
+        }
     }
+
+
+    protected virtual void Update()
+    {
+
+    }
+
 
     private void Start()
     {
@@ -87,15 +108,15 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
-    protected virtual void Update()
+    private void KillReminderSequence()
     {
-
+        reminderSequence.Kill();
     }
 
 
     public virtual void Interaction()
     {
-        
+        interacted = true;
     }
 
     protected virtual void OnTriggerEnter(Collider col)
@@ -103,6 +124,8 @@ public abstract class Interactable : MonoBehaviour
         if (col.CompareTag("Player") && isInteractive)
         {
             isInRange = true;
+            if(interactiveReminder)
+                reminderSequence.Kill();
             ShowInteractiveFeedback(true);
 
         }
@@ -148,8 +171,8 @@ public abstract class Interactable : MonoBehaviour
             Debug.Log("show feedback");
             Debug.Log(gameObject.name);
             if (showOutline)
-                myOutline.enabled = true;
-            if(showPopup)
+                DOTween.To(x => myOutline.OutlineWidth = x, 0, 2, 0.5f);
+            if (showPopup)
                 popupCanvasGroup.DOFade(1, .15f);
             playerManager.objectToInteractWith = this;
             playerManager.canInteract = true;
@@ -158,7 +181,7 @@ public abstract class Interactable : MonoBehaviour
         {
             Debug.Log("hide feedback");
             if (showOutline)
-                myOutline.enabled = false;
+                DOTween.To(x => myOutline.OutlineWidth = x, 2, 0, .5f);
             if (showPopup)
                 popupCanvasGroup.DOFade(0, .15f);
             playerManager.canInteract = false;

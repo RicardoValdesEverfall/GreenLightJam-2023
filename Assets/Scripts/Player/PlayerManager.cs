@@ -61,10 +61,10 @@ public class PlayerManager : MonoBehaviour
         if (popUpUINarrative)
         {
             popUpUINarrative.alpha = 0;
-            foreach (ReadableItem item in narrativeItems)
+            /*foreach (ReadableItem item in narrativeItems)
             {
                 item.SetupItem(itemDialogues, popUpUINarrative);
-            }
+            }*/
 
         }
         if(popUpUIOthers)
