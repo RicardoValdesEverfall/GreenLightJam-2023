@@ -5,6 +5,7 @@ using UnityEngine;
 public class Book : Interactable
 {
     [SerializeField] private Vector3 forcePush;
+    [SerializeField] public Transform interactPoint;
     private Rigidbody bookRB;
 
     protected override void Awake()

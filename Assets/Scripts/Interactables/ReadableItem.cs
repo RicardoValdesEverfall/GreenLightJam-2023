@@ -8,27 +8,20 @@ using TMPro;
 public class ReadableItem : Interactable
 {
 	[SerializeField] string yarnNode;
-	DialogueRunner dialogueRunner;
+	[SerializeField] DialogueRunner dialogueRunner;
     private bool isCurrentConversation = false;
     private bool alreadyCollected = false;
 
     protected override void Awake()
     {
         base.Awake();
-    }
-
-    public void SetupItem(DialogueRunner dr, CanvasGroup popup)
-    {
-        dialogueRunner = dr;
-        popupCanvasGroup = popup;
-
         //events
         dialogueRunner.onDialogueComplete.AddListener(EndConversation);
         dialogueRunner.onDialogueStart.AddListener(BeforeStartingItemDialogue);
-
         popUpTextUI = popupCanvasGroup.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         popUpTextUI.text = popUpText;
     }
+
 
     // Update is called once per frame
     protected override void Update()
