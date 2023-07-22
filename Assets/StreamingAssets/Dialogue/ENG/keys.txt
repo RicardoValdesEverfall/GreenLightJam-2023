@@ -297,3 +297,216 @@ line:04f6853,Dialogue_Narration_MorsJournal_004_LettersToDruids.wav
 
 //so many will remain hidden
 line:0ddd4c1,Dialogue_Narration_MorsJournal_005_SoManyWill.wav
+
+
+////Introduction////
+//Welcome to the Abbey dear
+line:03cab88,Dialogue_Narration_Introduction_001_WelcomeToThe.wav
+
+//Pangur Ban–my cat–lives here
+line:0da3d73,Dialogue_Narration_Introduction_002_PangurBanMy.wav
+
+//Day and night the old cat hunts
+line:0c88f9a,Dialogue_Narration_Introduction_003_DayAndNight.wav
+
+//Here we work in unison
+line:0b8a39f,Dialogue_Narration_Introduction_004_HereWeWork.wav
+
+//Day and night he hunts I write
+line:0f19f2d,Dialogue_Narration_Introduction_005_DayAndNight.wav
+
+//Heres where we both live and dine
+line:01643e0,Dialogue_Narration_Introduction_006_HereIsWhere.wav
+
+//His food has been left untouched
+line:0c116e3,Dialogue_Narration_Introduction_007_HisFoodHas.wav
+
+//Can you check on Pangur Ban
+line:06c5e43,Dialogue_Narration_Introduction_008_CanYouCheck.wav
+
+
+
+////Ending////
+//Pangur Ban… was once at work
+line:0de6f97,Dialogue_Narration_Ending_001_PangurBanWas.wav
+
+//We were adepts we were equals
+line:04c61ff,Dialogue_Narration_Ending_002_WeWereAdepts.wav
+
+//Then came winters frigid embrace
+line:090ca4c,Dialogue_Narration_Ending_003_ThenCameWinters.wav
+
+//The cats conscience faded away
+line:05aa694,Dialogue_Narration_Ending_004_TheCatsConscience.wav
+
+//That spring the stained glass broke down
+line:0c8e7f8,Dialogue_Narration_Ending_005_ThatSpringThe.wav
+
+//I thought it was him somehow
+line:0c3f7c0,Dialogue_Narration_Ending_006_IThoughtIt.wav
+
+//Instead I saw three kittens
+line:0581eda,Dialogue_Narration_Ending_007_InsteadISaw.wav
+
+//White like my dear Pangur Ban
+line:0bfce77,Dialogue_Narration_Ending_008_WhiteLikeMy.wav
+
+//Those three live as my equals
+line:093bc27,Dialogue_Narration_Ending_009_ThoseThreeLive.wav
+
+//Their whole instinct is to hunt
+line:0a1c2d2,Dialogue_Narration_Ending_010_TheirWholeInstinct.wav
+
+//Mine to free the meaning pent
+line:0feb031,Dialogue_Narration_Ending_011_MineToFree.wav
+
+//Day and night we all work hard
+line:0897062,Dialogue_Narration_Ending_012_DayAndNight.wav
+
+
+
+////HellenisticScrolls////
+//Look Pangur Ban look! They are here!
+line:0162611,Dialogue_Narration_HellenisticScrolls_001_LookPangurBan.wav
+
+//The Hellenistic Scrolls
+line:0e2d133,Dialogue_Narration_HellenisticScrolls_002_TheHellenisticScrolls.wav
+
+//Detailing the path of stars and comets alike!
+line:05bf8ab,Dialogue_Narration_HellenisticScrolls_003_DetailingThePath.wav
+
+
+
+////Ink////
+//Oh dear we seem to be out of ink once again Pangur
+line:019d804,Dialogue_Narration_Ink_001_OhDearWe.wav
+
+//Let's go and retrieve some oak galls from the garden to make more!
+line:007c761,Dialogue_Narration_Ink_002_LetsGoAnd.wav
+
+
+
+////BookShelves////
+//With a shelf full of books and a cat providing company
+line:0031601,Dialogue_Narration_Bookshelves_001_WithAShelf.wav
+
+//it is not surprising how much of a hermit I have become since Pangur Ban's arrival
+line:0e67b2c,Dialogue_Narration_Bookshelves_002_ItsNotSurprising.wav
+
+
+
+////PangurBansRug////
+//It's embarassing knowing how many injuries I went through while knitting this rug for Pangur Ban
+line:02a159d,Dialogue_Narration_PangurBansRug_001_ItsEmbarassingKnowing.wav
+
+//He loved it so much
+line:0bccf5a,Dialogue_Narration_PangurBansRug_002_HeLovedIt.wav
+
+//So I think it was worth it... 
+line:026dc2b,Dialogue_Narration_PangurBansRug_003_SoIThink.wav
+
+
+
+////BenchOfPrayer////
+//It took a while to get used to praying with members of the Abbey
+line:0c5041b,Dialogue_Narration_BenchOfPrayer_001_ItTookA.wav
+
+//but soon enough it was a part of my routine
+line:09b5bda,Dialogue_Narration_BenchOfPrayer_002_ButSoonEnough.wav
+
+
+
+////TheBishopsRosary////
+//The Bishop had a gorgeous rosary decorated with rare gemstones
+line:0dabe9e,Dialogue_Narration_TheBishopsRosary_001_TheBishopHad.wav
+
+//I should ask her where she bought it
+line:029174a,Dialogue_Narration_TheBishopsRosary_002_IShouldAsk.wav
+
+//but we haven't spoken since I got her letter...
+line:0f3a75a,Dialogue_Narration_TheBishopsRosary_003_ButWeHavent.wav
+
+
+
+
+////Clairseach////
+//The musicians were not fond of Pangur Ban playing with the cláirseach
+line:0a7ade1,Dialogue_Narration_Clairseach_001_TheMusiciansWere.wav
+
+//but enjoyed petting him in between masses
+line:084867a,Dialogue_Narration_Clairseach_002_ButEnjoyedPetting.wav
+
+//I wonder what those papers around the cláirseach are...
+line:0091114,Dialogue_Narration_Clairseach_003_IWonderWhat.wav
+
+
+
+////Altar////
+//Pangur would jump on top of the altar in the middle of the service.
+line:05868cb,Dialogue_Narration_Altar_001_PangurWouldJump.wav
+
+//Thank goodness he was loved by everyone in the monastery
+line:09cbfec,Dialogue_Narration_Altar_002_ThankGoodnessHe.wav
+
+
+
+////Wine////
+//This wine is supposedly of the finest quality
+line:0d1b8b7,Dialogue_Narration_Wine_001_ThisWineIs.wav
+
+//Well according to the Bishop
+line:0aa6e8e,Dialogue_Narration_Wine_002_WellAccordingTo.wav
+
+//Supposedly
+line:0443883,Dialogue_Narration_Wine_003_Supposedly.wav
+
+
+
+////Bread////
+//Even though I always had fish to spare
+line:054cb60,Dialogue_Narration_Bread_001_EvenThoughI.wav
+
+//Pangur Ban would still try to steal the bread meant for services
+line:062f7fe,Dialogue_Narration_Bread_002_PangurBanWould.wav
+
+
+
+////TheBishopsLetter////
+//The Bishop's words helped me through the worst of it...
+line:0148233,Dialogue_Narration_TheBishopsLetter_001_TheBishopsWords.wav
+
+
+
+////AstronomyLetter////
+//The nuns celebrated my discoveries
+line:0ed5eef,Dialogue_Narration_AstronomyLetter_001_TheNunsCelebrated.wav
+
+//No matter how small they were
+line:0388e52,Dialogue_Narration_AstronomyLetter_002_NoMatterHow.wav
+
+//It overwhelmed Pangur Ban
+line:022c895,Dialogue_Narration_AstronomyLetter_003_ItOverwhelmedPangur.wav
+
+//But he would purr by my side
+line:0cbcee7,Dialogue_Narration_AstronomyLetter_004_ButHeWould.wav
+
+//while they handed me this letter.
+line:0a40157,Dialogue_Narration_AstronomyLetter_005_WhileTheyHanded.wav
+
+
+
+////HandfulOfGrass////
+//Both the druid and the ovate said this would help Pangur Ban recover when he was not feeling well...
+line:08ebabf,Dialogue_Narration_HandfulOfGrass_001_BothTheDruid.wav
+
+//Oh how I wish they had been right
+line:0a25dba,Dialogue_Narration_HandfulOfGrass_002_OhHowI.wav
+
+
+
+////OakGalls////
+Pangur was so good at finding these
+line:059ab77,Dialogue_Narration_OakGalls_001_PangurWasSo.wav
+
+It was easy to gather them and make more ink whenever I ran out.
+line:04b118d,Dialogue_Narration_OakGalls_002_ItWasEasy.wav
