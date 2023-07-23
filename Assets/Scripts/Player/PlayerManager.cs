@@ -13,7 +13,6 @@ public class PlayerManager : MonoBehaviour
     private PlayerCamera playerCam;
 
     [Header("Narrative Management")]
-    [SerializeField] private DialogueRunner itemDialogues;
     [SerializeField] private CanvasGroup popUpUINarrative;
     [SerializeField] private CanvasGroup popUpUIOthers;
 
@@ -30,7 +29,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, ReadOnly] public bool kitchenComplete;
     [SerializeField, ReadOnly] public bool dormComplete;
     [SerializeField, ReadOnly] public bool canInteract;
-    [SerializeField, ReadOnly] private ReadableItem[] narrativeItems;
 
     //Week 4 - production Temp
     private int numScrolls = 0;
@@ -50,9 +48,6 @@ public class PlayerManager : MonoBehaviour
 
         //numScrolls = GameObject.FindGameObjectsWithTag("NarrativeItem").Length;
         //scrollsTxt.text = scrollsCollected + "/" + numScrolls;
-        narrativeItems = FindObjectsOfType<ReadableItem>();
-        if (!itemDialogues)
-            itemDialogues = FindFirstObjectByType<DialogueRunner>();
         
     }
 
