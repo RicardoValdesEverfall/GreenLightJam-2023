@@ -778,8 +778,8 @@ MonoBehaviour:
     layers:
       serializedVersion: 2
       m_Bits: 257
-    maxStep: 0.07
-    heightOffset: 0
+    maxStep: 0.64
+    heightOffset: 0.05
     footSpeed: 2.5
     footRadius: 0.0001
     footCenterOffset: 0
@@ -2217,13 +2217,13 @@ MonoBehaviour:
   fixTransforms: 1
   solver:
     executedInEditor: 0
-    IKPosition: {x: 0.038648214, y: 0.016085923, z: -0.1803783}
+    IKPosition: {x: -58.55265, y: 0.010085923, z: 25.704378}
     IKPositionWeight: 1
     root: {fileID: 8645343302481835577}
     target: {fileID: 0}
     IKRotationWeight: 1
-    IKRotation: {x: 0.70710653, y: 0.00000060218565, z: 0.00000031013926, w: 0.707107}
-    bendNormal: {x: 0.009994276, y: 0.0010525871, z: -0.0037449705}
+    IKRotation: {x: 0.000002480701, y: 0.707107, z: -0.70710653, w: 0.0000015683773}
+    bendNormal: {x: -0.009994284, y: 0.0010526216, z: 0.003744671}
     bone1:
       transform: {fileID: 75227473221883385}
       weight: 1
@@ -2254,7 +2254,7 @@ MonoBehaviour:
       length: 0
       sqrMag: 0
       axis: {x: -1, y: -0, z: -0}
-    goal: 0
+    goal: 1
     bendModifier: 0
     maintainRotationWeight: 0
     bendModifierWeight: 1
@@ -3071,6 +3071,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355ba58c08ecffe4b86295d3b80eb476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDialogues: {fileID: 0}
+  popUpUINarrative: {fileID: 0}
+  popUpUIOthers: {fileID: 0}
   endCinematic: {fileID: 0}
   objectToInteractWith: {fileID: 0}
   interactIKTarget: {fileID: 0}
@@ -3082,6 +3085,7 @@ MonoBehaviour:
   kitchenComplete: 0
   dormComplete: 0
   canInteract: 0
+  narrativeItems: []
   scrollsTxt: {fileID: 0}
   itemCounter:
     m_PersistentCalls:

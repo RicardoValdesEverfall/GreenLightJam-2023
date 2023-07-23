@@ -2,22 +2,34 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AN_Birch_Leaves
   m_Shader: {fileID: 4800000, guid: 0154318cd2c5a3747a66420b5d885dd5, type: 3}
-  m_ShaderKeywords: _COLOR2ENABLE_ON _COLOR2OVERLAYTYPE_VERTEXPOSITIONBASED _COLOR2OVERLAYTYPE_VERTEX_POSITION_BASED
-    _COLOR2TYPE_VERTEXPOSITIONBASED _KEYWORD0_ON _SNOWOVERLAYTYPE_WORLDNORMALBASED
-    _SNOWOVERLAYTYPE_WORLD_NORMAL_BASED _TREETYPE_BROADLEAF _WIND_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _COLOR2ENABLE_ON
+  - _COLOR2OVERLAYTYPE_VERTEX_POSITION_BASED
+  - _SNOWOVERLAYTYPE_UV_BASED
+  - _SNOW_ON
+  - _WIND_ON
+  m_InvalidKeywords:
+  - _COLOR2OVERLAYTYPE_VERTEXPOSITIONBASED
+  - _COLOR2TYPE_VERTEXPOSITIONBASED
+  - _KEYWORD0_ON
+  - _SNOWOVERLAYTYPE_WORLDNORMALBASED
+  - _TREETYPE_BROADLEAF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -146,15 +158,15 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SNOW: 0
+    - _SNOW: 1
     - _Smoothness: 0.1
     - _Smoothness1: 0.1
     - _SmoothnessTextureChannel: 0
     - _Snow: 0
-    - _SnowAmount: 0.5
-    - _SnowFade: 0.05
+    - _SnowAmount: 0
+    - _SnowFade: 0.5
     - _SnowLevel: 0
-    - _SnowOverlayType: 0
+    - _SnowOverlayType: 1
     - _SnowTiling: 0.15
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -178,8 +190,8 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.11446146, g: 0.496, b: 0.05341538, a: 0}
-    - _Color2: {r: 0.5568627, g: 1, b: 0.10196078, a: 0}
+    - _Color1: {r: 0.23925038, g: 0.3207547, b: 0.22543609, a: 0}
+    - _Color2: {r: 0.3868896, g: 0.5283019, b: 0.24172305, a: 0}
     - _CoverageColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowColor: {r: 1, g: 1, b: 1, a: 0}

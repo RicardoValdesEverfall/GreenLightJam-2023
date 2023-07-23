@@ -11,9 +11,10 @@ public class CutsceneManager : MonoBehaviour
 
     [Header("CUTSCENE MANAGER SETTINGS")]
     [SerializeField] private float playbackSpeed;
+    [SerializeField] private bool checkChild = true;
 
    // Start is called before the first frame update
-   void Start()
+    void Start()
     {
         cutsceneDirector = GetComponent<PlayableDirector>();
     }
@@ -37,7 +38,7 @@ public class CutsceneManager : MonoBehaviour
         {
             playerManager = other.GetComponent<PlayerManager>();
             playerManager.isCinematicPlaying = true;
-            playerManager.endCinematic = this.transform.GetChild(0).GetComponent<PlayableDirector>();
+            if (checkChild) { playerManager.endCinematic = this.transform.GetChild(0).GetComponent<PlayableDirector>(); }
           
             cutsceneDirector.Play();
             cutsceneDirector.playableGraph.GetRootPlayable(0).SetSpeed(playbackSpeed);
