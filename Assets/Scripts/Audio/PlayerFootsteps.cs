@@ -14,7 +14,7 @@ public class PlayerFootsteps : MonoBehaviour
     [SerializeField]
     private CURRENT_MATERIAL currentMaterial;
 
-    private enum CURRENT_MATERIAL { Wood, Concrete, Grass, Gravel };
+    private enum CURRENT_MATERIAL { Wood, Concrete, Grass, Gravel, Snow };
 
     private Vector3 rayCastOffSet = new Vector3(0f, 0.1f, 0f);
 
@@ -63,7 +63,8 @@ public class PlayerFootsteps : MonoBehaviour
         "Floor tileable",
         "Grass",
         "Gravel",
-        "Ground"
+        "Ground",
+        "Snow"
     };
 
     private CURRENT_MATERIAL[] textureMaterialMappings = new CURRENT_MATERIAL[]
@@ -74,7 +75,8 @@ public class PlayerFootsteps : MonoBehaviour
         CURRENT_MATERIAL.Concrete,
         CURRENT_MATERIAL.Grass,
         CURRENT_MATERIAL.Gravel,
-        CURRENT_MATERIAL.Gravel
+        CURRENT_MATERIAL.Gravel,
+        CURRENT_MATERIAL.Snow
     };
 
 
@@ -248,6 +250,10 @@ public class PlayerFootsteps : MonoBehaviour
 
             case CURRENT_MATERIAL.Gravel:
                 PlayFootstep(3);
+                break;
+
+            case CURRENT_MATERIAL.Snow:
+                PlayFootstep(4);
                 break;
 
             default:

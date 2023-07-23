@@ -129,6 +129,7 @@ public class InputManager : MonoBehaviour
         {
             if (jumpInputTimer < 0.3f) { jumpInputTimer = 0f; }
             playerLocomotion.PerformJumpAction(jumpInputTimer * 4);
+            playerAudio.PlayJump();
             jumpInputTimer = 0;
         }
     }

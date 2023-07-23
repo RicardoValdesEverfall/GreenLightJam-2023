@@ -5,7 +5,7 @@
 			<value>Cat_Jump</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b864ff47-e7c4-447c-95ce-92bf64a0ef1a}</destination>
@@ -41,6 +41,9 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{83292d90-b780-42ad-b4e5-018e1b82ce29}">
+		<relationship name="automationTracks">
+			<destination>{23433690-5022-4bd6-8ba8-cc6d957ca84a}</destination>
+		</relationship>
 		<relationship name="modules">
 			<destination>{d34ab29f-3c4e-4f80-9fa9-5ddc74ce78c5}</destination>
 		</relationship>
@@ -56,7 +59,7 @@
 			<destination>{a27e1757-2d8b-40a5-ace8-5e68ae2f7a26}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{0faecd2a-0da4-444b-81ec-8b87c4fb7216}</destination>
+			<destination>{917a6c3c-8577-48ea-97b3-b23fc3c51052}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6bf02dc0-7ea7-42c4-be6b-2bc925dd3303}" />
@@ -88,6 +91,11 @@
 			<destination>{b475be79-ba31-43cb-bc68-29e91eac2831}</destination>
 		</relationship>
 	</object>
+	<object class="AutomationTrack" id="{23433690-5022-4bd6-8ba8-cc6d957ca84a}">
+		<relationship name="automator">
+			<destination>{ead05803-79b4-4487-8d47-d573eb445e56}</destination>
+		</relationship>
+	</object>
 	<object class="MultiSound" id="{d34ab29f-3c4e-4f80-9fa9-5ddc74ce78c5}">
 		<relationship name="sounds">
 			<destination>{6bb523f3-8af4-49c4-95ca-7e2df44681af}</destination>
@@ -109,26 +117,78 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{d82a2eb5-5c36-497c-b373-0d1789cf0a0a}">
 		<relationship name="effects">
+			<destination>{f1cb5f1d-b8af-4abc-965b-b2234f9561c0}</destination>
 			<destination>{2a0bdf7c-e43b-4bfb-bf33-b0ae56e746b4}</destination>
+			<destination>{47c9a603-19d0-473b-ae31-31da21a4eeb9}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{94a832f0-30b9-46a1-a5fe-6bbfba961f29}" />
 	<object class="MultiSound" id="{6bb523f3-8af4-49c4-95ca-7e2df44681af}">
+		<relationship name="modulators">
+			<destination>{7546d6d1-be82-4eeb-8e33-3fdb6ecfbee5}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{1d519d4c-1823-4945-b90f-25ea465db2fd}</destination>
 			<destination>{bdbf0ecd-9984-476a-9033-a2d95ebb676e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{4c85e2ae-f084-43c1-b22b-4e2a6b3ba212}" />
+	<object class="ThreeEQEffect" id="{f1cb5f1d-b8af-4abc-965b-b2234f9561c0}">
+		<property name="lowGain">
+			<value>-7</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{2a0bdf7c-e43b-4bfb-bf33-b0ae56e746b4}" />
+	<object class="SpatialiserEffect" id="{47c9a603-19d0-473b-ae31-31da21a4eeb9}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="maximumDistance">
+			<value>4.80000019</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>0.100000001</value>
+		</property>
+		<property name="minimumExtent">
+			<value>20</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{7546d6d1-be82-4eeb-8e33-3fdb6ecfbee5}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>1</value>
+		</property>
+		<relationship name="automators">
+			<destination>{ead05803-79b4-4487-8d47-d573eb445e56}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{1d519d4c-1823-4945-b90f-25ea465db2fd}">
 		<relationship name="audioFile">
 			<destination>{3505eb0e-8834-4ea6-9363-8f844df7d249}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{bdbf0ecd-9984-476a-9033-a2d95ebb676e}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
+		<property name="pitch">
+			<value>2.79999995</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{566be4c9-44b0-4a7a-809e-1f39a6dc797e}</destination>
 		</relationship>
+	</object>
+	<object class="Automator" id="{ead05803-79b4-4487-8d47-d573eb445e56}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>amount</value>
+		</property>
 	</object>
 </objects>

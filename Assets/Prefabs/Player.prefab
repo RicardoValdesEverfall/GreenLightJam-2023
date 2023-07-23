@@ -3202,6 +3202,13 @@ MonoBehaviour:
       Data3: -552612697
       Data4: -1983216898
     Path: event:/Player/Cat_Meow
+  catJumpEvent:
+    Guid:
+      Data1: 922501947
+      Data2: 1115511929
+      Data3: 2093735055
+      Data4: 1086067470
+    Path: event:/Player/Cat_Jump
 --- !u!54 &7368046469734855472
 Rigidbody:
   m_ObjectHideFlags: 0
