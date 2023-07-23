@@ -8737,7 +8737,6 @@ Transform:
   - {fileID: 600784059}
   - {fileID: 407401859}
   - {fileID: 1071423560}
-  - {fileID: 1797096477}
   - {fileID: 2101803161}
   - {fileID: 653667166}
   - {fileID: 2096438277}
@@ -8745,6 +8744,7 @@ Transform:
   - {fileID: 734926008}
   - {fileID: 1548800295}
   - {fileID: 1553693332}
+  - {fileID: 1797096477}
   - {fileID: 1431586749}
   m_Father: {fileID: 658557830}
   m_RootOrder: -1
