@@ -80,7 +80,10 @@ public class PlayerManager : MonoBehaviour
             inputManager.HandleAllInputs();
             playerLocomotion.HandleAllLocomotion();
         }
-      
+        else
+        {
+            catAnimator.SetFloat("Movement", 0);
+        }
     }
 
     private void LateUpdate()
