@@ -1032,12 +1032,12 @@ PrefabInstance:
     - target: {fileID: 851538865244645083, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000034962675
+      value: 0.000003513048
       objectReference: {fileID: 0}
     - target: {fileID: 851538865244645083, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000007928075
+      value: 0.0000007966126
       objectReference: {fileID: 0}
     - target: {fileID: 3370713337085684687, guid: 1d2eb933dddab4b1aaea296d9fa94666,
         type: 3}
@@ -11678,6 +11678,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 306138544858261011, guid: e05ef682c85ea0543892b432f0f3fa4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8f89e992c581c647b2f49038f03bf06, type: 2}
     - target: {fileID: 1180593077989435814, guid: e05ef682c85ea0543892b432f0f3fa4d,
         type: 3}
       propertyPath: cameraObject
@@ -36582,7 +36587,7 @@ PrefabInstance:
     - target: {fileID: 1658170437658619790, guid: 700a1c0e7cd2aaf44b28d61b811e9e60,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2234801925925951448, guid: 700a1c0e7cd2aaf44b28d61b811e9e60,
         type: 3}
