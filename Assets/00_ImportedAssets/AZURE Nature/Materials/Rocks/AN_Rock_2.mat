@@ -15,6 +15,7 @@ Material:
   - _BLENDNORMALS_ON
   - _COVERAGEOVERLAYTYPE_WORLD_NORMAL
   - _COVERAGE_ON
+  - _SNOW_ON
   m_InvalidKeywords:
   - _COVERAGETHICKNESS_ON
   m_LightmapFlags: 4
@@ -158,12 +159,12 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SNOW: 0
+    - _SNOW: 1
     - _Smoothness: 0.4
     - _SmoothnessTextureChannel: 0
     - _Snow: 0
-    - _SnowAmount: 1
-    - _SnowFade: 0.3
+    - _SnowAmount: 0
+    - _SnowFade: 0.508
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SurfaceSmoothness: 0
