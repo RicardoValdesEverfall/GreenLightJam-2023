@@ -4,11 +4,13 @@ using UnityEngine;
 
 using Yarn.Unity;
 using TMPro;
+using UnityEngine.Events;
 
 public class ReadableItem : Interactable
 {
 	[SerializeField] string yarnNode;
 	[SerializeField] DialogueRunner dialogueRunner;
+    [SerializeField] public UnityEvent AfterNarrativeInteraction;
     private bool isCurrentConversation = false;
     private bool alreadyCollected = false;
 
@@ -56,6 +58,7 @@ public class ReadableItem : Interactable
             playerManager.isCinematicPlaying = false;
             ShowInteractiveFeedback(false);
             StartCoroutine(MakeInteractiveAgain());
+            AfterNarrativeInteraction.Invoke();
         }
     }
 
