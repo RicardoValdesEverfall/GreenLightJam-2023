@@ -87,7 +87,7 @@ public abstract class Interactable : MonoBehaviour
         {
             reminderSequence = DOTween.Sequence();
             reminderSequence.SetDelay(reminderLoopTime);
-            reminderSequence.Append(DOTween.To(x => myOutline.OutlineWidth = x, 0, 3, 1f)).SetRelative().SetEase(Ease
+            reminderSequence.Append(DOTween.To(x => myOutline.OutlineWidth = x, 0, 5, 1f)).SetRelative().SetEase(Ease
                 .InOutSine);
             reminderSequence.SetLoops(-1, LoopType.Yoyo);
         }
