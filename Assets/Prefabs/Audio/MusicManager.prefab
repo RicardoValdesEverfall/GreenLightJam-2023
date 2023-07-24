@@ -60,7 +60,7 @@ MonoBehaviour:
       Data3: -708903503
       Data4: -1289216531
     Path: event:/Music/Music_Menu
-  mainMenuScene: 0_MainMenu
+  mainMenuScene: W4_menu
   mainGameScene: 01_GameScene
   sprintingIntensity: 0.05
   jumpingIntensity: 0.1
