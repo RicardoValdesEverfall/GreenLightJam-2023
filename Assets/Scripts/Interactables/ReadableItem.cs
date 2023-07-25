@@ -40,12 +40,6 @@ public class ReadableItem : Interactable
 		    dialogueRunner.StartDialogue(yarnNode);
             //hide popup
             TogglePopUp(false);
-            //week 4 temp
-            if (!alreadyCollected)
-            {
-                alreadyCollected = true;
-                //playerManager.CollectScroll();
-            }
         }
 	}
 
@@ -58,7 +52,11 @@ public class ReadableItem : Interactable
             playerManager.isCinematicPlaying = false;
             ShowInteractiveFeedback(false);
             StartCoroutine(MakeInteractiveAgain());
-            AfterNarrativeInteraction.Invoke();
+            if (!alreadyCollected)
+            {
+                alreadyCollected = true;
+                AfterNarrativeInteraction.Invoke();
+            }
         }
     }
 
